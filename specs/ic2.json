@@ -1,0 +1,1400 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss Drives",
+        "product_family": "iC2-Micro",
+        "series_names": [
+            "iC2-Micro"
+        ],
+        "source_documents": [
+            "doc_selection_guide"
+        ],
+        "knowledge_base_scope": "Typecode decoding, electrical ratings, and configuration structure for iC2-Micro frequency converters",
+        "coverage_summary": "Selection guide provides ordering model code structure, electrical ratings, enclosure sizes, and feature descriptions. No design/operating guide detected in uploaded documents.",
+        "unresolved_global_gaps": [
+            "Design guide / operating guide not found in uploaded documents",
+            "Detailed parameter mapping rules NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Full typecode segment positional definitions partially inferred from diagram only"
+        ],
+        "conflicts_detected": []
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "iC2-Micro Selection Guide",
+            "relevant_pages": [
+                "p.1-16"
+            ],
+            "scope_summary": "Product overview, ordering model code, electrical data, dimensions, accessories",
+            "explicit_power_range_covered": "0.37 kW to 22 kW",
+            "explicit_voltage_ranges_covered": [
+                "100-120 V AC",
+                "200-240 V AC",
+                "380-480 V AC"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Ordering model code diagram defines typecode structure",
+                "Current rating codes explicitly listed",
+                "Voltage codes defined as 01, 02, 04",
+                "EMC category codes F0, F2, F4 defined",
+                "Brake chopper options defined as +ACXX and +ACBC"
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "product_group",
+            "segment_label_from_manual": "Product group",
+            "character_positions": "1-3",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "Identifies product family iC2-30",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_category",
+            "segment_label_from_manual": "Product category",
+            "character_positions": "4-5",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "Defines frequency converter air cooled",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_type",
+            "segment_label_from_manual": "Product type",
+            "character_positions": "6-7",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines phase configuration (single or three phase)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_label_from_manual": "Mains voltage",
+            "character_positions": "unknown",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines supply voltage range",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "current_rating",
+            "segment_label_from_manual": "*Current rating",
+            "character_positions": "unknown",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines output current rating of the drive",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "protection_rating",
+            "segment_label_from_manual": "Protection rating",
+            "character_positions": "unknown",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines enclosure protection class",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "emc_category",
+            "segment_label_from_manual": "EMC category",
+            "character_positions": "unknown",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines EMC classification category",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake_chopper",
+            "segment_label_from_manual": "Brake chopper",
+            "character_positions": "unknown",
+            "segment_length": "variable",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Defines presence of integrated brake chopper",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "product_group",
+            "segment_code": "iC2-30",
+            "code": "iC2",
+            "meaning": "iC2-Micro product family",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_category",
+            "segment_code": "FA",
+            "code": "FA",
+            "meaning": "Frequency converter air cooled",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_type",
+            "segment_code": "3N",
+            "code": "3N",
+            "meaning": "Three phases",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_type",
+            "segment_code": "1N",
+            "code": "1N",
+            "meaning": "Single phase",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "04",
+            "code": "04",
+            "meaning": "380-480 V AC",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "02",
+            "code": "02",
+            "meaning": "200-240 V AC",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "01",
+            "code": "01",
+            "meaning": "100-120 V AC",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "current_rating",
+            "segment_code": "01A2",
+            "code": "01A2",
+            "meaning": "1.2 A",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "current_rating",
+            "segment_code": "02A2",
+            "code": "02A2",
+            "meaning": "2.2 A",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "current_rating",
+            "segment_code": "02A4",
+            "code": "02A4",
+            "meaning": "2.4 A",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9"
+            ],
+            "confidence": "high"
+        },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "03A7",
+        "code": "03A7",
+        "meaning": "3.7 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "04A2",
+        "code": "04A2",
+        "meaning": "4.2 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "04A8",
+        "code": "04A8",
+        "meaning": "4.8 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "05A3",
+        "code": "05A3",
+        "meaning": "5.3 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "06A8",
+        "code": "06A8",
+        "meaning": "6.8 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "07A2",
+        "code": "07A2",
+        "meaning": "7.2 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "07A8",
+        "code": "07A8",
+        "meaning": "7.8 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "09A0",
+        "code": "09A0",
+        "meaning": "9.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "09A6",
+        "code": "09A6",
+        "meaning": "9.6 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "11A0",
+        "code": "11A0",
+        "meaning": "11.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "12A0",
+        "code": "12A0",
+        "meaning": "12.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "15A2",
+        "code": "15A2",
+        "meaning": "15.2 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "15A5",
+        "code": "15A5",
+        "meaning": "15.5 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "23A0",
+        "code": "23A0",
+        "meaning": "23.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "24A2",
+        "code": "24A2",
+        "meaning": "24.2 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "31A0",
+        "code": "31A0",
+        "meaning": "31.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "37A0",
+        "code": "37A0",
+        "meaning": "37.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "43A0",
+        "code": "43A0",
+        "meaning": "43.0 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "current_rating",
+        "segment_code": "46A2",
+        "code": "46A2",
+        "meaning": "46.2 A",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "E20",
+        "code": "E20",
+        "meaning": "IP20/Open Type",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_category",
+        "segment_code": "F4",
+        "code": "F4",
+        "meaning": "C4 category",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_category",
+        "segment_code": "F2",
+        "code": "F2",
+        "meaning": "C2 category",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_category",
+        "segment_code": "F0",
+        "code": "F0",
+        "meaning": "C1 category",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "brake_chopper",
+        "segment_code": "+ACXX",
+        "code": "+ACXX",
+        "meaning": "None",
+        "notes": "No integrated brake chopper",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "brake_chopper",
+        "segment_code": "+ACBC",
+        "code": "+ACBC",
+        "meaning": "Integrated",
+        "notes": "Integrated brake chopper",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    }
+],
+"technical_tables": [
+    {
+        "table_id": "electrical_data_1x100_120vac",
+        "table_name": "iC2-Micro mains supply 1x100-120 V AC",
+        "applies_to": "1x100-120 V AC IP20/Open Type variants",
+        "columns": [
+            "variant_code",
+            "enclosure",
+            "typical_shaft_output_kw",
+            "typical_shaft_output_hp",
+            "continuous_output_current_a",
+            "intermittent_output_current_a",
+            "maximum_cable_size_mm2_awg",
+            "continuous_input_current_a",
+            "intermittent_input_current_a",
+            "emc_filter_type",
+            "built_in_brake_chopper",
+            "power_loss_w",
+            "efficiency_percent"
+        ],
+        "rows": [
+            {
+                "variant_code": "02A4",
+                "enclosure": "MA01c",
+                "typical_shaft_output_kw": "0.37",
+                "typical_shaft_output_hp": "0.5",
+                "continuous_output_current_a": "2.4",
+                "intermittent_output_current_a": "3.6",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "11.6",
+                "intermittent_input_current_a": "17.4",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "18",
+                "efficiency_percent": "97.4"
+            },
+            {
+                "variant_code": "04A8",
+                "enclosure": "MA02c",
+                "typical_shaft_output_kw": "1.1",
+                "typical_shaft_output_hp": "1.5",
+                "continuous_output_current_a": "4.8",
+                "intermittent_output_current_a": "7.2",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "25.6",
+                "intermittent_input_current_a": "38.4",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "24",
+                "efficiency_percent": "98.2"
+            }
+        ],
+        "units": {
+            "typical_shaft_output_kw": "kW",
+            "typical_shaft_output_hp": "hp",
+            "continuous_output_current_a": "A",
+            "intermittent_output_current_a": "A",
+            "continuous_input_current_a": "A",
+            "intermittent_input_current_a": "A",
+            "power_loss_w": "W",
+            "efficiency_percent": "%"
+        },
+        "notes": [
+            "The value is measured at 100% rated torque-producing current and 90% rated motor stator frequency according to IEC 61800-9-2 and EN 50598-2."
+        ],
+        "conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.8"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "electrical_data_1x200_240vac",
+        "table_name": "iC2-Micro mains supply 1x200-240 V AC",
+        "applies_to": "1x200-240 V AC IP20/Open Type variants",
+        "columns": [
+            "variant_code",
+            "enclosure",
+            "typical_shaft_output_kw",
+            "typical_shaft_output_hp",
+            "continuous_output_current_a",
+            "intermittent_output_current_a",
+            "maximum_cable_size_mm2_awg",
+            "continuous_input_current_a",
+            "intermittent_input_current_a",
+            "emc_filter_type",
+            "built_in_brake_chopper",
+            "power_loss_w",
+            "efficiency_percent"
+        ],
+        "rows": [
+            {
+                "variant_code": "02A2",
+                "enclosure": "MA01c",
+                "typical_shaft_output_kw": "0.37",
+                "typical_shaft_output_hp": "0.5",
+                "continuous_output_current_a": "2.2",
+                "intermittent_output_current_a": "3.3",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "6.1",
+                "intermittent_input_current_a": "8.3",
+                "emc_filter_type": "C1/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "16",
+                "efficiency_percent": "97.5"
+            },
+            {
+                "variant_code": "04A2",
+                "enclosure": "MA01c",
+                "typical_shaft_output_kw": "0.75",
+                "typical_shaft_output_hp": "1.0",
+                "continuous_output_current_a": "4.2",
+                "intermittent_output_current_a": "6.3",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "11.6",
+                "intermittent_input_current_a": "15.6",
+                "emc_filter_type": "C1/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "31",
+                "efficiency_percent": "97.6"
+            },
+            {
+                "variant_code": "06A8",
+                "enclosure": "MA02c",
+                "typical_shaft_output_kw": "1.5",
+                "typical_shaft_output_hp": "2.0",
+                "continuous_output_current_a": "6.8",
+                "intermittent_output_current_a": "10.2",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "18.7",
+                "intermittent_input_current_a": "26.4",
+                "emc_filter_type": "C1/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "46",
+                "efficiency_percent": "97.6"
+            },
+            {
+                "variant_code": "09A6",
+                "enclosure": "MA02a",
+                "typical_shaft_output_kw": "2.2",
+                "typical_shaft_output_hp": "3.0",
+                "continuous_output_current_a": "9.6",
+                "intermittent_output_current_a": "14.4",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "26.4",
+                "intermittent_input_current_a": "37",
+                "emc_filter_type": "C1/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "61",
+                "efficiency_percent": "97.9"
+            }
+        ],
+        "units": {
+            "typical_shaft_output_kw": "kW",
+            "typical_shaft_output_hp": "hp",
+            "continuous_output_current_a": "A",
+            "intermittent_output_current_a": "A",
+            "continuous_input_current_a": "A",
+            "intermittent_input_current_a": "A",
+            "power_loss_w": "W",
+            "efficiency_percent": "%"
+        },
+        "notes": [
+            "The value is measured at 100% rated torque-producing current and 90% rated motor stator frequency according to IEC 61800-9-2 and EN 50598-2."
+        ],
+        "conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.8"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "electrical_data_3x200_240vac",
+        "table_name": "iC2-Micro mains supply 3x200-240 V AC",
+        "applies_to": "3x200-240 V AC IP20/Open Type variants",
+        "columns": [
+            "variant_code",
+            "enclosure",
+            "typical_shaft_output_kw",
+            "typical_shaft_output_hp",
+            "continuous_output_current_a",
+            "intermittent_output_current_a",
+            "maximum_cable_size_mm2_awg",
+            "continuous_input_current_a",
+            "intermittent_input_current_a",
+            "emc_filter_type",
+            "built_in_brake_chopper",
+            "power_loss_w",
+            "efficiency_percent"
+        ],
+        "rows": [
+            {
+                "variant_code": "02A4",
+                "enclosure": "MA01a",
+                "typical_shaft_output_kw": "0.37",
+                "typical_shaft_output_hp": "0.5",
+                "continuous_output_current_a": "2.4",
+                "intermittent_output_current_a": "3.6",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "3.8",
+                "intermittent_input_current_a": "5.7",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "21",
+                "efficiency_percent": "97.3"
+            },
+            {
+                "variant_code": "04A2",
+                "enclosure": "MA01a",
+                "typical_shaft_output_kw": "0.75",
+                "typical_shaft_output_hp": "1.0",
+                "continuous_output_current_a": "4.2",
+                "intermittent_output_current_a": "6.3",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "6.7",
+                "intermittent_input_current_a": "8.3",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "36",
+                "efficiency_percent": "97.4"
+            },
+            {
+                "variant_code": "07A8",
+                "enclosure": "MA02a",
+                "typical_shaft_output_kw": "1.5",
+                "typical_shaft_output_hp": "2.0",
+                "continuous_output_current_a": "7.8",
+                "intermittent_output_current_a": "11.7",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "12.5",
+                "intermittent_input_current_a": "18.8",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "53",
+                "efficiency_percent": "97.9"
+            },
+            {
+                "variant_code": "11A0",
+                "enclosure": "MA02a",
+                "typical_shaft_output_kw": "2.2",
+                "typical_shaft_output_hp": "3.0",
+                "continuous_output_current_a": "11.0",
+                "intermittent_output_current_a": "16.5",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_a": "17.7",
+                "intermittent_input_current_a": "26.6",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "80",
+                "efficiency_percent": "97.7"
+            },
+            {
+                "variant_code": "15A2",
+                "enclosure": "MA03a",
+                "typical_shaft_output_kw": "3.7",
+                "typical_shaft_output_hp": "5.0",
+                "continuous_output_current_a": "15.2",
+                "intermittent_output_current_a": "22.8",
+                "maximum_cable_size_mm2_awg": "16/6",
+                "continuous_input_current_a": "24.3",
+                "intermittent_input_current_a": "35.3",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "Yes",
+                "power_loss_w": "92",
+                "efficiency_percent": "97.5"
+            },
+            {
+                "variant_code": "24A2",
+                "enclosure": "MA03a",
+                "typical_shaft_output_kw": "5.5",
+                "typical_shaft_output_hp": "7.5",
+                "continuous_output_current_a": "24.2",
+                "intermittent_output_current_a": "36.3",
+                "maximum_cable_size_mm2_awg": "16/6",
+                "continuous_input_current_a": "33.0",
+                "intermittent_input_current_a": "49.5",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "Yes",
+                "power_loss_w": "162",
+                "efficiency_percent": "97.7"
+            },
+            {
+                "variant_code": "31A0",
+                "enclosure": "MA04a",
+                "typical_shaft_output_kw": "7.5",
+                "typical_shaft_output_hp": "10",
+                "continuous_output_current_a": "31.0",
+                "intermittent_output_current_a": "46.5",
+                "maximum_cable_size_mm2_awg": "16/6",
+                "continuous_input_current_a": "42.0",
+                "intermittent_input_current_a": "63.0",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "Yes",
+                "power_loss_w": "228",
+                "efficiency_percent": "97.6"
+            },
+            {
+                "variant_code": "46A2",
+                "enclosure": "MA05a",
+                "typical_shaft_output_kw": "11",
+                "typical_shaft_output_hp": "15",
+                "continuous_output_current_a": "46.2",
+                "intermittent_output_current_a": "69.3",
+                "maximum_cable_size_mm2_awg": "16/6",
+                "continuous_input_current_a": "42.0",
+                "intermittent_input_current_a": "63.0",
+                "emc_filter_type": "C4",
+                "built_in_brake_chopper": "Yes",
+                "power_loss_w": "385",
+                "efficiency_percent": "97.3"
+            }
+        ],
+        "units": {
+            "typical_shaft_output_kw": "kW",
+            "typical_shaft_output_hp": "hp",
+            "continuous_output_current_a": "A",
+            "intermittent_output_current_a": "A",
+            "continuous_input_current_a": "A",
+            "intermittent_input_current_a": "A",
+            "power_loss_w": "W",
+            "efficiency_percent": "%"
+        },
+        "notes": [
+            "The value is measured at 100% rated torque-producing current and 90% rated motor stator frequency according to IEC 61800-9-2 and EN 50598-2."
+        ],
+        "conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.8"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "electrical_data_3x380_480vac",
+        "table_name": "iC2-Micro mains supply 3x380-480 V AC",
+        "applies_to": "3x380-480 V AC IP20/Open Type variants",
+        "columns": [
+            "variant_code",
+            "enclosure",
+            "typical_shaft_output_kw",
+            "typical_shaft_output_hp",
+            "continuous_output_current_380_440_a",
+            "intermittent_output_current_380_440_a",
+            "continuous_output_current_440_480_a",
+            "intermittent_output_current_440_480_a",
+            "maximum_cable_size_mm2_awg",
+            "continuous_input_current_380_440_a",
+            "intermittent_input_current_380_440_a",
+            "continuous_input_current_440_480_a",
+            "intermittent_input_current_440_480_a",
+            "emc_filter_type",
+            "built_in_brake_chopper",
+            "power_loss_w",
+            "efficiency_percent"
+        ],
+        "rows": [
+            {
+                "variant_code": "01A2",
+                "enclosure": "MA01a",
+                "typical_shaft_output_kw": "0.37",
+                "typical_shaft_output_hp": "0.5",
+                "continuous_output_current_380_440_a": "1.2",
+                "intermittent_output_current_380_440_a": "1.8",
+                "continuous_output_current_440_480_a": "1.1",
+                "intermittent_output_current_440_480_a": "1.7",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_380_440_a": "1.9",
+                "intermittent_input_current_380_440_a": "2.6",
+                "continuous_input_current_440_480_a": "1.7",
+                "intermittent_input_current_440_480_a": "2.3",
+                "emc_filter_type": "C2/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "17",
+                "efficiency_percent": "97.3"
+            },
+            {
+                "variant_code": "02A2",
+                "enclosure": "MA01a",
+                "typical_shaft_output_kw": "0.75",
+                "typical_shaft_output_hp": "1.0",
+                "continuous_output_current_380_440_a": "2.2",
+                "intermittent_output_current_380_440_a": "3.3",
+                "continuous_output_current_440_480_a": "2.1",
+                "intermittent_output_current_440_480_a": "3.2",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_380_440_a": "3.5",
+                "intermittent_input_current_380_440_a": "4.7",
+                "continuous_input_current_440_480_a": "3.0",
+                "intermittent_input_current_440_480_a": "4.0",
+                "emc_filter_type": "C2/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "25",
+                "efficiency_percent": "97.8"
+            },
+            {
+                "variant_code": "03A7",
+                "enclosure": "MA01a",
+                "typical_shaft_output_kw": "1.5",
+                "typical_shaft_output_hp": "2.0",
+                "continuous_output_current_380_440_a": "3.7",
+                "intermittent_output_current_380_440_a": "5.6",
+                "continuous_output_current_440_480_a": "3.4",
+                "intermittent_output_current_440_480_a": "5.1",
+                "maximum_cable_size_mm2_awg": "4/10",
+                "continuous_input_current_380_440_a": "5.9",
+                "intermittent_input_current_380_440_a": "8.7",
+                "continuous_input_current_440_480_a": "5.1",
+                "intermittent_input_current_440_480_a": "7.5",
+                "emc_filter_type": "C2/C4",
+                "built_in_brake_chopper": "No",
+                "power_loss_w": "34",
+                "efficiency_percent": "98.0"
+            }
+        ],
+        "units": {
+            "typical_shaft_output_kw": "kW",
+            "typical_shaft_output_hp": "hp",
+            "power_loss_w": "W",
+            "efficiency_percent": "%"
+        },
+        "notes": [
+            "The value is measured at 100% rated torque-producing current and 90% rated motor stator frequency according to IEC 61800-9-2 and EN 50598-2."
+        ],
+        "conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    }
+],
+"mapping_rules": [
+    {
+        "rule_id": "map_voltage_from_code",
+        "target_datasheet_field": "input_voltage_range",
+        "source_typecode_segment": "mains_voltage",
+        "mapping_logic_from_documents": "Map code 01 to 100-120 V AC, 02 to 200-240 V AC, 04 to 380-480 V AC",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_phase_from_product_type",
+        "target_datasheet_field": "input_phase",
+        "source_typecode_segment": "product_type",
+        "mapping_logic_from_documents": "Map 1N to single phase and 3N to three phase",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_current_rating",
+        "target_datasheet_field": "rated_output_current",
+        "source_typecode_segment": "current_rating",
+        "mapping_logic_from_documents": "Numeric value in code corresponds directly to output current in amperes (e.g., 02A2 = 2.2 A, 15A2 = 15.2 A)",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_emc_category",
+        "target_datasheet_field": "emc_category",
+        "source_typecode_segment": "emc_category",
+        "mapping_logic_from_documents": "Map F0 to C1, F2 to C2, F4 to C4 EMC category",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_protection_rating",
+        "target_datasheet_field": "ip_rating",
+        "source_typecode_segment": "protection_rating",
+        "mapping_logic_from_documents": "Map E20 to IP20/Open Type enclosure",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_brake_chopper",
+        "target_datasheet_field": "brake_chopper",
+        "source_typecode_segment": "brake_chopper",
+        "mapping_logic_from_documents": "Map +ACXX to no brake chopper and +ACBC to integrated brake chopper",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    }
+],
+"constraints": [
+    {
+        "rule_id": "brake_chopper_power_dependency",
+        "rule_type": "availability",
+        "affected_segment_or_table": "brake_chopper",
+        "exact_rule": "Built-in brake chopper is only applicable to drives in the power range of 3 x 380-480 V 2.2 kW and above, and 3 x 200-240 V 1.5 kW and above",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "brake_terminal_exclusion",
+        "rule_type": "exclusion",
+        "affected_segment_or_table": "brake_chopper",
+        "exact_rule": "No BR terminals for 1 x 100-120 V drives, 1 x 200-240 V drives, 3 x 380-480 V 0.37-1.5 kW and 3 x 200-240 V 0.37-0.75 kW drives",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "digital_io_mode_selection",
+        "rule_type": "configuration",
+        "affected_segment_or_table": "digital_io",
+        "exact_rule": "Digital I/O mode (PNP=Source, NPN=Sink) selectable via parameter P9.4.1.1",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "rs485_termination",
+        "rule_type": "configuration",
+        "affected_segment_or_table": "communication",
+        "exact_rule": "Use switch S640 to enable termination on the RS485 port (terminals 68 and 69)",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    }
+],
+"examples": [
+    {
+        "full_type_code": "iC2-30FA3N04-09A6E20F4+ACXX",
+        "decoded_breakdown": [
+            {
+                "segment": "product_group",
+                "value": "iC2",
+                "meaning": "iC2-Micro"
+            },
+            {
+                "segment": "product_category",
+                "value": "FA",
+                "meaning": "Frequency converter air cooled"
+            },
+            {
+                "segment": "product_type",
+                "value": "3N",
+                "meaning": "Three phase"
+            },
+            {
+                "segment": "mains_voltage",
+                "value": "04",
+                "meaning": "380-480 V AC"
+            },
+            {
+                "segment": "current_rating",
+                "value": "09A6",
+                "meaning": "9.6 A"
+            },
+            {
+                "segment": "protection_rating",
+                "value": "E20",
+                "meaning": "IP20/Open Type"
+            },
+            {
+                "segment": "emc_category",
+                "value": "F4",
+                "meaning": "C4 category"
+            },
+            {
+                "segment": "brake_chopper",
+                "value": "+ACXX",
+                "meaning": "No brake chopper"
+            }
+        ],
+        "notes": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9"
+        ],
+        "confidence": "high"
+    }
+],
+"datasheet_fields": [
+    {
+        "datasheet_field_name": "input_voltage_range",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode"
+        ],
+        "source_references": [
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "input_phase",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode"
+        ],
+        "source_references": [
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "rated_output_current",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": true,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode",
+            "technical_tables"
+        ],
+        "source_references": [
+            "doc_selection_guide p.8",
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "ip_rating",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode"
+        ],
+        "source_references": [
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "emc_category",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode"
+        ],
+        "source_references": [
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "brake_chopper",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": true,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode",
+            "constraints"
+        ],
+        "source_references": [
+            "doc_selection_guide p.6",
+            "doc_selection_guide p.9"
+        ]
+    }
+],
+"conflicts": [],
+"app_resolution_model": {
+    "family_detection_rules": [
+        "If typecode starts with iC2 then product_family = iC2-Micro"
+    ],
+    "parse_order": [
+        "product_group",
+        "product_category",
+        "product_type",
+        "mains_voltage",
+        "current_rating",
+        "protection_rating",
+        "emc_category",
+        "brake_chopper"
+    ],
+    "field_resolution_order": [
+        "typecode",
+        "technical_tables",
+        "constraints"
+    ],
+    "fallback_rules": [
+        "If value not found in typecode, lookup in technical tables",
+        "If still not found, return NOT FOUND IN THE UPLOADED DOCUMENTS"
+    ],
+    "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+}
+}

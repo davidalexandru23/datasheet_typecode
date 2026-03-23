@@ -1,0 +1,1379 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss",
+        "product_family": "VLT® AQUA Drive FC 202",
+        "series_names": [
+            "FC 202"
+        ],
+        "source_documents": [
+            "Selection Guide 0.25 kW – 1.4 MW"
+        ],
+        "knowledge_base_scope": "Extraction of typecode structure, values, technical data, and mapping rules for VLT® AQUA Drive FC 202 series based strictly on uploaded selection guide",
+        "coverage_summary": "General product description, features, performance range, and references to typecode sections identified; detailed typecode tables not yet extracted in current pages",
+        "unresolved_global_gaps": [
+            "Typecode structure details NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Typecode value tables NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Detailed ordering tables not yet extracted from later pages",
+            "Electrical rating tables not yet extracted",
+            "Datasheet mapping logic NOT FOUND IN THE UPLOADED DOCUMENTS"
+        ],
+        "conflicts_detected": []
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "VLT® AQUA Drive FC 202 Selection Guide 0.25 kW – 1.4 MW",
+            "relevant_pages": [
+                1,
+                2,
+                7,
+                14,
+                16,
+                18,
+                22
+            ],
+            "scope_summary": "Product overview, installation features, efficiency, harmonic mitigation, cascade control, and references to ordering typecodes and technical data sections",
+            "explicit_power_range_covered": "0.25 kW – 1.4 MW",
+            "explicit_voltage_ranges_covered": [
+                "200-240 V",
+                "380-480 V",
+                "525-600 V",
+                "525-690 V"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Ordering typecode sections referenced on pages 49, 58, 64 ",
+                "Multiple enclosure sizes A–F and enclosed drives referenced",
+                "Options structure includes A options (fieldbus), B options (functional), C options (cascade/relay), D option (24 V backup) "
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "overall_typecode",
+            "segment_label_from_manual": "Ordering typecode",
+            "character_positions": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "segment_length": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "fixed_variable_optional_conditional": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "explanation": "Ordering typecode exists and is defined in later sections of the selection guide",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_selection_guide p.58",
+                "doc_selection_guide p.64"
+            ],
+            "confidence": "low"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "power_range",
+            "segment_code": "power",
+            "code": "0.25 kW – 1.4 MW",
+            "meaning": "Drive power range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.1"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "voltage_range",
+            "segment_code": "voltage",
+            "code": "200-240 V",
+            "meaning": "Supported supply voltage range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.27"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "voltage_range",
+            "segment_code": "voltage",
+            "code": "380-480 V",
+            "meaning": "Supported supply voltage range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.27"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "voltage_range",
+            "segment_code": "voltage",
+            "code": "525-600 V",
+            "meaning": "Supported supply voltage range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.27"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "voltage_range",
+            "segment_code": "voltage",
+            "code": "525-690 V",
+            "meaning": "Supported supply voltage range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.27"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "enclosure",
+            "code": "A, B, C, D, E, F",
+            "meaning": "Enclosure sizes",
+            "notes": "Multiple enclosure size groups referenced",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "protection_class",
+            "segment_code": "ip_rating",
+            "code": "IP00 to IP66",
+            "meaning": "Ingress protection range",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "options_group",
+            "segment_code": "A_options",
+            "code": "Fieldbuses",
+            "meaning": "Communication options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "options_group",
+            "segment_code": "B_options",
+            "code": "Functional extensions",
+            "meaning": "Additional functional modules",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "options_group",
+            "segment_code": "C_options",
+            "code": "Cascade controller and relay card",
+            "meaning": "Cascade control related options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "options_group",
+            "segment_code": "D_option",
+            "code": "24 V back-up power supply",
+            "meaning": "Backup supply option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "smartstart",
+            "code": "SmartStart",
+            "meaning": "Setup wizard activated at first power up or after factory reset",
+            "notes": "Guides through motor setup and water/pump feature selection",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "ama",
+            "code": "Automatic Motor Adaptation",
+            "meaning": "Measures motor parameters and optimizes drive settings at standstill without disconnecting the load",
+            "notes": "Also referenced as AMA and accessible through SmartStart",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.24",
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "aeo",
+            "code": "Automatic Energy Optimization",
+            "meaning": "Adapts voltage to the current load situation to reduce energy consumption",
+            "notes": "Also described as automatic adaption to application",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.9",
+                "doc_selection_guide p.24"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "auto_tuning",
+            "code": "Auto Tuning",
+            "meaning": "Measures system characteristics and automatically finds process controller settings for stable and precise system control",
+            "notes": "Described as easy commissioning and super-easy commissioning",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.24"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "flow_compensation",
+            "code": "Flow compensation",
+            "meaning": "Drive adapts the set-point according to the flow",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "deragging",
+            "code": "Deragging",
+            "meaning": "Removes clogs from impellers by reversing the direction of the flow in cycles",
+            "notes": "Can be used as proactive measure to avoid damaging the pump; also described as standard and as replacement for external deragger relay",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.9",
+                "doc_selection_guide p.11",
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "pipe_fill",
+            "code": "Pipe fill",
+            "meaning": "Helps to avoid water hammering by filling pipes smoothly",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "dry_run_end_of_curve_detection",
+            "code": "Dry run/end of curve detection",
+            "meaning": "Protects the pump from damage; if a set-point is not reached, the drive assumes that the pipe is dry or there is a leakage",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "sleep_mode",
+            "code": "Sleep mode",
+            "meaning": "Saves energy by stopping the pump when there is no demand",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11",
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "special_ramps",
+            "code": "Special ramps",
+            "meaning": "Dedicated startup and stop ramps for specific applications",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "motor_alternation",
+            "code": "Motor alternation",
+            "meaning": "Two motors share one drive",
+            "notes": "Also described as suitable for applications with 2 motors or 2 pumps sharing 1 drive",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "basic_cascade_control",
+            "code": "Basic cascade control",
+            "meaning": "Speed control a single pump in a multi pump system",
+            "notes": "Described as cost attractive solution in for example booster sets",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22",
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "master_follower",
+            "code": "Master-follower",
+            "meaning": "Control up to 8 drives and pumps to ensure smooth operation of the overall pump system",
+            "notes": "Use Master/Follower mode to reduce energy consumption compared to traditional technology across the line for on/off cycling of pumps or blowers, and valve throttling",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22",
+                "doc_selection_guide p.25"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "digital_cascade_controller",
+            "code": "Digital Cascade Controller",
+            "meaning": "Integrated cascade controller based on Modbus RTU communication protocol",
+            "notes": "Ready to use; simply activate it with a software license key",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "license based activation required"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22",
+                "doc_selection_guide p.23"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "hot_swap",
+            "code": "Hot Swap",
+            "meaning": "Automatic drive detection supports drive maintenance without downtime by re-allocating roles in the master/follower architecture",
+            "notes": "After maintenance is complete, the cascade controller automatically incorporates the drive back into the loop and allows re-allocation of master/follower roles",
+            "dependencies": [
+                "digital_cascade_controller"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11",
+                "doc_selection_guide p.23"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "condition_based_monitoring",
+            "code": "Condition-based monitoring",
+            "meaning": "Cloud-free artificial intelligence embedded in the drive automatically defines operating baseline parameters corresponding to specific applications, at all speeds and real-life operating cycles",
+            "notes": "Reduced installation time and predictive maintenance lower operating costs and boost uptime",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "back_channel_cooling",
+            "code": "Back-channel cooling",
+            "meaning": "Cooling concept directing air through a rear cooling channel so up to 90% of the drive’s heat loss is removed directly outside the installation room",
+            "notes": "Described as reducing investment for air cooling systems by up to 90%",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.9",
+                "doc_selection_guide p.14",
+                "doc_selection_guide p.15"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "panel_through_cooling",
+            "code": "Panel-through cooling",
+            "meaning": "Accessory mounting kit for small and mid-range drives enables heat losses to be directed directly outside the panel room and into designated air ducts",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.15"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "long_motor_cables",
+            "code": "150 m screened / 300 m unscreened",
+            "meaning": "Standard cable capability without need for additional components",
+            "notes": "Presented as installation cost reduction feature",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "pcb_coating_standard",
+            "code": "3C3 PCB coating as standard on 90 kW and larger drives",
+            "meaning": "Printed circuit board protection standard for larger drives",
+            "notes": "Guide also states VLT® AQUA Drive conforms to class 3C2 (IEC 60721-3-3) as standard and special coating can comply with class 3C3; all drives above 90 kW delivered with 3C3 coating as standard",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "90 kW and larger drives"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "ruggedized_version",
+            "code": "Ruggedized",
+            "meaning": "Version intended to ensure components remain firmly in place in pump environments characterized by high vibration levels",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "ambient_temperature_range",
+            "code": "-25 to +50 °C",
+            "meaning": "Operating ambient temperature range without derating",
+            "notes": "One statement says VLT® AQUA Drives up to 315 kW operate in ambient temperatures from -25 to 50 °C without derating; another states VLT® AQUA Drive can operate in ambient temperatures between -25 and +50 °C, without derating",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "harmonic_mitigation_solution",
+            "code": "Advanced active filters",
+            "meaning": "Certified harmonic mitigation solution",
+            "notes": "Distortion levels of no more than 5% THDi and power factor of the system re-established at 1",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18",
+                "doc_selection_guide p.19"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "harmonic_mitigation_solution",
+            "code": "Advanced harmonic filters",
+            "meaning": "Certified harmonic mitigation solution",
+            "notes": "Specially designed to be connected in front of a VLT® drive; harmonic current distortion generated back to the mains is reduced to a minimum",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18",
+                "doc_selection_guide p.19"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "harmonic_mitigation_solution",
+            "code": "Low harmonic drives",
+            "meaning": "Certified harmonic mitigation solution",
+            "notes": "Provide total harmonic current distortion (THDi) of maximum 5%",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "harmonic_mitigation_solution",
+            "code": "12-pulse drives",
+            "meaning": "Certified harmonic mitigation solution",
+            "notes": "Robust and cost-effective harmonic solution for higher power range above 250 kW",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "above 250 kW"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18",
+                "doc_selection_guide p.19"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "feature",
+            "segment_code": "harmonic_mitigation_solution",
+            "code": "Active front end drives",
+            "meaning": "Certified harmonic mitigation solution",
+            "notes": "Supply current distortion (THDi) about 3-4%",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18",
+                "doc_selection_guide p.19"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "technical_tables": [
+        {
+            "table_id": "power_vs_energy_savings_centrifugal_pumps",
+            "table_name": "Flow vs Power Relationship for Centrifugal Pumps",
+            "applies_to": "Centrifugal pumps and blowers in water supply systems",
+            "columns": [
+                "Flow (%)",
+                "Power required (%)",
+                "Control method"
+            ],
+            "rows": [
+                [
+                    "20",
+                    "~10",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "40",
+                    "~30",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "60",
+                    "~55",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "80",
+                    "~80",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "100",
+                    "100",
+                    "AC drive / Ideal control"
+                ]
+            ],
+            "units": {
+                "Flow (%)": "%",
+                "Power required (%)": "%"
+            },
+            "notes": [
+                "20% reduction in pump speed/flowrate can result in up to 50% energy reduction",
+                "Energy consumption for pumps typically represents 60-80% of total energy consumption in water supply systems"
+            ],
+            "conditions": [
+                "Applies to systems characterized by friction loss",
+                "Applies to centrifugal or rotodynamic pumps"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.12"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "power_vs_energy_savings_wastewater",
+            "table_name": "Flow vs Input Power for Wastewater Blowers/Pumps",
+            "applies_to": "Positive displacement blowers or pumps in wastewater treatment",
+            "columns": [
+                "Flow rate (%)",
+                "Input power (%)",
+                "Control method"
+            ],
+            "rows": [
+                [
+                    "20",
+                    "~20",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "40",
+                    "~40",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "60",
+                    "~60",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "80",
+                    "~80",
+                    "AC drive / Ideal control"
+                ],
+                [
+                    "100",
+                    "100",
+                    "AC drive / Ideal control"
+                ]
+            ],
+            "units": {
+                "Flow rate (%)": "%",
+                "Input power (%)": "%"
+            },
+            "notes": [
+                "A 30% reduction in speed will result in 30% energy savings assuming constant pressure",
+                "Blowers or surface aerators typically consume 40-70% of total energy in wastewater treatment plants"
+            ],
+            "conditions": [
+                "Applies to positive displacement blowers or pumps",
+                "Assumes constant pressure"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.13"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "cascade_control_energy_comparison",
+            "table_name": "Energy Consumption Comparison of Cascade Control Methods",
+            "applies_to": "Multi-pump systems",
+            "columns": [
+                "Control method",
+                "Energy consumption (kWh)"
+            ],
+            "rows": [
+                [
+                    "Master/Follower",
+                    "20689"
+                ],
+                [
+                    "Basic cascade control",
+                    "23126"
+                ],
+                [
+                    "Variable speed only",
+                    "25596"
+                ],
+                [
+                    "All constant speed",
+                    "48492"
+                ]
+            ],
+            "units": {
+                "Energy consumption (kWh)": "kWh"
+            },
+            "notes": [
+                "Master/Follower mode significantly reduces energy consumption compared to traditional constant speed systems"
+            ],
+            "conditions": [
+                "Comparison based on example system shown in guide"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "cascade_controller_capabilities",
+            "table_name": "Cascade Controller Pump Configuration Capabilities",
+            "applies_to": "Cascade control options",
+            "columns": [
+                "Controller type",
+                "Configuration",
+                "Maximum pumps"
+            ],
+            "rows": [
+                [
+                    "Basic Cascade Controller",
+                    "1 VSP + 2 FSP",
+                    "3"
+                ],
+                [
+                    "Extended Cascade Controller MCO 101",
+                    "1 VSP + 5 FSP",
+                    "6"
+                ],
+                [
+                    "Extended Cascade Controller MCO 101",
+                    "1-6 VSP + 1-5 FSP",
+                    "6"
+                ],
+                [
+                    "Extended Cascade Controller MCO 101",
+                    "6 VSP",
+                    "6"
+                ],
+                [
+                    "Advanced Cascade Controller MCO 102",
+                    "1 VSP + 8 FSP",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "Advanced Cascade Controller MCO 102",
+                    "1-8 VSP + 1-7 FSP",
+                    "8"
+                ],
+                [
+                    "Advanced Cascade Controller MCO 102",
+                    "8 VSP",
+                    "8"
+                ],
+                [
+                    "Digital Cascade Controller",
+                    "8 VSP",
+                    "8"
+                ]
+            ],
+            "units": {},
+            "notes": [
+                "VSP = Variable Speed Pump",
+                "FSP = Fixed Speed Pump",
+                "Digital Cascade Controller based on Modbus RTU communication protocol"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22",
+                "doc_selection_guide p.23"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "harmonic_mitigation_comparison",
+            "table_name": "Harmonic Mitigation Technology Comparison",
+            "applies_to": "Harmonic mitigation solutions",
+            "columns": [
+                "Technology",
+                "Typical THDi",
+                "Notes"
+            ],
+            "rows": [
+                [
+                    "Advanced Active Filter (AAF)",
+                    "<=5%",
+                    "Central solution; operates only when needed"
+                ],
+                [
+                    "Active Front End (AFE)",
+                    "3-4%",
+                    "Requires voltage boost of approximately 10%"
+                ],
+                [
+                    "Low Harmonic Drive (LHD)",
+                    "<=5%",
+                    "Integrated Advanced Active Filter"
+                ],
+                [
+                    "12-pulse drive",
+                    "~12%",
+                    "Used above 250 kW"
+                ]
+            ],
+            "units": {
+                "Typical THDi": "%"
+            },
+            "notes": [
+                "Central AAF solution can support up to 50 drives",
+                "Harmonic noise kept under 3% on all AC drives in system with central AAF solution"
+            ],
+            "conditions": [
+                "Performance depends on grid quality, imbalance, and pre-distortion"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.16",
+                "doc_selection_guide p.18",
+                "doc_selection_guide p.19"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "installation_features_summary",
+            "table_name": "Installation Savings Features",
+            "applies_to": "All VLT® AQUA Drive installations",
+            "columns": [
+                "Feature",
+                "Description",
+                "Value"
+            ],
+            "rows": [
+                [
+                    "Cable length capability",
+                    "Screened cable length",
+                    "150 m"
+                ],
+                [
+                    "Cable length capability",
+                    "Unscreened cable length",
+                    "300 m"
+                ],
+                [
+                    "Air conditioning reduction",
+                    "Reduction in air cooling investment",
+                    "up to 90%"
+                ],
+                [
+                    "Heat removal",
+                    "Heat removed via back-channel cooling",
+                    "up to 90%"
+                ],
+                [
+                    "Installation savings",
+                    "Cost savings compared to traditional AC drives",
+                    "up to 15%"
+                ]
+            ],
+            "units": {
+                "Cable length": "m",
+                "Reduction": "%"
+            },
+            "notes": [
+                "Back-channel cooling significantly reduces cooling system size",
+                "Space-saving design enables side-by-side installation"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.6",
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "mapping_rules": [
+        {
+            "rule_id": "map_power_from_range",
+            "target_datasheet_field": "rated_power",
+            "source_typecode_segment": "power_range",
+            "mapping_logic_from_documents": "Select rated power within the overall supported range 0.25 kW – 1.4 MW",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.1"
+            ],
+            "confidence": "low"
+        },
+        {
+            "rule_id": "map_voltage_from_range",
+            "target_datasheet_field": "supply_voltage",
+            "source_typecode_segment": "voltage_range",
+            "mapping_logic_from_documents": "Select supply voltage based on supported ranges: 200-240 V, 380-480 V, 525-600 V, 525-690 V",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.27"
+            ],
+            "confidence": "low"
+        },
+        {
+            "rule_id": "map_enclosure_size",
+            "target_datasheet_field": "enclosure_size",
+            "source_typecode_segment": "enclosure",
+            "mapping_logic_from_documents": "Map enclosure code to one of the enclosure sizes A, B, C, D, E, F",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "low"
+        },
+        {
+            "rule_id": "map_ip_rating",
+            "target_datasheet_field": "protection_class",
+            "source_typecode_segment": "protection_class",
+            "mapping_logic_from_documents": "Map selected IP rating within range IP00 to IP66",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7",
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "low"
+        },
+        {
+            "rule_id": "map_options_group",
+            "target_datasheet_field": "options",
+            "source_typecode_segment": "options_group",
+            "mapping_logic_from_documents": "Map option groups A, B, C, D to fieldbus, functional extensions, cascade/relay, and 24 V backup respectively",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.2"
+            ],
+            "confidence": "low"
+        }
+    ],
+"constraints": [
+    {
+        "rule_id": "temperature_derating_condition",
+        "rule_type": "operational_limit",
+        "affected_segment_or_table": "ambient_temperature_range",
+        "exact_rule": "VLT® AQUA Drives up to 315 kW operate in ambient temperatures from -25 to 50 °C without derating",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.7"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "temperature_general_range",
+        "rule_type": "operational_limit",
+        "affected_segment_or_table": "ambient_temperature_range",
+        "exact_rule": "VLT® AQUA Drive can operate in ambient temperatures between -25 and +50 °C without derating",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.14"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "pcb_coating_condition",
+        "rule_type": "availability_condition",
+        "affected_segment_or_table": "pcb_coating_standard",
+        "exact_rule": "3C3 PCB coating is standard on 90 kW and larger drives",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.7"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "pcb_coating_class_standard",
+        "rule_type": "technical_condition",
+        "affected_segment_or_table": "pcb_coating_standard",
+        "exact_rule": "VLT® AQUA Drive conforms to class 3C2 (IEC 60721-3-3) as standard; special coating can comply with class 3C3",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.14"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "harmonic_standard_reference",
+        "rule_type": "compliance_requirement",
+        "affected_segment_or_table": "harmonic_mitigation_comparison",
+        "exact_rule": "Harmonic mitigation designed to meet IEEE-519 2014 Guide requirements for voltage THD limits at the Point of Common Coupling",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.16"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "harmonic_central_filter_limit",
+        "rule_type": "performance_limit",
+        "affected_segment_or_table": "harmonic_mitigation_comparison",
+        "exact_rule": "Central advanced active filter solution ensures harmonic noise is kept under 3% on all AC drives in the system",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.16"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "harmonic_low_harmonic_drive_limit",
+        "rule_type": "performance_limit",
+        "affected_segment_or_table": "harmonic_mitigation_comparison",
+        "exact_rule": "Low harmonic drives provide total harmonic current distortion (THDi) of maximum 5%",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.18"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "harmonic_active_front_end_limit",
+        "rule_type": "performance_limit",
+        "affected_segment_or_table": "harmonic_mitigation_comparison",
+        "exact_rule": "Active front-end systems provide supply current distortion (THDi) of about 3-4%",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.19"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "harmonic_12_pulse_application",
+        "rule_type": "availability_condition",
+        "affected_segment_or_table": "harmonic_mitigation_comparison",
+        "exact_rule": "12-pulse drives are used for higher power range applications above 250 kW",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.19"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "cascade_controller_license",
+        "rule_type": "availability_condition",
+        "affected_segment_or_table": "digital_cascade_controller",
+        "exact_rule": "Digital Cascade Controller is license-based and activated via software license key",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.23"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "cascade_controller_max_pumps",
+        "rule_type": "system_limit",
+        "affected_segment_or_table": "cascade_controller_capabilities",
+        "exact_rule": "Digital Cascade Controller enables configuration of up to eight pumps in multiple-pump systems",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.23"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "cooling_heat_removal",
+        "rule_type": "performance_limit",
+        "affected_segment_or_table": "back_channel_cooling",
+        "exact_rule": "Back-channel cooling transfers up to 90% of heat away from the room",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.9",
+            "doc_selection_guide p.14",
+            "doc_selection_guide p.15"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "installation_savings_limit",
+        "rule_type": "performance_limit",
+        "affected_segment_or_table": "installation_features_summary",
+        "exact_rule": "Installation cost savings of up to 15% compared to traditional AC drives",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    }
+],
+"examples": [
+    {
+        "full_type_code": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+        "decoded_breakdown": [],
+        "notes": [
+            "No explicit typecode examples found in the provided pages"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [],
+        "confidence": "low"
+    }
+],
+"datasheet_fields": [
+    {
+        "datasheet_field_name": "rated_power",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": true,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "rating_table",
+            "selection_logic"
+        ],
+        "source_references": [
+            "doc_selection_guide p.1"
+        ]
+    },
+    {
+        "datasheet_field_name": "supply_voltage",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": true,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "rating_table"
+        ],
+        "source_references": [
+            "doc_selection_guide p.27"
+        ]
+    },
+    {
+        "datasheet_field_name": "enclosure_size",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": true,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "lookup_table"
+        ],
+        "source_references": [
+            "doc_selection_guide p.2"
+        ]
+    },
+    {
+        "datasheet_field_name": "ip_rating",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": true,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "lookup_table"
+        ],
+        "source_references": [
+            "doc_selection_guide p.7",
+            "doc_selection_guide p.14"
+        ]
+    },
+    {
+        "datasheet_field_name": "cooling_method",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "feature_mapping"
+        ],
+        "source_references": [
+            "doc_selection_guide p.14",
+            "doc_selection_guide p.15"
+        ]
+    },
+    {
+        "datasheet_field_name": "harmonic_mitigation_type",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": true,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "lookup_table"
+        ],
+        "source_references": [
+            "doc_selection_guide p.18",
+            "doc_selection_guide p.19"
+        ]
+    },
+    {
+        "datasheet_field_name": "ambient_temperature_range",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "feature_mapping"
+        ],
+        "source_references": [
+            "doc_selection_guide p.7",
+            "doc_selection_guide p.14"
+        ]
+    },
+    {
+        "datasheet_field_name": "cascade_control_capability",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": true,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "lookup_table"
+        ],
+        "source_references": [
+            "doc_selection_guide p.22",
+            "doc_selection_guide p.23"
+        ]
+    },
+    {
+        "datasheet_field_name": "energy_savings",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "feature_mapping"
+        ],
+        "source_references": [
+            "doc_selection_guide p.8",
+            "doc_selection_guide p.9"
+        ]
+    },
+    {
+        "datasheet_field_name": "typecode_full",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": false,
+        "not_available_in_uploaded_documents": true,
+        "resolution_priority": [],
+        "source_references": []
+    }
+],
+"conflicts": [],
+"app_resolution_model": {
+    "family_detection_rules": [
+        "If product name contains 'VLT® AQUA Drive FC 202', assign to this knowledge base"
+    ],
+    "parse_order": [
+        "overall_typecode",
+        "power_range",
+        "voltage_range",
+        "enclosure",
+        "options_group"
+    ],
+    "field_resolution_order": [
+        "direct_typecode",
+        "lookup_table",
+        "technical_table",
+        "feature_mapping"
+    ],
+    "fallback_rules": [
+        "If value not found, return NOT FOUND IN THE UPLOADED DOCUMENTS",
+        "If multiple options exist, select based on applicable conditions"
+    ],
+    "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+}
+}

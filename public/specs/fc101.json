@@ -1,0 +1,1258 @@
+{
+    "export_metadata": {
+        "manufacturer": "Danfoss",
+        "product_family": "VLT HVAC Basic Drive FC 101",
+        "document_set_id": "FC101_DS_SET_001",
+        "part_number": 1,
+        "part_name": "knowledge_base_metadata + source_registry + typecode_structure",
+        "subpart": "",
+        "is_final_part": false,
+        "next_part": "PART 2",
+        "source_documents_used": [
+            "doc_design_guide",
+            "doc_selection_guide"
+        ]
+    },
+    "data": {
+        "knowledge_base_metadata": {
+            "manufacturer": "Danfoss",
+            "product_family": "VLT HVAC Basic Drive FC 101",
+            "series_names": [
+                "FC 101",
+                "VLT HVAC Basic Drive"
+            ],
+            "source_documents": [
+                "doc_design_guide",
+                "doc_selection_guide"
+            ],
+            "knowledge_base_scope": "Type code decoding, configuration structure, and technical parameter convergence for FC 101 drives",
+            "coverage_summary": "Covers type code structure (positions 1–39), configuration options, enclosure variants, voltage ranges, and product range across both documents",
+            "unresolved_global_gaps": [],
+            "conflicts_detected": []
+        },
+        "source_registry": [
+            {
+                "document_id": "doc_design_guide",
+                "document_role": "design_guide",
+                "short_title": "FC101 Design Guide",
+                "relevant_pages": [
+                    "p.134",
+                    "p.135"
+                ],
+                "scope_summary": "Detailed type code structure and full option breakdown including positions 1–39 and configuration rules",
+                "explicit_power_range_covered": "0.25–90 kW (0.34–120 hp)",
+                "explicit_voltage_ranges_covered": [
+                    "3x200–240 V AC",
+                    "3x380–480 V AC",
+                    "3x525–600 V AC"
+                ],
+                "explicit_other_manual_references": [],
+                "notes_relevant_to_decoding_or_datasheet_generation": [
+                    "Primary source for type code structure and segment definitions",
+                    "Contains full positional mapping for type code (1–39)",
+                    "Includes dependencies and constraints (e.g., UL conditions, enclosure restrictions)"
+                ]
+            },
+            {
+                "document_id": "doc_selection_guide",
+                "document_role": "selection_guide",
+                "short_title": "FC101 Selection Guide",
+                "relevant_pages": [
+                    "p.4",
+                    "p.5",
+                    "p.8"
+                ],
+                "scope_summary": "Product range overview, enclosure options, voltage ranges, and general configuration context",
+                "explicit_power_range_covered": "0.25–90 kW",
+                "explicit_voltage_ranges_covered": [
+                    "3 x 200 – 240 V",
+                    "3 x 380 – 480 V",
+                    "3 x 525 – 600 V"
+                ],
+                "explicit_other_manual_references": [],
+                "notes_relevant_to_decoding_or_datasheet_generation": [
+                    "Confirms product family scope and available voltage ranges",
+                    "Confirms enclosure ratings (IP20, IP21/UL Type 1, IP54)",
+                    "Does not provide explicit type code positional structure"
+                ]
+            }
+        ],
+        "typecode_structure": [
+            {
+                "segment_name": "product_group_series",
+                "segment_label_from_manual": "Product group & FC series",
+                "character_positions": "1–6",
+                "segment_length": "6",
+                "fixed_variable_optional_conditional": "fixed",
+                "explanation": "Defines product family and series (FC 101)",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "power_rating",
+                "segment_label_from_manual": "Power rating",
+                "character_positions": "7–10",
+                "segment_length": "4",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines drive power rating within 0.25–90 kW range using coded values (PK25–P90K)",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134",
+                    "doc_selection_guide p.4"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "number_of_phases",
+                "segment_label_from_manual": "Number of phases",
+                "character_positions": "11",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "fixed",
+                "explanation": "Defines number of input phases (3-phase)",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "mains_voltage",
+                "segment_label_from_manual": "Mains voltage",
+                "character_positions": "11–12",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines supply voltage class (T2, T4, T6)",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134",
+                    "doc_selection_guide p.4"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "enclosure",
+                "segment_label_from_manual": "Enclosure",
+                "character_positions": "13–15",
+                "segment_length": "3",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines enclosure type and protection class (IP20, IP54, with/without back plate)",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134",
+                    "doc_selection_guide p.5"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "rfi_filter",
+                "segment_label_from_manual": "RFI filter",
+                "character_positions": "16–17",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines EMC/RFI filter class configuration",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "brake",
+                "segment_label_from_manual": "Brake",
+                "character_positions": "18",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines presence of brake chopper",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "display",
+                "segment_label_from_manual": "Display",
+                "character_positions": "19",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines local control panel configuration",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134",
+                    "doc_selection_guide p.5"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "pcb_coating",
+                "segment_label_from_manual": "Coating PCB",
+                "character_positions": "20",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines whether PCB coating is applied",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "mains_option",
+                "segment_label_from_manual": "Mains option",
+                "character_positions": "21",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines optional mains-related configuration",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "adaptation_1",
+                "segment_label_from_manual": "Adaptation",
+                "character_positions": "22",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines adaptation configuration",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "adaptation_2",
+                "segment_label_from_manual": "Adaptation",
+                "character_positions": "23",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines adaptation configuration including UL type",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "software_release",
+                "segment_label_from_manual": "Software release",
+                "character_positions": "24–27",
+                "segment_length": "4",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines firmware/software version",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "software_language",
+                "segment_label_from_manual": "Software language",
+                "character_positions": "28",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "variable",
+                "explanation": "Defines language configuration",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "a_option",
+                "segment_label_from_manual": "A option",
+                "character_positions": "29–30",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines A option module",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.134"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "b_option",
+                "segment_label_from_manual": "B option",
+                "character_positions": "31–32",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines B option module",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.135"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "c0_option",
+                "segment_label_from_manual": "C0 options MCO",
+                "character_positions": "33–34",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines C0 option module",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.135"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "c1_option",
+                "segment_label_from_manual": "C1 option",
+                "character_positions": "35",
+                "segment_length": "1",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines C1 option",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.135"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "c_option_software",
+                "segment_label_from_manual": "C option software",
+                "character_positions": "36–37",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines software-related options",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.135"
+                ],
+                "confidence": "high"
+            },
+            {
+                "segment_name": "d_option",
+                "segment_label_from_manual": "D option",
+                "character_positions": "38–39",
+                "segment_length": "2",
+                "fixed_variable_optional_conditional": "optional",
+                "explanation": "Defines D option module",
+                "preferred_source_document_id": "doc_design_guide",
+                "all_source_references": [
+                    "doc_design_guide p.135"
+                ],
+                "confidence": "high"
+            }
+        ]
+    },
+    "typecode_values": [
+        {
+            "segment_name": "product_group_series",
+            "segment_code": "product_group_series",
+            "code": "FC 101",
+            "meaning": "VLT HVAC Basic Drive FC 101",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_rating",
+            "segment_code": "power_rating",
+            "code": "PK25-P90K",
+            "meaning": "Power rating range from 0.25–90 kW (0.34–120 hp)",
+            "notes": "Exact individual code-to-power mappings NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "3 x 200–240 V: 0.25–45 kW",
+                "3 x 380–480 V: 0.37–90 kW",
+                "3 x 525–600 V: 2.2–90 kW"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_selection_guide p.4"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "number_of_phases",
+            "segment_code": "number_of_phases",
+            "code": "T",
+            "meaning": "3-phases",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "mains_voltage",
+            "code": "T2",
+            "meaning": "3x200–240 V AC",
+            "notes": "Also includes 3x200Y/115–240Y/139 V AC variant",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "mains_voltage",
+            "code": "T4",
+            "meaning": "3x380–480 V AC",
+            "notes": "Also includes 3x380Y/220–480Y/277 V AC variant",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "mains_voltage",
+            "code": "T6",
+            "meaning": "3x525–600 V AC",
+            "notes": "UL 61800-5-1 not available for this voltage",
+            "dependencies": [],
+            "exclusions": [
+                "UL 61800-5-1 type not available"
+            ],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display",
+            "segment_code": "display",
+            "code": "A",
+            "meaning": "Alphanumeric local control panel",
+            "notes": "For IP20/Open type units, LCP is ordered separately; for IP54 units, LCP is included",
+            "dependencies": [
+                "enclosure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [
+                "IP20/Open type: ordered separately",
+                "IP54: included as standard"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_design_guide p.135",
+                "doc_selection_guide p.5"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display",
+            "segment_code": "display",
+            "code": "X",
+            "meaning": "No local control panel",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "pcb_coating",
+            "segment_code": "pcb_coating",
+            "code": "X",
+            "meaning": "No coated PCB",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "pcb_coating",
+            "segment_code": "pcb_coating",
+            "code": "C",
+            "meaning": "Coated PCB",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_option",
+            "segment_code": "mains_option",
+            "code": "X",
+            "meaning": "No mains option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "adaptation_1",
+            "segment_code": "adaptation_1",
+            "code": "X",
+            "meaning": "No adaptation",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "adaptation_2",
+            "segment_code": "adaptation_2",
+            "code": "X",
+            "meaning": "No adaptation",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "adaptation_2",
+            "segment_code": "adaptation_2",
+            "code": "6",
+            "meaning": "UL 61800-5-1 type",
+            "notes": "Applies with specific constraints",
+            "dependencies": [
+                "mains_voltage",
+                "enclosure"
+            ],
+            "exclusions": [
+                "Not available for 3x525–600 V AC",
+                "Not valid for IT and delta grounded grids"
+            ],
+            "availability_conditions": [
+                "Only available for T2 and T4",
+                "Only for enclosure sizes H1–H8",
+                "Factory installed load share terminal cover must not be removed for H1–H5"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "software_release",
+            "segment_code": "software_release",
+            "code": "SXXX",
+            "meaning": "Latest release - standard software",
+            "notes": "XXX represents version number",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "software_release",
+            "segment_code": "software_release",
+            "code": "S600",
+            "meaning": "UL61800-5-1 type software",
+            "notes": "",
+            "dependencies": [
+                "adaptation_2"
+            ],
+            "exclusions": [],
+            "availability_conditions": [
+                "Used with UL configuration"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "software_language",
+            "segment_code": "software_language",
+            "code": "X",
+            "meaning": "Standard",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "a_option",
+            "segment_code": "a_option",
+            "code": "AX",
+            "meaning": "No A option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "b_option",
+            "segment_code": "b_option",
+            "code": "BX",
+            "meaning": "No B option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "c0_option",
+            "segment_code": "c0_option",
+            "code": "CX",
+            "meaning": "No C option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "c1_option",
+            "segment_code": "c1_option",
+            "code": "X",
+            "meaning": "No C1 option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "c_option_software",
+            "segment_code": "c_option_software",
+            "code": "XX",
+            "meaning": "No option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "d_option",
+            "segment_code": "d_option",
+            "code": "DX",
+            "meaning": "No D0 option",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "technical_tables": [
+        {
+            "table_id": "power_range_overview",
+            "table_name": "Product Range by Voltage",
+            "applies_to": "FC 101 all variants",
+            "columns": [
+                "mains_voltage",
+                "power_range_kW"
+            ],
+            "rows": [
+                {
+                    "mains_voltage": "3 x 200 – 240 V",
+                    "power_range_kW": "0.25 – 45 kW"
+                },
+                {
+                    "mains_voltage": "3 x 380 – 480 V",
+                    "power_range_kW": "0.37 – 90 kW"
+                },
+                {
+                    "mains_voltage": "3 x 525 – 600 V",
+                    "power_range_kW": "2.2 – 90 kW"
+                }
+            ],
+            "units": {
+                "power_range_kW": "kW"
+            },
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.4"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "enclosure_types",
+            "table_name": "Available Enclosure Ratings",
+            "applies_to": "FC 101 all variants",
+            "columns": [
+                "enclosure_type",
+                "description"
+            ],
+            "rows": [
+                {
+                    "enclosure_type": "IP20",
+                    "description": "Standard enclosure"
+                },
+                {
+                    "enclosure_type": "IP21/UL Type 1",
+                    "description": "Available via separate option kit"
+                },
+                {
+                    "enclosure_type": "IP54",
+                    "description": "Standard sealed enclosure"
+                }
+            ],
+            "units": {},
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.4",
+                "doc_selection_guide p.5"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "frame_size_dimensions_partial",
+            "table_name": "Frame Sizes and Dimensions (Partial)",
+            "applies_to": "Selected enclosure sizes",
+            "columns": [
+                "frame_size",
+                "enclosure",
+                "power_range",
+                "height_mm",
+                "width_mm",
+                "depth_mm"
+            ],
+            "rows": [
+                {
+                    "frame_size": "H8",
+                    "enclosure": "IP20",
+                    "power_range": "37-45 kW / 50-60 HP (200–240 V), 90 kW / 125 HP (380–480 V), 75-90 kW / 100-125 HP (525–600 V)",
+                    "height_mm": "660",
+                    "width_mm": "375",
+                    "depth_mm": "335"
+                },
+                {
+                    "frame_size": "H9",
+                    "enclosure": "IP20",
+                    "power_range": "2.2-7.5 kW / 3-10 HP (525–600 V)",
+                    "height_mm": "372",
+                    "width_mm": "130",
+                    "depth_mm": "205"
+                },
+                {
+                    "frame_size": "H10",
+                    "enclosure": "IP20",
+                    "power_range": "11-15 kW / 15-20 HP (525–600 V)",
+                    "height_mm": "475",
+                    "width_mm": "165",
+                    "depth_mm": "249"
+                },
+                {
+                    "frame_size": "I2",
+                    "enclosure": "IP54",
+                    "power_range": "0.75-4 kW / 1-5.4 HP",
+                    "height_mm": "332",
+                    "width_mm": "115",
+                    "depth_mm": "225"
+                },
+                {
+                    "frame_size": "I3",
+                    "enclosure": "IP54",
+                    "power_range": "5.5-7.5 kW / 7.5-10 HP",
+                    "height_mm": "368",
+                    "width_mm": "135",
+                    "depth_mm": "237"
+                },
+                {
+                    "frame_size": "I4",
+                    "enclosure": "IP54",
+                    "power_range": "11-18.5 kW / 15-25 HP",
+                    "height_mm": "476",
+                    "width_mm": "180",
+                    "depth_mm": "290"
+                },
+                {
+                    "frame_size": "I6",
+                    "enclosure": "IP54",
+                    "power_range": "22-37 kW / 30-50 HP",
+                    "height_mm": "650",
+                    "width_mm": "242",
+                    "depth_mm": "260"
+                },
+                {
+                    "frame_size": "I7",
+                    "enclosure": "IP54",
+                    "power_range": "45-55 kW / 60-75 HP",
+                    "height_mm": "680",
+                    "width_mm": "308",
+                    "depth_mm": "310"
+                },
+                {
+                    "frame_size": "I8",
+                    "enclosure": "IP54",
+                    "power_range": "75-90 kW / 100-125 HP",
+                    "height_mm": "770",
+                    "width_mm": "370",
+                    "depth_mm": "335"
+                }
+            ],
+            "units": {
+                "height_mm": "mm",
+                "width_mm": "mm",
+                "depth_mm": "mm"
+            },
+            "notes": [
+                "Partial extraction; full table NOT FOUND IN THE UPLOADED DOCUMENTS"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "medium"
+        }
+    ],
+    "mapping_rules": [
+        {
+            "rule_id": "MR_001",
+            "target_datasheet_field": "product_family",
+            "source_typecode_segment": "product_group_series",
+            "mapping_logic_from_documents": "Code 'FC 101' maps to VLT HVAC Basic Drive FC 101",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_002",
+            "target_datasheet_field": "rated_power_kW",
+            "source_typecode_segment": "power_rating",
+            "mapping_logic_from_documents": "Power rating code (PK25–P90K) maps to numeric kW values via rating tables",
+            "required_additional_conditions": [
+                "mains_voltage"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_selection_guide p.4"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "rule_id": "MR_003",
+            "target_datasheet_field": "input_voltage",
+            "source_typecode_segment": "mains_voltage",
+            "mapping_logic_from_documents": "T2, T4, T6 codes directly map to voltage classes",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_004",
+            "target_datasheet_field": "enclosure_rating",
+            "source_typecode_segment": "enclosure",
+            "mapping_logic_from_documents": "E20, P20, E5A, P5A map to IP ratings and mounting configurations",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_selection_guide p.5"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_005",
+            "target_datasheet_field": "emc_class",
+            "source_typecode_segment": "rfi_filter",
+            "mapping_logic_from_documents": "RFI filter codes H1–H4 and HX determine EMC class and compliance",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_selection_guide p.4"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_006",
+            "target_datasheet_field": "brake_chopper",
+            "source_typecode_segment": "brake",
+            "mapping_logic_from_documents": "Code X indicates no brake chopper",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_007",
+            "target_datasheet_field": "control_panel",
+            "source_typecode_segment": "display",
+            "mapping_logic_from_documents": "A indicates alphanumeric LCP; X indicates no panel",
+            "required_additional_conditions": [
+                "enclosure"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134",
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR_008",
+            "target_datasheet_field": "pcb_coating",
+            "source_typecode_segment": "pcb_coating",
+            "mapping_logic_from_documents": "C indicates coated PCB; X indicates no coating",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "constraints": [
+        {
+            "rule_id": "C_001",
+            "rule_type": "dependency",
+            "affected_segment_or_table": "adaptation_2",
+            "exact_rule": "Code '6' (UL 61800-5-1) only available for T2 and T4 voltage classes",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C_002",
+            "rule_type": "exclusion",
+            "affected_segment_or_table": "adaptation_2",
+            "exact_rule": "UL 61800-5-1 not available for 3x525–600 V AC",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C_003",
+            "rule_type": "dependency",
+            "affected_segment_or_table": "adaptation_2",
+            "exact_rule": "UL 61800-5-1 only available for enclosure sizes H1–H8",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C_004",
+            "rule_type": "exclusion",
+            "affected_segment_or_table": "adaptation_2",
+            "exact_rule": "UL 61800-5-1 is not valid for IT and delta grounded grids",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C_005",
+            "rule_type": "dependency",
+            "affected_segment_or_table": "rfi_filter",
+            "exact_rule": "HX (no RFI filter) only available for enclosure sizes H1–H5",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.135"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "examples": [
+        {
+            "full_type_code": "FC-101PK25T4E20H1XAXXXXXXX",
+            "decoded_breakdown": [
+                {
+                    "segment_name": "product_group_series",
+                    "value": "FC 101"
+                },
+                {
+                    "segment_name": "power_rating",
+                    "value": "PK25"
+                },
+                {
+                    "segment_name": "number_of_phases",
+                    "value": "T"
+                },
+                {
+                    "segment_name": "mains_voltage",
+                    "value": "T4"
+                },
+                {
+                    "segment_name": "enclosure",
+                    "value": "E20"
+                },
+                {
+                    "segment_name": "rfi_filter",
+                    "value": "H1"
+                },
+                {
+                    "segment_name": "brake",
+                    "value": "X"
+                },
+                {
+                    "segment_name": "display",
+                    "value": "A"
+                }
+            ],
+            "notes": [
+                "Remaining positions filled with default 'no option' values",
+                "Exact formatting based on type code structure figure"
+            ],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.134"
+            ],
+            "confidence": "medium"
+        }
+    ],
+    "datasheet_fields": [
+        {
+            "datasheet_field_name": "product_family",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "product_group_series"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "rated_power_kW",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": true,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "power_rating",
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_design_guide p.134",
+                "doc_selection_guide p.4"
+            ]
+        },
+        {
+            "datasheet_field_name": "input_voltage",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "mains_voltage"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "enclosure_rating",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "enclosure"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "emc_class",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "rfi_filter"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "brake_chopper",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "brake"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "control_panel",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "display"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        },
+        {
+            "datasheet_field_name": "pcb_coating",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "pcb_coating"
+            ],
+            "source_references": [
+                "doc_design_guide p.134"
+            ]
+        }
+    ],
+    "conflicts": [],
+    "app_resolution_model": {
+        "family_detection_rules": [
+            "If type code starts with 'FC-101' or 'FC101', assign product_family = VLT HVAC Basic Drive FC 101"
+        ],
+        "parse_order": [
+            "product_group_series",
+            "power_rating",
+            "number_of_phases",
+            "mains_voltage",
+            "enclosure",
+            "rfi_filter",
+            "brake",
+            "display",
+            "pcb_coating",
+            "mains_option",
+            "adaptation_1",
+            "adaptation_2",
+            "software_release",
+            "software_language",
+            "a_option",
+            "b_option",
+            "c0_option",
+            "c1_option",
+            "c_option_software",
+            "d_option"
+        ],
+        "field_resolution_order": [
+            "direct_from_typecode",
+            "lookup_tables",
+            "technical_tables",
+            "selection_guide_context"
+        ],
+        "fallback_rules": [
+            "If code not present, assume 'no option' if explicitly defined",
+            "If mapping missing, return NOT FOUND IN THE UPLOADED DOCUMENTS"
+        ],
+        "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+    }
+}

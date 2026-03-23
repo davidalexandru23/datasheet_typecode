@@ -1,0 +1,1755 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss",
+        "product_family": "VLT® AutomationDrive FC 300 series, VLT® Decentral Drive FCD 302",
+        "series_names": [
+            "VLT® AutomationDrive FC 301",
+            "VLT® AutomationDrive FC 302",
+            "VLT® Decentral Drive FCD 302"
+        ],
+        "source_documents": [
+            "Selection Guide VLT® AutomationDrive FC 300 series, VLT® Decentral Drive FCD 302"
+        ],
+        "knowledge_base_scope": "Typecode decoding, electrical data, ordering structure, options, and technical characteristics for FC 300 series and FCD 302",
+        "coverage_summary": "Selection guide provides ordering type code references, electrical data tables, options structure (A, B, C, D), and application/technical descriptions. Full typecode structure details not fully visible in extracted pages.",
+        "unresolved_global_gaps": [
+            "Full typecode structure definition not fully visible in extracted pages",
+            "Complete ordering tables not extracted",
+            "Design/operating guide not found in uploaded documents"
+        ],
+        "conflicts_detected": []
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "VLT® AutomationDrive FC 300 series Selection Guide",
+            "relevant_pages": [
+                "p.1",
+                "p.2",
+                "p.3"
+            ],
+            "scope_summary": "Overview, features, applications, and references to ordering type codes and electrical data sections for FC 300 and FCD 302",
+            "explicit_power_range_covered": "1.1 kW to 1400 kW at 690 V (stated)",
+            "explicit_voltage_ranges_covered": [
+                "690 V"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Ordering type code sections referenced on pages 59, 61, 68, 74",
+                "Options categorized as A options (Fieldbus), B options (Functional extensions), C options (Relay/Motion), D options (24 V backup/RTC)",
+                "Multiple enclosure types A, B, C, D, E, F referenced",
+                "Electrical data tables referenced for multiple configurations"
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "segment_label_from_manual": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "character_positions": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "segment_length": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "fixed_variable_optional_conditional": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "explanation": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.61",
+                "doc_selection_guide p.68",
+                "doc_selection_guide p.74"
+            ],
+            "confidence": "low"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "Product Series",
+            "segment_code": "FC",
+            "code": "301",
+            "meaning": "VLT® AutomationDrive FC 301",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Product Series",
+            "segment_code": "FC",
+            "code": "302",
+            "meaning": "VLT® AutomationDrive FC 302",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Product Series",
+            "segment_code": "FCD",
+            "code": "302",
+            "meaning": "VLT® Decentral Drive FCD 302",
+            "notes": "Decentral drive with IP66 enclosure for multi-motor applications",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "A",
+            "meaning": "Enclosure size A",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.30"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "B",
+            "meaning": "Enclosure size B",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.30"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "C",
+            "meaning": "Enclosure size C",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.30"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "D",
+            "meaning": "Enclosure size D",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.32"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "E",
+            "meaning": "Enclosure size E",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.32"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Enclosure Type",
+            "segment_code": "Frame",
+            "code": "F",
+            "meaning": "Enclosure size F",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.32"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Option Category",
+            "segment_code": "A",
+            "code": "Fieldbus",
+            "meaning": "Fieldbus communication options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.78"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Option Category",
+            "segment_code": "B",
+            "code": "Functional",
+            "meaning": "Functional extension options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.80"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Option Category",
+            "segment_code": "C",
+            "code": "Relay_Motion",
+            "meaning": "Relay card and motion control options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.82"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Option Category",
+            "segment_code": "D",
+            "code": "24V_RTC",
+            "meaning": "24 V back-up power supply and real-time clock options",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.83"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Application",
+            "segment_code": "[1]",
+            "code": "301",
+            "meaning": "VLT® AutomationDrive FC 301",
+            "notes": "Application character 4-6 for A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Application",
+            "segment_code": "[1]",
+            "code": "302",
+            "meaning": "VLT® AutomationDrive FC 302",
+            "notes": "Application character 4-6 for A, B and C enclosures; application character 4-6 for D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures",
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "PK25",
+            "meaning": "0.25 kW / 0.33 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "PK37",
+            "meaning": "0.37 kW / 0.50 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "PK55",
+            "meaning": "0.55 kW / 0.75 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "PK75",
+            "meaning": "0.75 kW / 1.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P1K1",
+            "meaning": "1.1 kW / 1.5 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P1K5",
+            "meaning": "1.5 kW / 2.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P2K2",
+            "meaning": "2.2 kW / 3.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P3K0",
+            "meaning": "3.0 kW / 4.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P3K7",
+            "meaning": "3.7 kW / 5.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P4K0",
+            "meaning": "4.0 kW / 5.0 Hp",
+            "notes": "A, B and C enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "A, B and C enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N55K",
+            "meaning": "55 kW / 75 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N75K",
+            "meaning": "75 kW / 100 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N90K",
+            "meaning": "90 kW / 125 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N110",
+            "meaning": "110 kW / 150 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N132",
+            "meaning": "132 kW / 200 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N160",
+            "meaning": "160 kW / 250 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N200",
+            "meaning": "200 kW / 300 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N250",
+            "meaning": "250 kW / 350 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N315",
+            "meaning": "315 kW / 450 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P315",
+            "meaning": "315 kW / 450 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N355",
+            "meaning": "355 kW / 500 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P355",
+            "meaning": "355 kW / 500 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N400",
+            "meaning": "400 kW / 550 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P400",
+            "meaning": "400 kW / 550 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N450",
+            "meaning": "450 kW / 600 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P450",
+            "meaning": "450 kW / 600 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N500",
+            "meaning": "500 kW / 650 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P500",
+            "meaning": "500 kW / 650 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N560",
+            "meaning": "560 kW / 750 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P560",
+            "meaning": "560 kW / 750 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N630",
+            "meaning": "630 kW / 900 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P630",
+            "meaning": "630 kW / 900 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N710",
+            "meaning": "710 kW / 1000 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P710",
+            "meaning": "710 kW / 1000 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "N800",
+            "meaning": "800 kW / 1200 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P800",
+            "meaning": "800 kW / 1200 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P900",
+            "meaning": "900 kW / 1250 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P1M0",
+            "meaning": "1.0 MW / 1350 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Power Size",
+            "segment_code": "[2]",
+            "code": "P1M2",
+            "meaning": "1.2 MW / 1600 Hp",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "AC Mains Voltage",
+            "segment_code": "[3]",
+            "code": "T5",
+            "meaning": "3 x 380-500 V AC",
+            "notes": "D, E and F enclosures",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "AC Mains Voltage",
+            "segment_code": "[3]",
+            "code": "T7",
+            "meaning": "3 x 525-690 V AC",
+            "notes": "690 V kW. See manuals for 575 V Hp",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [
+                "D, E and F enclosures"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Enclosure Rating",
+            "segment_code": "[4]",
+            "code": "IP20",
+            "meaning": "IP20 enclosure",
+            "notes": "Optimized for cabinet mounting, side-by-side installation up to 50 °C",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Enclosure Rating",
+            "segment_code": "[4]",
+            "code": "IP66",
+            "meaning": "IP66 enclosure",
+            "notes": "Used for decentral drive FCD 302, suitable for harsh environments and close-to-motor mounting",
+            "dependencies": [
+                "Product Series = FCD 302"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Cooling Concept",
+            "segment_code": "[5]",
+            "code": "BackChannel",
+            "meaning": "Back-channel cooling",
+            "notes": "Used for drives above 90 kW to improve heat management and reduce cooling costs",
+            "dependencies": [
+                "Power Size > 90 kW"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.5"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "Motor Compatibility",
+            "segment_code": "[6]",
+            "code": "IM",
+            "meaning": "Induction motor",
+            "notes": "Three-phase induction motor with copper rotor",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Motor Compatibility",
+            "segment_code": "[6]",
+            "code": "IPM",
+            "meaning": "Permanent magnet motor with buried magnets",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Motor Compatibility",
+            "segment_code": "[6]",
+            "code": "SPM",
+            "meaning": "Permanent magnet motor with surface-mounted magnets",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Motor Compatibility",
+            "segment_code": "[6]",
+            "code": "SynRM",
+            "meaning": "Synchronous reluctance motor",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Motor Compatibility",
+            "segment_code": "[6]",
+            "code": "LSPM",
+            "meaning": "Line-start permanent magnet motor",
+            "notes": "With buried magnets and rotor cage",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Control Feature",
+            "segment_code": "[7]",
+            "code": "AMA",
+            "meaning": "Automatic Motor Adaptation",
+            "notes": "Automatic tuning of motor parameters without spinning motor",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.7"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Control Feature",
+            "segment_code": "[7]",
+            "code": "IMC",
+            "meaning": "Integrated Motion Controller",
+            "notes": "Supports positioning and synchronization without additional hardware",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.14"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Control Feature",
+            "segment_code": "[7]",
+            "code": "PID",
+            "meaning": "Integrated PID controllers",
+            "notes": "Four built-in PID controllers for process control",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Safety Option",
+            "segment_code": "[8]",
+            "code": "STO",
+            "meaning": "Safe Torque Off",
+            "notes": "Standard safety function compliant with ISO 13849-1 PL d and SIL 2",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.17"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Safety Option",
+            "segment_code": "[8]",
+            "code": "MCB150",
+            "meaning": "Safety Option MCB 150",
+            "notes": "Adds SS1, SLS, SMS functionality",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.17"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Safety Option",
+            "segment_code": "[8]",
+            "code": "MCB151",
+            "meaning": "Safety Option MCB 151",
+            "notes": "Supports speed monitoring functions with or without feedback",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.17"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Safety Option",
+            "segment_code": "[8]",
+            "code": "MCB152",
+            "meaning": "Safety Option MCB 152",
+            "notes": "PROFIsafe fieldbus safety integration",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.17"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Monitoring Feature",
+            "segment_code": "[9]",
+            "code": "CBM",
+            "meaning": "Condition-Based Monitoring",
+            "notes": "Monitors motor, load and sensors for predictive maintenance",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Communication Feature",
+            "segment_code": "[10]",
+            "code": "Ethernet",
+            "meaning": "Ethernet-based communication",
+            "notes": "Supports multiple industrial protocols with dual ports",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.8"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Communication Feature",
+            "segment_code": "[10]",
+            "code": "Wireless_LCP103",
+            "meaning": "Wireless Communication Panel LCP 103",
+            "notes": "Enables wireless access via MyDrive® Connect app",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.23"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Energy Optimization",
+            "segment_code": "[11]",
+            "code": "AEO",
+            "meaning": "Automatic Energy Optimization",
+            "notes": "Adjusts voltage according to load to reduce energy consumption",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "Configuration Tool",
+            "segment_code": "[12]",
+            "code": "SmartStart",
+            "meaning": "SmartStart setup wizard",
+            "notes": "Guided commissioning at first power-up",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.22"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "technical_tables": [
+        {
+            "table_id": "electrical_data_general_range",
+            "table_name": "Electrical data – overall power and voltage range",
+            "applies_to": "VLT® AutomationDrive FC 302",
+            "columns": [
+                "parameter",
+                "value"
+            ],
+            "rows": [
+                [
+                    "power_range_690V",
+                    "1.1 kW to 1400 kW"
+                ],
+                [
+                    "minimum_motor_power",
+                    "0.37 kW"
+                ]
+            ],
+            "units": {
+                "power_range_690V": "kW",
+                "minimum_motor_power": "kW"
+            },
+            "notes": [
+                "690 V versions can control motors down to 0.37 kW without step-down transformer"
+            ],
+            "conditions": [
+                "Applies to 690 V mains networks"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "operating_temperature_range",
+            "table_name": "Operating temperature range",
+            "applies_to": "VLT® AutomationDrive family",
+            "columns": [
+                "parameter",
+                "value"
+            ],
+            "rows": [
+                [
+                    "minimum_temperature",
+                    "-25"
+                ],
+                [
+                    "maximum_temperature",
+                    "+50"
+                ]
+            ],
+            "units": {
+                "minimum_temperature": "°C",
+                "maximum_temperature": "°C"
+            },
+            "notes": [
+                "Wide operating temperature range ensures reliability in harsh environments"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.6"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "emc_cable_length_categories",
+            "table_name": "EMC/RFI cable length categories",
+            "applies_to": "VLT® AutomationDrive",
+            "columns": [
+                "category",
+                "maximum_cable_length"
+            ],
+            "rows": [
+                [
+                    "C1",
+                    "50"
+                ],
+                [
+                    "C2",
+                    "150"
+                ]
+            ],
+            "units": {
+                "maximum_cable_length": "m"
+            },
+            "notes": [
+                "Applies to screened motor cables",
+                "Enables operation without additional filters"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.8"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "cbm_features_benefits",
+            "table_name": "Condition-based monitoring features and benefits",
+            "applies_to": "VLT® AutomationDrive",
+            "columns": [
+                "feature",
+                "benefit"
+            ],
+            "rows": [
+                [
+                    "embedded_cbm",
+                    "No cloud required, reduced installation cost, improved system stability documentation"
+                ],
+                [
+                    "motor_stator_monitoring",
+                    "Early fault detection, prevents unplanned downtime"
+                ],
+                [
+                    "load_envelope_monitoring",
+                    "Process optimization and efficiency improvement"
+                ],
+                [
+                    "sensor_monitoring",
+                    "Detection of misalignment, wear and looseness"
+                ]
+            ],
+            "units": {},
+            "notes": [
+                "Complies with ISO 13373 and VDMA 24582 standards",
+                "Monitoring adjusted according to system speed"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.18"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "motor_types_supported",
+            "table_name": "Supported motor technologies",
+            "applies_to": "VLT® AutomationDrive",
+            "columns": [
+                "motor_type",
+                "description"
+            ],
+            "rows": [
+                [
+                    "IM",
+                    "Three-phase induction motor with copper rotor"
+                ],
+                [
+                    "IPM",
+                    "Permanent magnet motor with buried magnets"
+                ],
+                [
+                    "SPM",
+                    "Permanent magnet motor with surface-mounted magnets"
+                ],
+                [
+                    "SynRM",
+                    "Synchronous reluctance motor"
+                ],
+                [
+                    "LSPM",
+                    "Line-start permanent magnet motor with rotor cage"
+                ]
+            ],
+            "units": {},
+            "notes": [
+                "Drive is motor-independent and supports multiple motor technologies"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "mapping_rules": [
+        {
+            "rule_id": "map_power_from_typecode",
+            "target_datasheet_field": "rated_power",
+            "source_typecode_segment": "Power Size",
+            "mapping_logic_from_documents": "Power size code corresponds directly to kW and Hp rating as defined in ordering type code tables",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "map_voltage_from_typecode",
+            "target_datasheet_field": "supply_voltage",
+            "source_typecode_segment": "AC Mains Voltage",
+            "mapping_logic_from_documents": "Voltage code (e.g., T5, T7) maps to defined AC supply voltage ranges",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "map_enclosure",
+            "target_datasheet_field": "enclosure_rating",
+            "source_typecode_segment": "Enclosure Rating",
+            "mapping_logic_from_documents": "Enclosure code defines IP rating and installation environment",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3",
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "map_series",
+            "target_datasheet_field": "product_series",
+            "source_typecode_segment": "Product Series",
+            "mapping_logic_from_documents": "Series code determines base product family and capabilities",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "constraints": [
+        {
+            "rule_id": "constraint_power_enclosure_dependency",
+            "rule_type": "dependency",
+            "affected_segment_or_table": "Power Size",
+            "exact_rule": "Certain power sizes only available in specific enclosure sizes (A/B/C vs D/E/F)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "constraint_voltage_power_range",
+            "rule_type": "limit",
+            "affected_segment_or_table": "Electrical Data",
+            "exact_rule": "690 V range supports 1.1 kW to 1400 kW",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "constraint_motor_min_power",
+            "rule_type": "limit",
+            "affected_segment_or_table": "Electrical Data",
+            "exact_rule": "Minimum controllable motor power is 0.37 kW for 690 V versions",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.11"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "examples": [
+        {
+            "full_type_code": "FC-302-P3K0-T5-IP20",
+            "decoded_breakdown": [
+                "FC 302 = AutomationDrive series",
+                "P3K0 = 3.0 kW",
+                "T5 = 3x380-500V",
+                "IP20 = enclosure"
+            ],
+            "notes": [
+                "Example constructed from available segments"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.3",
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.68"
+            ],
+            "confidence": "medium"
+        }
+    ],
+    "datasheet_fields": [
+        {
+            "datasheet_field_name": "product_series",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.3"
+            ]
+        },
+        {
+            "datasheet_field_name": "rated_power",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": true,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values",
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_selection_guide p.59",
+                "doc_selection_guide p.68"
+            ]
+        },
+        {
+            "datasheet_field_name": "supply_voltage",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.68"
+            ]
+        },
+        {
+            "datasheet_field_name": "enclosure_rating",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.3",
+                "doc_selection_guide p.11"
+            ]
+        },
+        {
+            "datasheet_field_name": "operating_temperature_range",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": true,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_selection_guide p.6"
+            ]
+        },
+        {
+            "datasheet_field_name": "motor_compatibility",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_selection_guide p.21"
+            ]
+        },
+        {
+            "datasheet_field_name": "safety_functions",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.17"
+            ]
+        },
+        {
+            "datasheet_field_name": "communication_protocols",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.8"
+            ]
+        },
+        {
+            "datasheet_field_name": "cooling_method",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.5"
+            ]
+        },
+        {
+            "datasheet_field_name": "minimum_motor_power",
+            "directly_available_from_typecode": false,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": true,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_selection_guide p.11"
+            ]
+        }
+    ],
+    "conflicts": [],
+    "app_resolution_model": {
+        "family_detection_rules": [
+            "If typecode contains FC 301 or FC 302 → AutomationDrive",
+            "If typecode contains FCD 302 → Decentral Drive"
+        ],
+        "parse_order": [
+            "Product Series",
+            "Power Size",
+            "AC Mains Voltage",
+            "Enclosure",
+            "Options"
+        ],
+        "field_resolution_order": [
+            "direct_typecode_mapping",
+            "lookup_tables",
+            "technical_tables",
+            "fallback_NOT_FOUND"
+        ],
+        "fallback_rules": [
+            "If value not found in any table or mapping → return NOT FOUND IN THE UPLOADED DOCUMENTS"
+        ],
+        "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+    }
+}

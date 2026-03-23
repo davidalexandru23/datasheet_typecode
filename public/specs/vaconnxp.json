@@ -1,0 +1,1702 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss",
+        "product_family": "VACON NX",
+        "series_names": [
+            "VACON NXP",
+            "VACON NXS"
+        ],
+        "source_documents": [
+            "doc_selection_guide",
+            "doc_design_guide"
+        ],
+        "knowledge_base_scope": "Typecode decoding, configuration logic, technical characteristics and selection parameters for VACON NXP/NXS AC drives including liquid cooled and air-cooled variants",
+        "coverage_summary": "Includes typecode structure, segment definitions, enclosure mappings, voltage classes, EMC classes, protection ratings, hardware configurations, and system architecture details from both selection and operating guides",
+        "unresolved_global_gaps": [],
+        "conflicts_detected": []
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "VACON NXP Liquid Cooled Selection Guide",
+            "relevant_pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ],
+            "scope_summary": "Product overview, application domains, system configurations, module types, power ranges, cooling concepts and product variants for liquid cooled VACON NXP drives",
+            "explicit_power_range_covered": "10 HP - 5900 HP (7.5 kW - 5.3 MW)",
+            "explicit_voltage_ranges_covered": [
+                "380-690 VAC"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Defines product variants such as AFE, INU, BCU and enclosed drives",
+                "Describes pulse configurations (6, 12, 18 pulse)",
+                "Indicates modular system architecture and optional components",
+                "Mentions IP54 protection level for liquid cooled drives",
+                "Indicates application segments and functional capabilities"
+            ]
+        },
+        {
+            "document_id": "doc_design_guide",
+            "document_role": "design_guide",
+            "short_title": "VACON NXS/NXP Air-cooled Operating Guide",
+            "relevant_pages": [
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26
+            ],
+            "scope_summary": "Typecode structure, enclosure sizes, protection ratings, EMC classes, electrical and mechanical specifications",
+            "explicit_power_range_covered": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "explicit_voltage_ranges_covered": [
+                "208–240 V",
+                "380–500 V",
+                "525–690 V"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Provides full typecode breakdown and decoding rules",
+                "Defines segment positions and meanings",
+                "Contains enclosure size lookup tables based on current and voltage",
+                "Defines protection ratings and EMC classifications",
+                "Includes option board encoding structure"
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "product_prefix",
+            "segment_label_from_manual": "VACON",
+            "character_positions": "1-5",
+            "segment_length": "fixed",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "This part is the same for all the products.",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_range",
+            "segment_label_from_manual": "NXP/NXS",
+            "character_positions": "6-8",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "Defines the product range: NXP = VACON NXP, NXS = VACON NXS",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "current_rating",
+            "segment_label_from_manual": "0003",
+            "character_positions": "9-12",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "The drive rating in amperes. For example, 0003 = 3 A",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_label_from_manual": "5",
+            "character_positions": "after current rating",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines the mains voltage class",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "control_panel",
+            "segment_label_from_manual": "A",
+            "character_positions": "next position",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines the control panel type",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "protection_rating",
+            "segment_label_from_manual": "2",
+            "character_positions": "next position",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines enclosure protection rating and mounting type",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "emc_class",
+            "segment_label_from_manual": "H",
+            "character_positions": "next position",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines EMC emission category",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake_chopper",
+            "segment_label_from_manual": "1",
+            "character_positions": "next position",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines brake chopper configuration",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "hardware_configuration",
+            "segment_label_from_manual": "SSV",
+            "character_positions": "next 3 characters",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines supply, mounting and board configuration",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.22"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "option_boards",
+            "segment_label_from_manual": "A1A2E30000",
+            "character_positions": "variable length block",
+            "segment_length": "multiple of 2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Defines option boards, two characters per slot",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.22"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "optional_codes",
+            "segment_label_from_manual": "+DNOT",
+            "character_positions": "suffix",
+            "segment_length": "variable",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Defines additional optional codes and documentation packages",
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.22"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "product_range",
+            "segment_code": "range",
+            "code": "NXP",
+            "meaning": "VACON NXP",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_range",
+            "segment_code": "range",
+            "code": "NXS",
+            "meaning": "VACON NXS",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.20"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "voltage",
+            "code": "2",
+            "meaning": "208–240 V",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "voltage",
+            "code": "5",
+            "meaning": "380–500 V",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_voltage",
+            "segment_code": "voltage",
+            "code": "6",
+            "meaning": "525–690 V (IEC) / 525–600 V (cULus)",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "control_panel",
+            "segment_code": "panel",
+            "code": "A",
+            "meaning": "standard (text display)",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "control_panel",
+            "segment_code": "panel",
+            "code": "B",
+            "meaning": "no local control panel",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "control_panel",
+            "segment_code": "panel",
+            "code": "F",
+            "meaning": "dummy keypad",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "control_panel",
+            "segment_code": "panel",
+            "code": "G",
+            "meaning": "graphical display",
+            "notes": "",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide",
+            "all_source_references": [
+                "doc_design_guide p.21"
+            ],
+            "confidence": "high"
+        },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "protection",
+        "code": "0",
+        "meaning": "IP00",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "protection",
+        "code": "2",
+        "meaning": "IP21 (UL Type 1)",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21",
+            "doc_design_guide p.25",
+            "doc_design_guide p.26"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "protection",
+        "code": "5",
+        "meaning": "IP54 (UL Type 12)",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21",
+            "doc_selection_guide p.2",
+            "doc_design_guide p.25",
+            "doc_design_guide p.26"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "protection",
+        "code": "T",
+        "meaning": "flange-mounted (through-hole mounted), power part IP54, control part IP21",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "protection_rating",
+        "segment_code": "protection",
+        "code": "Z",
+        "meaning": "flange-mounted (through-hole mounted), power part IP54, control part IP00",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21",
+            "doc_design_guide p.11"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_class",
+        "segment_code": "emc",
+        "code": "C",
+        "meaning": "complies with the category C1 of standard IEC/EN 61800-3 + A1, 1st environment, and nominal voltage less than 1000 V",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_class",
+        "segment_code": "emc",
+        "code": "H",
+        "meaning": "complies with the category C2 of standard IEC/EN 61800-3 + A1, fixed installations, and nominal voltage less than 1000 V",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_class",
+        "segment_code": "emc",
+        "code": "L",
+        "meaning": "complies with the category C3 of standard IEC/EN 61800-3 + A1, 2nd environment, and nominal voltage less than 1000 V",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_class",
+        "segment_code": "emc",
+        "code": "T",
+        "meaning": "complies with the standard IEC/EN 61800-3 + A1 when used in IT networks (C4)",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "emc_class",
+        "segment_code": "emc",
+        "code": "N",
+        "meaning": "no EMC emission protection. An external EMC filter is necessary",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "brake_chopper",
+        "segment_code": "brake",
+        "code": "0",
+        "meaning": "no brake chopper",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "brake_chopper",
+        "segment_code": "brake",
+        "code": "1",
+        "meaning": "internal brake chopper",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21",
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "brake_chopper",
+        "segment_code": "brake",
+        "code": "2",
+        "meaning": "internal brake chopper and resistor",
+        "notes": "available for: 208–240 V (FR4–FR6); 380–500 V (FR4–FR6)",
+        "dependencies": [
+            "mains_voltage=2 or 5",
+            "enclosure_size=FR4–FR6"
+        ],
+        "exclusions": [
+            "NOT AVAILABLE for 525–690 V in the listed typecode definition"
+        ],
+        "availability_conditions": [
+            "208–240 V (FR4–FR6)",
+            "380–500 V (FR4–FR6)"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "S",
+        "meaning": "6-pulse connection",
+        "notes": "",
+        "dependencies": [
+            "FR4 to FR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR4 to FR11"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22",
+            "doc_selection_guide p.6"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "B",
+        "meaning": "additional DC-connection",
+        "notes": "",
+        "dependencies": [
+            "FR8 to FR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR8 to FR11"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "O",
+        "meaning": "standard and input switch",
+        "notes": "Standalone",
+        "dependencies": [
+            "Standalone"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "Standalone"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "J",
+        "meaning": "FR10 to 11 standalone with main switch and DC-link terminals",
+        "notes": "",
+        "dependencies": [
+            "FR10 to FR11 standalone"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR10 to FR11 standalone"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "P",
+        "meaning": "standard and input switch UL",
+        "notes": "Standalone",
+        "dependencies": [
+            "Standalone"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "Standalone"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_supply",
+        "segment_code": "supply",
+        "code": "K",
+        "meaning": "DC link connectors and input switch UL",
+        "notes": "standalone",
+        "dependencies": [
+            "standalone"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "standalone"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_mounting",
+        "segment_code": "mounting",
+        "code": "S",
+        "meaning": "air-cooled drive",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_mounting",
+        "segment_code": "mounting",
+        "code": "T",
+        "meaning": "flange mounting",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "S",
+        "meaning": "standard boards",
+        "notes": "",
+        "dependencies": [
+            "FR4 to FR8"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR4 to FR8"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "V",
+        "meaning": "coated boards",
+        "notes": "",
+        "dependencies": [
+            "FR4 to FR8"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR4 to FR8"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22",
+            "doc_design_guide p.11"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "F",
+        "meaning": "standard boards",
+        "notes": "",
+        "dependencies": [
+            "FR9 to FR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 to FR11"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "G",
+        "meaning": "coated boards",
+        "notes": "",
+        "dependencies": [
+            "FR9 to FR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 to FR11"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22",
+            "doc_design_guide p.11"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "A",
+        "meaning": "fiber, Integrated control",
+        "notes": "",
+        "dependencies": [
+            "FR10 to FR11 standalone drives"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR10 to FR11 standalone drives"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "B",
+        "meaning": "fiber, Integrated control, Coated boards",
+        "notes": "",
+        "dependencies": [
+            "FR10 to FR11 standalone drives"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR10 to FR11 standalone drives"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "N",
+        "meaning": "separate IP54 (UL Type 12) control box, standard boards, fiber connection",
+        "notes": "",
+        "dependencies": [
+            "FR9 IP00, ≥ FR10"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 IP00, ≥ FR10"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "O",
+        "meaning": "separate IP54 (UL Type 12) control box, coated boards, fiber connection",
+        "notes": "",
+        "dependencies": [
+            "FR9 IP00, ≥ FR10"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 IP00, ≥ FR10"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "X",
+        "meaning": "separate IP00 control box, standard boards",
+        "notes": "",
+        "dependencies": [
+            "FR9 IP00"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 IP00"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "hardware_configuration_boards",
+        "segment_code": "boards",
+        "code": "Y",
+        "meaning": "separate IP00 control box, coated boards",
+        "notes": "",
+        "dependencies": [
+            "FR9 IP00"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "FR9 IP00"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_board_prefix",
+        "segment_code": "slot_prefix",
+        "code": "A",
+        "meaning": "basic I/O board",
+        "notes": "The option board abbreviations",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_board_prefix",
+        "segment_code": "slot_prefix",
+        "code": "B",
+        "meaning": "expander I/O board",
+        "notes": "The option board abbreviations",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_board_prefix",
+        "segment_code": "slot_prefix",
+        "code": "C",
+        "meaning": "fieldbus board",
+        "notes": "The option board abbreviations",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_board_prefix",
+        "segment_code": "slot_prefix",
+        "code": "D",
+        "meaning": "special board",
+        "notes": "The option board abbreviations",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_board_prefix",
+        "segment_code": "slot_prefix",
+        "code": "E",
+        "meaning": "fieldbus board",
+        "notes": "The option board abbreviations",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_boards",
+        "segment_code": "slot_value",
+        "code": "00",
+        "meaning": "the slot is not used",
+        "notes": "2 characters for each slot. 00 = the slot is not used",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "option_boards",
+        "segment_code": "slot_value",
+        "code": "E3",
+        "meaning": "PROFIBUS DP",
+        "notes": "For example, E3 = PROFIBUS DP",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22",
+            "doc_selection_guide p.10"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "optional_codes",
+        "segment_code": "documentation",
+        "code": "+DQCK",
+        "meaning": "quick guide",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "optional_codes",
+        "segment_code": "documentation",
+        "code": "+DPAP",
+        "meaning": "paper guides",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "optional_codes",
+        "segment_code": "documentation",
+        "code": "+DINS",
+        "meaning": "installation guides",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "segment_name": "optional_codes",
+        "segment_code": "documentation",
+        "code": "+DNOT",
+        "meaning": "no guides included",
+        "notes": "",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    }
+],
+"technical_tables": [
+    {
+        "table_id": "enclosure_sizes_208_240V",
+        "table_name": "Enclosure Sizes for 208–240 V",
+        "applies_to": "VACON NXP/NXS",
+        "columns": [
+            "Nominal mains voltage",
+            "Nominal current",
+            "Enclosure size"
+        ],
+        "rows": [
+            [
+                "208–240 V",
+                "0003",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0004",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0007",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0008",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0011",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0012",
+                "FR4"
+            ],
+            [
+                "208–240 V",
+                "0017",
+                "FR5"
+            ],
+            [
+                "208–240 V",
+                "0025",
+                "FR5"
+            ],
+            [
+                "208–240 V",
+                "0031",
+                "FR5"
+            ],
+            [
+                "208–240 V",
+                "0048",
+                "FR6"
+            ],
+            [
+                "208–240 V",
+                "0061",
+                "FR6"
+            ],
+            [
+                "208–240 V",
+                "0075",
+                "FR7"
+            ],
+            [
+                "208–240 V",
+                "0088",
+                "FR7"
+            ],
+            [
+                "208–240 V",
+                "0114",
+                "FR7"
+            ],
+            [
+                "208–240 V",
+                "0140",
+                "FR8"
+            ],
+            [
+                "208–240 V",
+                "0170",
+                "FR8"
+            ],
+            [
+                "208–240 V",
+                "0205",
+                "FR8"
+            ],
+            [
+                "208–240 V",
+                "0261",
+                "FR9"
+            ],
+            [
+                "208–240 V",
+                "0300",
+                "FR9"
+            ]
+        ],
+        "units": {
+            "Nominal mains voltage": "V",
+            "Nominal current": "A"
+        },
+        "notes": [],
+        "conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.23"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "enclosure_sizes_380_500V",
+        "table_name": "Enclosure Sizes for 380–500 V",
+        "applies_to": "VACON NXP/NXS",
+        "columns": [
+            "Nominal mains voltage",
+            "Nominal current",
+            "Enclosure size"
+        ],
+        "rows": [
+            [
+                "380–500 V",
+                "0003",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0004",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0005",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0007",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0009",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0012",
+                "FR4"
+            ],
+            [
+                "380–500 V",
+                "0016",
+                "FR5"
+            ],
+            [
+                "380–500 V",
+                "0022",
+                "FR5"
+            ],
+            [
+                "380–500 V",
+                "0031",
+                "FR5"
+            ],
+            [
+                "380–500 V",
+                "0038",
+                "FR6"
+            ],
+            [
+                "380–500 V",
+                "0045",
+                "FR6"
+            ],
+            [
+                "380–500 V",
+                "0061",
+                "FR6"
+            ],
+            [
+                "380–500 V",
+                "0072",
+                "FR7"
+            ],
+            [
+                "380–500 V",
+                "0087",
+                "FR7"
+            ],
+            [
+                "380–500 V",
+                "0105",
+                "FR7"
+            ],
+            [
+                "380–500 V",
+                "0140",
+                "FR8"
+            ],
+            [
+                "380–500 V",
+                "0168",
+                "FR8"
+            ],
+            [
+                "380–500 V",
+                "0205",
+                "FR8"
+            ],
+            [
+                "380–500 V",
+                "0261",
+                "FR9"
+            ],
+            [
+                "380–500 V",
+                "0300",
+                "FR9"
+            ],
+            [
+                "380–500 V",
+                "0385",
+                "FR10 Standalone"
+            ],
+            [
+                "380–500 V",
+                "0460",
+                "FR10 Standalone"
+            ],
+            [
+                "380–500 V",
+                "0520",
+                "FR10 Standalone"
+            ],
+            [
+                "380–500 V",
+                "0590",
+                "FR11 Standalone"
+            ],
+            [
+                "380–500 V",
+                "0650",
+                "FR11 Standalone"
+            ],
+            [
+                "380–500 V",
+                "0730",
+                "FR11 Standalone"
+            ]
+        ],
+        "units": {
+            "Nominal mains voltage": "V",
+            "Nominal current": "A"
+        },
+        "notes": [],
+        "conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.24"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "enclosure_sizes_525_690V",
+        "table_name": "Enclosure Sizes for 525–690 V",
+        "applies_to": "VACON NXP/NXS",
+        "columns": [
+            "Nominal mains voltage",
+            "Nominal current",
+            "Enclosure size"
+        ],
+        "rows": [
+            [
+                "525–690 V",
+                "0004",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0005",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0007",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0010",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0013",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0018",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0022",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0027",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0034",
+                "FR6"
+            ],
+            [
+                "525–690 V",
+                "0041",
+                "FR7"
+            ],
+            [
+                "525–690 V",
+                "0052",
+                "FR7"
+            ],
+            [
+                "525–690 V",
+                "0062",
+                "FR8"
+            ],
+            [
+                "525–690 V",
+                "0080",
+                "FR8"
+            ],
+            [
+                "525–690 V",
+                "0100",
+                "FR8"
+            ],
+            [
+                "525–690 V",
+                "0125",
+                "FR9"
+            ],
+            [
+                "525–690 V",
+                "0144",
+                "FR9"
+            ],
+            [
+                "525–690 V",
+                "0177",
+                "FR9"
+            ],
+            [
+                "525–690 V",
+                "0205",
+                "FR9"
+            ],
+            [
+                "525–690 V",
+                "0261",
+                "FR10 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0325",
+                "FR10 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0385",
+                "FR10 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0416",
+                "FR10 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0460",
+                "FR11 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0502",
+                "FR11 Standalone"
+            ],
+            [
+                "525–690 V",
+                "0590",
+                "FR11 Standalone"
+            ]
+        ],
+        "units": {
+            "Nominal mains voltage": "V",
+            "Nominal current": "A"
+        },
+        "notes": [],
+        "conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.25"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "protection_ratings",
+        "table_name": "Available Protection Ratings",
+        "applies_to": "VACON NXP/NXS",
+        "columns": [
+            "Mains voltage",
+            "Enclosure size",
+            "IP21 (UL Type 1)",
+            "IP54 (UL Type 12)"
+        ],
+        "rows": [
+            [
+                "208–240 V",
+                "FR4–FR9",
+                "x",
+                "x"
+            ],
+            [
+                "350–500 V",
+                "FR4–FR9",
+                "x",
+                "x"
+            ],
+            [
+                "350–500 V",
+                "FR10 Standalone",
+                "x",
+                "x"
+            ],
+            [
+                "350–500 V",
+                "FR11 Standalone",
+                "x",
+                "-"
+            ],
+            [
+                "525–690 V",
+                "FR4–FR9",
+                "x",
+                "x"
+            ],
+            [
+                "525–690 V",
+                "FR10 Standalone",
+                "x",
+                "x"
+            ],
+            [
+                "525–690 V",
+                "FR11 Standalone",
+                "x",
+                "-"
+            ]
+        ],
+        "units": {},
+        "notes": [],
+        "conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.25",
+            "doc_design_guide p.26"
+        ],
+        "confidence": "high"
+    }
+],
+"mapping_rules": [
+    {
+        "rule_id": "map_voltage_from_typecode",
+        "target_datasheet_field": "mains_voltage",
+        "source_typecode_segment": "mains_voltage",
+        "mapping_logic_from_documents": "The numeric code (2,5,6) directly maps to voltage ranges defined in type code table",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "map_enclosure_from_current_voltage",
+        "target_datasheet_field": "enclosure_size",
+        "source_typecode_segment": "current_rating",
+        "mapping_logic_from_documents": "Use nominal current code and mains voltage code together to lookup enclosure size in enclosure size tables",
+        "required_additional_conditions": [
+            "mains_voltage must be known"
+        ],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.23",
+            "doc_design_guide p.24",
+            "doc_design_guide p.25"
+        ],
+        "confidence": "high"
+    }
+],
+"constraints": [
+    {
+        "rule_id": "brake_chopper_availability",
+        "rule_type": "dependency",
+        "affected_segment_or_table": "brake_chopper",
+        "exact_rule": "Code 2 (internal brake chopper and resistor) available only for 208–240 V (FR4–FR6) and 380–500 V (FR4–FR6)",
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "hardware_supply_dependency",
+        "rule_type": "dependency",
+        "affected_segment_or_table": "hardware_configuration_supply",
+        "exact_rule": "Certain supply codes only available for specific frame sizes (e.g., B only for FR8–FR11)",
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    }
+],
+"examples": [
+    {
+        "full_type_code": "NXP00035-A2H1SSS-A1A2C30000+DNOT",
+        "decoded_breakdown": [
+            "NXP = product range",
+            "0003 = 3 A current rating",
+            "5 = 380–500 V",
+            "A = standard control panel",
+            "2 = IP21",
+            "H = EMC C2",
+            "1 = internal brake chopper",
+            "SSS = 6-pulse, air-cooled, standard boards",
+            "A1A2C3... = option boards",
+            "+DNOT = no guides included"
+        ],
+        "notes": [],
+        "preferred_source_document_id": "doc_design_guide",
+        "all_source_references": [
+            "doc_design_guide p.20",
+            "doc_design_guide p.21",
+            "doc_design_guide p.22"
+        ],
+        "confidence": "high"
+    }
+],
+"datasheet_fields": [
+    {
+        "datasheet_field_name": "mains_voltage",
+        "directly_available_from_typecode": true,
+        "available_from_lookup_table": false,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "typecode"
+        ],
+        "source_references": [
+            "doc_design_guide p.21"
+        ]
+    },
+    {
+        "datasheet_field_name": "enclosure_size",
+        "directly_available_from_typecode": false,
+        "available_from_lookup_table": true,
+        "available_from_rating_table": false,
+        "available_from_converged_documents": true,
+        "not_available_in_uploaded_documents": false,
+        "resolution_priority": [
+            "lookup_table"
+        ],
+        "source_references": [
+            "doc_design_guide p.23",
+            "doc_design_guide p.24",
+            "doc_design_guide p.25"
+        ]
+    }
+],
+"conflicts": [],
+"app_resolution_model": {
+    "family_detection_rules": [
+        "If typecode contains NXP or NXS prefix → VACON NX family"
+    ],
+    "parse_order": [
+        "product_prefix",
+        "product_range",
+        "current_rating",
+        "mains_voltage",
+        "control_panel",
+        "protection_rating",
+        "emc_class",
+        "brake_chopper",
+        "hardware_configuration",
+        "option_boards",
+        "optional_codes"
+    ],
+    "field_resolution_order": [
+        "mains_voltage from typecode",
+        "current_rating from typecode",
+        "enclosure_size via lookup",
+        "hardware features from segments"
+    ],
+    "fallback_rules": [
+        "If lookup not possible → NOT FOUND IN THE UPLOADED DOCUMENTS"
+    ],
+    "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+}
+}

@@ -1,0 +1,1913 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss",
+        "product_family": "VLT HVAC Drive FC 102",
+        "series_names": [
+            "VLT HVAC Drive FC 102"
+        ],
+        "source_documents": [
+            "doc_selection_guide",
+            "doc_design_guide_abc",
+            "doc_design_guide_de"
+        ],
+        "knowledge_base_scope": "Converged typecode structure, ordering values, enclosure-related ordering logic, options coding, and datasheet-generation-relevant technical references for Danfoss VLT HVAC Drive FC 102 across low/medium power A/B/C frames and high-power D/E frames, based strictly on the uploaded selection guide and design guides.",
+        "coverage_summary": "The uploaded documents together cover FC 102 family overview, ordering/typecode structures for A/B/C and D/E enclosures, option coding, and technical references. The selection guide extends coverage to D, E and F enclosure overview and ordering pages, while the two design guides provide the detailed character-position ordering logic for A/B/C and D/E families. No separate F-frame design guide is uploaded. No complete enclosed-drive typecode table has been extracted from the uploaded documents in this part.",
+        "unresolved_global_gaps": [
+            "Complete ordering type code for enclosed drive enclosures not extracted from the uploaded documents in this part",
+            "F-enclosure detailed typecode structure beyond selection-guide ordering page is NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Some selection-guide ordering page text is truncated in the currently retrieved snippets and may require later convergence with additional retrieved pages",
+            "Any datasheet field that depends on non-uploaded manuals remains NOT FOUND IN THE UPLOADED DOCUMENTS"
+        ],
+        "conflicts_detected": [
+            {
+                "conflict_id": "global_conflict_001",
+                "topic": "Family power-range coverage wording",
+                "summary": "The selection guide states portfolio coverage up to 1.1-1400 kW, the A/B/C design guide covers 1.1-90 kW, and the D/E design guide covers 110-800 kW. These are not necessarily contradictory, but they represent different document scopes and must not be flattened into one identical source scope."
+            }
+        ]
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "Selection Guide | VLT HVAC Drive FC 102",
+            "relevant_pages": [
+                "p.2",
+                "p.3",
+                "p.4",
+                "p.52",
+                "p.53",
+                "p.58"
+            ],
+            "scope_summary": "Family portfolio overview, application coverage, ordering type code pages for A/B/C enclosures and D/E/F enclosures, plus enclosure overview tables.",
+            "explicit_power_range_covered": "1.1-1400 kW",
+            "explicit_voltage_ranges_covered": [
+                "3 x 200-240 V AC",
+                "3 x 380-480 V AC",
+                "3 x 525-690 V AC"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Lists ordering type code for A, B and C enclosures on doc_selection_guide p.52",
+                "Lists enclosure overview D, E and F on doc_selection_guide p.53",
+                "Lists ordering type code for D, E and F enclosures on doc_selection_guide p.58",
+                "States portfolio coverage as 1.1-1400 kW",
+                "States supported motor technologies IM, IPM, LSPM, SPM, SynRM"
+            ]
+        },
+        {
+            "document_id": "doc_design_guide_abc",
+            "document_role": "design_guide",
+            "short_title": "Design Guide VLT HVAC Drive FC 102 1.1-90 kW MG11BC02",
+            "relevant_pages": [
+                "p.65",
+                "p.66",
+                "p.67",
+                "p.68"
+            ],
+            "scope_summary": "Detailed ordering form and type code string for low and medium power A/B/C frame FC 102 variants, including character positions and option codes.",
+            "explicit_power_range_covered": "1.1-90 kW",
+            "explicit_voltage_ranges_covered": [
+                "T2: 200-240 V AC",
+                "T4: 380-480 V AC",
+                "T6: 525-600 V AC",
+                "T7: 525-690 V AC"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Provides explicit type code example string",
+                "Defines character positions 1-39 for low and medium power type code string",
+                "Provides A/B/C option code mappings",
+                "Provides mains option and adaptation codes specific to A/B/C family"
+            ]
+        },
+        {
+            "document_id": "doc_design_guide_de",
+            "document_role": "design_guide",
+            "short_title": "Design Guide VLT HVAC Drive FC 102 110-800 kW Enclosure Sizes D and E MG16Z202",
+            "relevant_pages": [
+                "p.202",
+                "p.203",
+                "p.204",
+                "p.205"
+            ],
+            "scope_summary": "Detailed ordering type code for D1h-D8h and E1h-E4h enclosures, including character positions, hardware configurations, and FC 102 option coding.",
+            "explicit_power_range_covered": "110-800 kW",
+            "explicit_voltage_ranges_covered": [
+                "T4: 380-480 V AC",
+                "T7: 525-690 V AC"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Provides explicit type code example string",
+                "Defines ordered character positions for D/E family type code string",
+                "Provides shared FC 102 A/B/C/D option codes for these enclosures",
+                "Provides D1h-D8h and E1h-E4h specific enclosure code values"
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "product_group_series",
+            "segment_label_from_manual": "Product group & FC Series / Product group",
+            "character_positions": "1-6",
+            "segment_length": "6",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "FC 102 family identifier at the beginning of the type code string.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.202",
+                "doc_design_guide_de p.203"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_label_from_manual": "Power rating / Model / Power size",
+            "character_positions": "7-10",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Encodes the ordered power/model code. The exact values depend on enclosure family and document scope.",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_selection_guide p.58",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "number_of_phases_or_mains_voltage_prefix",
+            "segment_label_from_manual": "Phases / Mains Voltage",
+            "character_positions": "11",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "For A/B/C low-medium power design guide, position 11 is the phase designator T for 3 phases and position 12 completes the mains-voltage code. In D/E ordering tables the 2-character mains-voltage code is represented jointly as positions 11-12.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.202"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "ac_line_voltage",
+            "segment_label_from_manual": "AC Line Voltage / Mains voltage",
+            "character_positions": "11-12",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Voltage code. For A/B/C, built from T plus the voltage digit. For D/E, directly listed as the 2-character voltage code.",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_label_from_manual": "IP/UL protection ratings / Enclosure",
+            "character_positions": "13-15",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Encodes enclosure and protection-rating combination. Allowed values differ between A/B/C and D/E families.",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "rfi_filter",
+            "segment_label_from_manual": "RFI filter",
+            "character_positions": "16-17",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "EMC/RFI filter configuration code.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_label_from_manual": "Brake",
+            "character_positions": "18",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Brake / brake chopper / regeneration / safe stop related hardware code, depending on family.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display_lcp",
+            "segment_label_from_manual": "Display (LCP) / Display",
+            "character_positions": "19",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Local control panel selection.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "pcb_coating",
+            "segment_label_from_manual": "Coating PCB / PCB coating",
+            "character_positions": "20",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "PCB coating and ruggedization selection.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "mains_option",
+            "segment_label_from_manual": "Mains option",
+            "character_positions": "21",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Main supply/disconnector/load sharing/circuit breaker related hardware option code. Allowed values differ by family.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "adaptation_a",
+            "segment_label_from_manual": "Adaptation / Hardware, adaptation A",
+            "character_positions": "22",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Physical/mechanical adaptation code. Definitions differ by family.",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "adaptation_b",
+            "segment_label_from_manual": "Adaptation / Hardware, adaptation B",
+            "character_positions": "23",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Second physical/mechanical adaptation code. A/B/C low-medium power guide shows this as reserved; D/E guide uses this as hardware adaptation B.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "software_release",
+            "segment_label_from_manual": "Software release",
+            "character_positions": "24-27",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Software release code. In D/E guide, text also shows SXXX latest release standard software and S067 integrated motion control software.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "software_language",
+            "segment_label_from_manual": "Software language",
+            "character_positions": "28",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Language pack code, default X in retrieved ordering tables.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.202",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "a_options",
+            "segment_label_from_manual": "A options",
+            "character_positions": "29-30",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Fieldbus/network option code.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "b_options",
+            "segment_label_from_manual": "B options",
+            "character_positions": "31-32",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Functional extension option code.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "c0_options_mco",
+            "segment_label_from_manual": "C0 options, MCO / C0-E0 options",
+            "character_positions": "33-34",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "C0/E0 option positions. Retrieved pages show only CX no option.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "c1_options",
+            "segment_label_from_manual": "C1 options / C1 options-A-B in C option adapter",
+            "character_positions": "35",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "C1 option position. Retrieved pages show X no option and R extended relay card MCB 113 for D/E family.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "c_option_software",
+            "segment_label_from_manual": "C option software / E1 options",
+            "character_positions": "36-37",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Software controller code for C option positions; retrieved pages show XX standard controller/software.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "d_options",
+            "segment_label_from_manual": "D options",
+            "character_positions": "38-39",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "24 V backup supply option code.",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.202",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "product_group_series",
+            "segment_code": "family_identifier",
+            "code": "FC-102",
+            "meaning": "VLT HVAC Drive FC 102",
+            "notes": "Shown in D/E type code example and D/E ordering tables. A/B/C guide expresses the same family as FC 102 in positions 1-6.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.202",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "product_group_series",
+            "segment_code": "family_identifier",
+            "code": "FC 102",
+            "meaning": "VLT HVAC Drive FC 102",
+            "notes": "Spacing variant used in A/B/C design guide table text for positions 1-6.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P1K1",
+            "meaning": "1.1 kW/ 1.5 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P1K5",
+            "meaning": "1.5 kW/ 2.0 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P2K2",
+            "meaning": "2.2 kW/ 3.0 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P3K0",
+            "meaning": "3.0 kW/ 4.0 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P3K7",
+            "meaning": "3.7 kW/ 5.0 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P4K0",
+            "meaning": "4.0 kW / 5.5 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P5K5",
+            "meaning": "5.5 kW/ 7.5 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P7K5",
+            "meaning": "7.5 kW/ 10 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P11K",
+            "meaning": "11 kW/ 15 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P15K",
+            "meaning": "15 kW/ 20 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P18K",
+            "meaning": "18.5 kW/ 25 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P22K",
+            "meaning": "22 kW/ 30 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P30K",
+            "meaning": "30 kW/ 40 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P37K",
+            "meaning": "37 kW/ 50 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P45K",
+            "meaning": "45 kW/ 60 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P55K",
+            "meaning": "55 kW/ 75 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P75K",
+            "meaning": "75 kW/ 100 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "power_size_model",
+            "segment_code": "abc_power_size",
+            "code": "P90K",
+            "meaning": "90 kW/ 125 Hp",
+            "notes": "A/B/C enclosure ordering page.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "ac_line_voltage",
+            "segment_code": "abc_voltage",
+            "code": "T2",
+            "meaning": "3 x 200-240 V AC",
+            "notes": "Listed in both selection guide and A/B/C design guide.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "ac_line_voltage",
+            "segment_code": "abc_voltage",
+            "code": "T4",
+            "meaning": "3 x 380-480 V AC",
+            "notes": "Listed in both selection guide and A/B/C design guide.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "ac_line_voltage",
+            "segment_code": "abc_voltage",
+            "code": "T6",
+            "meaning": "3 x 525-600 V AC",
+            "notes": "Present in A/B/C ordering references.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "ac_line_voltage",
+            "segment_code": "abc_voltage",
+            "code": "T7",
+            "meaning": "3 x 525-690 V AC",
+            "notes": "Listed in selection guide, A/B/C design guide, and D/E design guide.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "A1",
+            "code": "A1",
+            "meaning": "IP20 / Chassis",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "A2",
+            "code": "A2",
+            "meaning": "IP21 / NEMA 1",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "A3",
+            "code": "A3",
+            "meaning": "IP55 / NEMA 12",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "A4",
+            "code": "A4",
+            "meaning": "IP66 / NEMA 4X",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "B1",
+            "code": "B1",
+            "meaning": "IP21 / NEMA 1",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "B2",
+            "code": "B2",
+            "meaning": "IP55 / NEMA 12",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "C1",
+            "code": "C1",
+            "meaning": "IP21 / NEMA 1",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "C2",
+            "code": "C2",
+            "meaning": "IP55 / NEMA 12",
+            "notes": "Listed for A/B/C enclosure ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D1h",
+            "code": "D1h",
+            "meaning": "D1h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D2h",
+            "code": "D2h",
+            "meaning": "D2h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D3h",
+            "code": "D3h",
+            "meaning": "D3h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D4h",
+            "code": "D4h",
+            "meaning": "D4h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D5h",
+            "code": "D5h",
+            "meaning": "D5h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D6h",
+            "code": "D6h",
+            "meaning": "D6h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D7h",
+            "code": "D7h",
+            "meaning": "D7h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "D8h",
+            "code": "D8h",
+            "meaning": "D8h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "E1h",
+            "code": "E1h",
+            "meaning": "E1h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "E2h",
+            "code": "E2h",
+            "meaning": "E2h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "E3h",
+            "code": "E3h",
+            "meaning": "E3h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "enclosure",
+            "segment_code": "E4h",
+            "code": "E4h",
+            "meaning": "E4h enclosure",
+            "notes": "D/E enclosure family overview and D/E ordering type code.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_selection_guide p.53",
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "rfi_filter",
+            "segment_code": "rf_code",
+            "code": "R0",
+            "meaning": "Without RFI filter",
+            "notes": "Present in A/B/C and D/E ordering structures.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "rfi_filter",
+            "segment_code": "rf_code",
+            "code": "R1",
+            "meaning": "RFI filter class A1/B (C1)",
+            "notes": "Exact wording differs across retrieved tables: A/B/C page shows class A1/B (C1); D/E page shows RFI class A1/B.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "medium"
+        },
+        {
+            "segment_name": "rfi_filter",
+            "segment_code": "rf_code",
+            "code": "R2",
+            "meaning": "RFI filter class A2 (C3)",
+            "notes": "Present in A/B/C and D/E ordering structures.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "rfi_filter",
+            "segment_code": "rf_code",
+            "code": "R3",
+            "meaning": "RFI filter class A1/B and DC choke",
+            "notes": "Present in A/B/C and D/E ordering structures.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "X",
+            "meaning": "No brake chopper",
+            "notes": "Present in A/B/C ordering and compatible with generic no-brake selection meaning.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "B",
+            "meaning": "Brake chopper",
+            "notes": "Present in A/B/C ordering.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "D",
+            "meaning": "Brake chopper + mains disconnect",
+            "notes": "Present in A/B/C ordering.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "Z",
+            "meaning": "Safe stop",
+            "notes": "Present in D/E ordering structure.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "E",
+            "meaning": "Brake chopper + safe stop",
+            "notes": "Present in D/E ordering structure.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "brake",
+            "segment_code": "brake_code",
+            "code": "F",
+            "meaning": "Regen terminals + brake chopper + safe stop",
+            "notes": "Present in D/E ordering structure.",
+            "dependencies": [
+                "Applies to D/E ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display_lcp",
+            "segment_code": "display_code",
+            "code": "X",
+            "meaning": "No display / No LCP",
+            "notes": "Present in A/B/C and D/E ordering structures.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display_lcp",
+            "segment_code": "display_code",
+            "code": "N",
+            "meaning": "Numerical local control panel",
+            "notes": "Present in A/B/C ordering structure.",
+            "dependencies": [
+                "Applies to A/B/C ordering structure"
+            ],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "display_lcp",
+            "segment_code": "display_code",
+            "code": "G",
+            "meaning": "Graphical local control panel",
+            "notes": "Present in A/B/C and D/E ordering structures.",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "technical_tables": [
+        {
+            "table_id": "enclosure_overview_de_f",
+            "table_name": "Enclosure overview D, E and F",
+            "applies_to": "VLT HVAC Drive FC 102 D, E and F enclosures",
+            "columns": [
+                "enclosure_type",
+                "frame_designation",
+                "description"
+            ],
+            "rows": [
+                [
+                    "D",
+                    "D1h-D8h",
+                    "High power standalone enclosure frames"
+                ],
+                [
+                    "E",
+                    "E1h-E4h",
+                    "High power modular enclosure frames"
+                ],
+                [
+                    "F",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS",
+                    "Enclosed drive system"
+                ]
+            ],
+            "units": {},
+            "notes": [
+                "Selection guide provides overview grouping of D, E and F enclosures",
+                "Detailed F-enclosure typecode structure not extracted"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.53"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "motor_technology_compatibility",
+            "table_name": "Supported motor technologies",
+            "applies_to": "VLT HVAC Drive FC 102",
+            "columns": [
+                "code",
+                "motor_type",
+                "description"
+            ],
+            "rows": [
+                [
+                    "IM",
+                    "Induction motor",
+                    "Three-phase induction motor with copper rotor"
+                ],
+                [
+                    "IPM",
+                    "Interior permanent magnet motor",
+                    "PM motor with buried magnets"
+                ],
+                [
+                    "LSPM",
+                    "Line-start permanent magnet motor",
+                    "PM motor with rotor cage and buried magnets"
+                ],
+                [
+                    "SPM",
+                    "Surface permanent magnet motor",
+                    "PM motor with surface-mounted magnets"
+                ],
+                [
+                    "SynRM",
+                    "Synchronous reluctance motor",
+                    "Reluctance-based synchronous motor"
+                ]
+            ],
+            "units": {},
+            "notes": [
+                "Motor compatibility is application-level, not encoded in typecode segments"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.4"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "environment_operating_limits",
+            "table_name": "Operating environmental limits",
+            "applies_to": "VLT HVAC Drive FC 102",
+            "columns": [
+                "parameter",
+                "value",
+                "unit"
+            ],
+            "rows": [
+                [
+                    "Ambient temperature minimum",
+                    "-25",
+                    "°C"
+                ],
+                [
+                    "Ambient temperature maximum",
+                    "55",
+                    "°C"
+                ],
+                [
+                    "Maximum altitude without derating",
+                    "2000",
+                    "m"
+                ]
+            ],
+            "units": {
+                "temperature": "°C",
+                "altitude": "m"
+            },
+            "notes": [
+                "Applies to general installation conditions",
+                "Further derating rules not extracted"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.12"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "mapping_rules": [
+        {
+            "rule_id": "MR-001",
+            "target_datasheet_field": "product_family",
+            "source_typecode_segment": "product_group_series",
+            "mapping_logic_from_documents": "If segment equals FC-102 or FC 102, map to VLT HVAC Drive FC 102",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.202",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR-002",
+            "target_datasheet_field": "power_rating",
+            "source_typecode_segment": "power_size_model",
+            "mapping_logic_from_documents": "Map power code (e.g. P1K1, P90K) to kW and Hp rating using selection guide table",
+            "required_additional_conditions": [
+                "Must match enclosure family A/B/C for P-format codes"
+            ],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR-003",
+            "target_datasheet_field": "voltage",
+            "source_typecode_segment": "ac_line_voltage",
+            "mapping_logic_from_documents": "Translate T2, T4, T6, T7 codes to voltage ranges",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.203"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "MR-004",
+            "target_datasheet_field": "enclosure_rating",
+            "source_typecode_segment": "enclosure",
+            "mapping_logic_from_documents": "Map enclosure code to IP/NEMA rating or enclosure frame",
+            "required_additional_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52",
+                "doc_selection_guide p.53"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "constraints": [
+        {
+            "rule_id": "C-001",
+            "rule_type": "voltage_availability",
+            "affected_segment_or_table": "ac_line_voltage",
+            "exact_rule": "T2 voltage option only applies to A/B/C enclosure families",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C-002",
+            "rule_type": "voltage_availability",
+            "affected_segment_or_table": "ac_line_voltage",
+            "exact_rule": "D/E enclosure families support T4 and T7 voltage codes",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.203",
+                "doc_design_guide_de p.204"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C-003",
+            "rule_type": "enclosure_dependency",
+            "affected_segment_or_table": "power_size_model",
+            "exact_rule": "P-format power codes (e.g. P1K1, P90K) are defined for A/B/C enclosure ordering structure",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C-004",
+            "rule_type": "segment_length",
+            "affected_segment_or_table": "typecode_structure",
+            "exact_rule": "Typecode length spans positions 1-39 for FC 102 ordering string in A/B/C design guide",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_abc p.68"
+            ],
+            "confidence": "high"
+        },
+        {
+            "rule_id": "C-005",
+            "rule_type": "segment_length",
+            "affected_segment_or_table": "typecode_structure",
+            "exact_rule": "Typecode includes structured option positions through at least position 39 for D/E ordering structure",
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.202",
+                "doc_design_guide_de p.205"
+            ],
+            "confidence": "high"
+        }
+    ],
+    "examples": [
+        {
+            "full_type_code": "FC-102P90KT4E20H2XGXXXXSXXXXAXBXCXXXXDX",
+            "decoded_breakdown": [
+                {
+                    "segment": "product_group_series",
+                    "value": "FC-102",
+                    "meaning": "VLT HVAC Drive FC 102"
+                },
+                {
+                    "segment": "power_size_model",
+                    "value": "P90K",
+                    "meaning": "90 kW"
+                },
+                {
+                    "segment": "ac_line_voltage",
+                    "value": "T4",
+                    "meaning": "3 x 380-480 V AC"
+                },
+                {
+                    "segment": "enclosure",
+                    "value": "E20",
+                    "meaning": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                }
+            ],
+            "notes": [
+                "Example format derived from design guide structure",
+                "Some positions truncated or not fully resolved from extracted pages"
+            ],
+            "preferred_source_document_id": "doc_design_guide_de",
+            "all_source_references": [
+                "doc_design_guide_de p.202"
+            ],
+            "confidence": "low"
+        }
+    ],
+    "datasheet_fields": [
+        {
+            "datasheet_field_name": "product_family",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": false,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_de p.202",
+                "doc_design_guide_abc p.68"
+            ]
+        },
+        {
+            "datasheet_field_name": "power_rating",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": true,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values",
+                "technical_tables"
+            ],
+            "source_references": [
+                "doc_selection_guide p.52"
+            ]
+        },
+        {
+            "datasheet_field_name": "voltage",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.52"
+            ]
+        },
+        {
+            "datasheet_field_name": "enclosure",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_selection_guide p.52",
+                "doc_selection_guide p.53"
+            ]
+        },
+        {
+            "datasheet_field_name": "rfi_filter",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "brake_configuration",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "display_type",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "pcb_coating",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_abc p.68",
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "mains_option",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_abc p.66",
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "software_release",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_de p.204"
+            ]
+        },
+        {
+            "datasheet_field_name": "fieldbus_option",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_de p.205"
+            ]
+        },
+        {
+            "datasheet_field_name": "backup_supply",
+            "directly_available_from_typecode": true,
+            "available_from_lookup_table": true,
+            "available_from_rating_table": false,
+            "available_from_converged_documents": true,
+            "not_available_in_uploaded_documents": false,
+            "resolution_priority": [
+                "typecode_values"
+            ],
+            "source_references": [
+                "doc_design_guide_de p.205"
+            ]
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict_id": "conflict_001",
+            "topic": "RFI filter code R1 description",
+            "document_a_reference": "doc_design_guide_abc p.68",
+            "document_b_reference": "doc_design_guide_de p.204",
+            "document_a_value": "RFI filter class A1/B (C1)",
+            "document_b_value": "RFI class A1/B",
+            "status": "unresolved"
+        }
+    ],
+    "app_resolution_model": {
+        "family_detection_rules": [
+            "If typecode begins with FC-102 or FC 102 then product family is VLT HVAC Drive FC 102"
+        ],
+        "parse_order": [
+            "product_group_series",
+            "power_size_model",
+            "ac_line_voltage",
+            "enclosure",
+            "rfi_filter",
+            "brake",
+            "display_lcp",
+            "pcb_coating",
+            "mains_option",
+            "adaptation_a",
+            "adaptation_b",
+            "software_release",
+            "software_language",
+            "a_options",
+            "b_options",
+            "c0_options_mco",
+            "c1_options",
+            "c_option_software",
+            "d_options"
+        ],
+        "field_resolution_order": [
+            "typecode_values",
+            "technical_tables",
+            "mapping_rules"
+        ],
+        "fallback_rules": [
+            "If a segment value is not found in tables return NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "If enclosure-specific interpretation is required prioritize matching design guide (ABC vs DE)"
+        ],
+        "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
+    }
+}

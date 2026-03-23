@@ -1,0 +1,2610 @@
+{
+    "knowledge_base_metadata": {
+        "manufacturer": "Danfoss Drives",
+        "product_family": "VACON 100",
+        "series_names": [
+            "VACON 100 INDUSTRIAL",
+            "VACON 100 FLOW",
+            "VACON 100 X"
+        ],
+        "source_documents": [
+            "VACON 100 Selection Guide"
+        ],
+        "knowledge_base_scope": "Typecode decoding, product configuration, power ratings, hardware variants, enclosure types, and technical data for VACON 100 family",
+        "coverage_summary": "Covers power ranges (0.55–800 kW), voltage ranges, hardware frames, enclosure types, options, and technical specifications. No explicit typecode structure definition found in the provided document.",
+        "unresolved_global_gaps": [
+            "Typecode structure definition NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Segment-by-segment decoding rules NOT FOUND IN THE UPLOADED DOCUMENTS"
+        ],
+        "conflicts_detected": []
+    },
+    "source_registry": [
+        {
+            "document_id": "doc_selection_guide",
+            "document_role": "selection_guide",
+            "short_title": "VACON 100 Selection Guide",
+            "relevant_pages": [
+                "p.1-32"
+            ],
+            "scope_summary": "Product overview, variants, power ratings, voltage ranges, technical data, options and hardware configurations",
+            "explicit_power_range_covered": "0.55–800 kW",
+            "explicit_voltage_ranges_covered": [
+                "208-240 Vac",
+                "380-500 Vac",
+                "525-600 Vac",
+                "525-690 Vac"
+            ],
+            "explicit_other_manual_references": [],
+            "notes_relevant_to_decoding_or_datasheet_generation": [
+                "Typecodes appear in tables (e.g., VACON 0100-3L-0003-2)",
+                "Hardware frame sizes (MR4–MR12, MM4–MM6) linked to ratings",
+                "Variants INDUSTRIAL, FLOW, and 100 X are distinguished functionally",
+                "Loadability categories defined: low loadability (110%) and high loadability (150%)",
+                "Enclosure types: IP21, IP54, IP00, IP66"
+            ]
+        }
+    ],
+    "typecode_structure": [
+        {
+            "segment_name": "full_typecode",
+            "segment_label_from_manual": "AC drive type",
+            "character_positions": "NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "segment_length": "variable",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "Example format observed: VACON 0100-3L-0003-2",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20",
+                "doc_selection_guide p.21"
+            ],
+            "confidence": "medium"
+        }
+    ],
+    "typecode_values": [
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0003-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0004-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0007-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0008-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0011-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0012-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+        {
+            "segment_name": "full_typecode",
+            "segment_code": "example",
+            "code": "VACON 0100-3L-0018-2",
+            "meaning": "AC drive type identifier with embedded rating and voltage information",
+            "notes": "Exact segmentation NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "dependencies": [],
+            "exclusions": [],
+            "availability_conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.20"
+            ],
+            "confidence": "low"
+        },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0024-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0031-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0048-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0062-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0075-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0088-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0105-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0140-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0170-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0205-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0261-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0310-2",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "208-240 V wall mounted drive/module rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0006-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0008-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0011-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0012-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0018-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0024-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0031-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0048-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0062-2-X",
+        "meaning": "VACON 100 X decentral drive AC drive type identifier",
+        "notes": "100 X drives IP66/Type 4X, 208-240 V",
+        "dependencies": [
+            "VACON 100 X product variant"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "208-240 Vac",
+            "100X drives (IP66)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0003-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0004-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0005-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0008-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0009-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0012-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0016-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0023-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0031-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0038-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0046-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0061-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0072-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry; 37kW [50HP] variant only for low loadability (110% 1min/10min) in 100 X table footnote, not this base entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0087-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0105-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0140-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0170-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0205-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0261-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0310-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [
+            "Not available in IP54 for specific variant: VACON 0100-3L-0386-5"
+        ],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0386-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V rating; class C3 EMC noted; not available in IP54",
+        "dependencies": [],
+        "exclusions": [
+            "Not available in IP54"
+        ],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21",
+            "doc_selection_guide p.23"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0460-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V wall mounted/module/enclosed drive rating entry",
+        "dependencies": [],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0520-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V high power frame MR10",
+        "dependencies": [
+            "Frame size MR10"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0590-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V high power frame MR10",
+        "dependencies": [
+            "Frame size MR10"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0651-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR11",
+        "dependencies": [
+            "Frame size MR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0731-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR11",
+        "dependencies": [
+            "Frame size MR11"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0820-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR12",
+        "dependencies": [
+            "Frame size MR12"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-0920-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR12",
+        "dependencies": [
+            "Frame size MR12"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-1040-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR12",
+        "dependencies": [
+            "Frame size MR12"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "segment_name": "full_typecode",
+        "segment_code": "example",
+        "code": "VACON 0100-3L-1180-5",
+        "meaning": "AC drive type identifier with embedded rating and voltage information",
+        "notes": "380-500 V frame MR12 maximum range",
+        "dependencies": [
+            "Frame size MR12"
+        ],
+        "exclusions": [],
+        "availability_conditions": [
+            "380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "medium"
+    }
+],
+"technical_tables": [
+    {
+        "table_id": "table_voltage_power_wall_mounted_208_240",
+        "table_name": "208-240V Power ratings for VACON 100 INDUSTRIAL and FLOW Wall Mounted Drives and Drive Modules",
+        "applies_to": "VACON 100 INDUSTRIAL and VACON 100 FLOW Wall Mounted (IP21/IP54) and Modules (IP00)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IL [A]",
+            "Motor shaft power [kW] @230V",
+            "Motor shaft power [HP] @230V",
+            "Continuous current IH [A]",
+            "Motor shaft power [kW] @230V (high load)",
+            "Motor shaft power [HP] @230V (high load)",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0003-2",
+                "3.7",
+                "0.55",
+                "0.75",
+                "2.6",
+                "0.37",
+                "0.5",
+                "5.2",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0004-2",
+                "4.8",
+                "0.75",
+                "1",
+                "3.7",
+                "0.55",
+                "0.75",
+                "7.4",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0007-2",
+                "6.6",
+                "1.1",
+                "1.5",
+                "4.8",
+                "0.75",
+                "1",
+                "9.6",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0008-2",
+                "8",
+                "1.5",
+                "2",
+                "6.6",
+                "1.1",
+                "1.5",
+                "13.2",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0011-2",
+                "11",
+                "2.2",
+                "3",
+                "8",
+                "1.5",
+                "2",
+                "16",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0012-2",
+                "12.5",
+                "3",
+                "4",
+                "9.6",
+                "2.2",
+                "3",
+                "19.6",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0018-2",
+                "18",
+                "4",
+                "5",
+                "12.5",
+                "3",
+                "4",
+                "25",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0024-2",
+                "24",
+                "5.5",
+                "7.5",
+                "18",
+                "4",
+                "5",
+                "36",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0031-2",
+                "31",
+                "7.5",
+                "10",
+                "25",
+                "5.5",
+                "7.5",
+                "46",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0048-2",
+                "48",
+                "11",
+                "15",
+                "31",
+                "7.5",
+                "10",
+                "62",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0062-2",
+                "62",
+                "15",
+                "20",
+                "48",
+                "11",
+                "15",
+                "96",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0075-2",
+                "75",
+                "18.5",
+                "25",
+                "62",
+                "15",
+                "20",
+                "124",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0088-2",
+                "88",
+                "22",
+                "30",
+                "75",
+                "18.5",
+                "25",
+                "150",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0105-2",
+                "105",
+                "30",
+                "40",
+                "88",
+                "22",
+                "30",
+                "176",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0140-2",
+                "140",
+                "37",
+                "50",
+                "114",
+                "30",
+                "40",
+                "210",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0170-2",
+                "170",
+                "45",
+                "60",
+                "140",
+                "37",
+                "50",
+                "280",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0205-2",
+                "205",
+                "55",
+                "75",
+                "170",
+                "45",
+                "60",
+                "340",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0261-2",
+                "261",
+                "75",
+                "100",
+                "211",
+                "55",
+                "75",
+                "410",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0310-2",
+                "310",
+                "90",
+                "125",
+                "251",
+                "75",
+                "100",
+                "502",
+                "MR9"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_kw": "kW",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "Low loadability (110% 1min/10min) and high loadability (150% 1min/10min) values included",
+            "Applies to both INDUSTRIAL and FLOW variants"
+        ],
+        "conditions": [
+            "Supply voltage 208-240 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "table_voltage_power_208_240_100x",
+        "table_name": "208-240V Power ratings for VACON 100 X Decentral Drive IP66/Type 4X",
+        "applies_to": "VACON 100 X Decentral Drive (IP66/Type 4X)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IH [A]",
+            "Motor shaft power [kW] @230V",
+            "Motor shaft power [HP] @230V",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0006-2-X",
+                "6.6",
+                "1.1",
+                "1.5",
+                "9.9",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0008-2-X",
+                "8.0",
+                "1.5",
+                "2",
+                "12.0",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0011-2-X",
+                "11.0",
+                "2.2",
+                "3",
+                "16.5",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0012-2-X",
+                "12.5",
+                "3",
+                "4",
+                "18.8",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0018-2-X",
+                "18.0",
+                "4",
+                "5",
+                "27.0",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0024-2-X",
+                "24.2",
+                "5.5",
+                "7.5",
+                "36.3",
+                "MM5"
+            ],
+            [
+                "VACON 0100-3L-0031-2-X",
+                "31.0",
+                "7.5",
+                "10",
+                "46.5",
+                "MM5"
+            ],
+            [
+                "VACON 0100-3L-0048-2-X",
+                "48.0",
+                "11",
+                "15",
+                "72.0",
+                "MM6"
+            ],
+            [
+                "VACON 0100-3L-0062-2-X",
+                "62.0",
+                "15",
+                "20",
+                "93.0",
+                "MM6"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_kw": "kW",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "High loadability (150% 1min/10min) values only",
+            "Applies only to VACON 100 X variant"
+        ],
+        "conditions": [
+            "Supply voltage 208-240 Vac",
+            "IP66 enclosure"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "table_voltage_power_380_500_wall_mounted",
+        "table_name": "380-500V Power ratings for VACON 100 INDUSTRIAL and FLOW Wall Mounted, Modules and Enclosed Drives",
+        "applies_to": "VACON 100 INDUSTRIAL and FLOW Wall Mounted (IP21/IP54), Modules (IP00), Enclosed Drives (IP21/IP54)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IL [A]",
+            "Motor shaft power [kW] @400V",
+            "Motor shaft power [HP] @480V",
+            "Continuous current IH [A]",
+            "Motor shaft power [kW] @400V (high load)",
+            "Motor shaft power [HP] @480V (high load)",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0003-5",
+                "3.4",
+                "1.1",
+                "1.5",
+                "2.6",
+                "0.75",
+                "1",
+                "5.2",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0004-5",
+                "4.8",
+                "1.5",
+                "2",
+                "3.4",
+                "1.1",
+                "1.5",
+                "6.8",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0005-5",
+                "5.6",
+                "2.2",
+                "3",
+                "4.3",
+                "1.5",
+                "2",
+                "8.6",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0008-5",
+                "8",
+                "3",
+                "4",
+                "5.6",
+                "2.2",
+                "3",
+                "11.2",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0009-5",
+                "9.6",
+                "4",
+                "5",
+                "8",
+                "3",
+                "4",
+                "16",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0012-5",
+                "12",
+                "5.5",
+                "7.5",
+                "9.6",
+                "4",
+                "5",
+                "19.2",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0016-5",
+                "16",
+                "7.5",
+                "10",
+                "12",
+                "5.5",
+                "7.5",
+                "24",
+                "MR4"
+            ],
+            [
+                "VACON 0100-3L-0023-5",
+                "23",
+                "11",
+                "15",
+                "16",
+                "7.5",
+                "10",
+                "32",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0031-5",
+                "31",
+                "15",
+                "20",
+                "23",
+                "11",
+                "15",
+                "46",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0038-5",
+                "38",
+                "18.5",
+                "25",
+                "31",
+                "15",
+                "20",
+                "62",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0046-5",
+                "46",
+                "22",
+                "30",
+                "38",
+                "18.5",
+                "25",
+                "76",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0061-5",
+                "61",
+                "30",
+                "40",
+                "46",
+                "22",
+                "30",
+                "92",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0072-5",
+                "72",
+                "37",
+                "50",
+                "61",
+                "30",
+                "40",
+                "122",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0087-5",
+                "87",
+                "45",
+                "60",
+                "72",
+                "37",
+                "50",
+                "144",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0105-5",
+                "105",
+                "55",
+                "75",
+                "87",
+                "45",
+                "60",
+                "174",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0140-5",
+                "140",
+                "75",
+                "100",
+                "105",
+                "55",
+                "75",
+                "210",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0170-5",
+                "170",
+                "90",
+                "125",
+                "140",
+                "75",
+                "100",
+                "280",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0205-5",
+                "205",
+                "110",
+                "150",
+                "170",
+                "90",
+                "125",
+                "340",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0261-5",
+                "261",
+                "132",
+                "200",
+                "205",
+                "110",
+                "150",
+                "410",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0310-5",
+                "310",
+                "160",
+                "250",
+                "251",
+                "132",
+                "200",
+                "502",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0386-5",
+                "385",
+                "200",
+                "300",
+                "310",
+                "160",
+                "250",
+                "620",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0460-5",
+                "460",
+                "250",
+                "350",
+                "385",
+                "200",
+                "300",
+                "770",
+                "MR10"
+            ],
+            [
+                "VACON 0100-3L-0520-5",
+                "520",
+                "250",
+                "450",
+                "460",
+                "250",
+                "350",
+                "920",
+                "MR10"
+            ],
+            [
+                "VACON 0100-3L-0590-5",
+                "590",
+                "315",
+                "500",
+                "520",
+                "250",
+                "450",
+                "1040",
+                "MR10"
+            ],
+            [
+                "VACON 0100-3L-0651-5",
+                "650",
+                "355",
+                "500",
+                "590",
+                "315",
+                "500",
+                "1180",
+                "MR11"
+            ],
+            [
+                "VACON 0100-3L-0731-5",
+                "730",
+                "400",
+                "600",
+                "650",
+                "355",
+                "500",
+                "1300",
+                "MR11"
+            ],
+            [
+                "VACON 0100-3L-0820-5",
+                "820",
+                "450",
+                "700",
+                "730",
+                "400",
+                "600",
+                "1460",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-0920-5",
+                "920",
+                "500",
+                "800",
+                "820",
+                "450",
+                "700",
+                "1640",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-1040-5",
+                "1040",
+                "560",
+                "900",
+                "920",
+                "500",
+                "800",
+                "1840",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-1180-5",
+                "1180",
+                "630",
+                "1000",
+                "920",
+                "500",
+                "800",
+                "1840",
+                "MR12"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_kw": "kW",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "Includes wall mounted, modules and enclosed drive variants",
+            "Low and high loadability values included",
+            "* VACON 0100-3L-0386-5 not available in IP54"
+        ],
+        "conditions": [
+            "Supply voltage 380-500 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "table_voltage_power_380_500_100x",
+        "table_name": "380-500V Power ratings for VACON 100 X Decentral Drive IP66/Type 4X",
+        "applies_to": "VACON 100 X Decentral Drive (IP66/Type 4X)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IH [A]",
+            "Motor shaft power [kW] @400V",
+            "Motor shaft power [HP] @480V",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0003-5-X",
+                "3.4",
+                "1.1",
+                "1.5",
+                "5.2",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0004-5-X",
+                "4.8",
+                "1.5",
+                "2",
+                "6.8",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0005-5-X",
+                "5.6",
+                "2.2",
+                "3",
+                "8.6",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0008-5-X",
+                "8",
+                "3",
+                "4",
+                "11.2",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0009-5-X",
+                "9.6",
+                "4",
+                "5",
+                "16",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0012-5-X",
+                "12",
+                "5.5",
+                "7.5",
+                "19.2",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0016-5-X",
+                "16",
+                "7.5",
+                "10",
+                "24",
+                "MM4"
+            ],
+            [
+                "VACON 0100-3L-0023-5-X",
+                "23",
+                "11",
+                "15",
+                "32",
+                "MM5"
+            ],
+            [
+                "VACON 0100-3L-0031-5-X",
+                "31",
+                "15",
+                "20",
+                "46",
+                "MM5"
+            ],
+            [
+                "VACON 0100-3L-0038-5-X",
+                "38",
+                "18.5",
+                "25",
+                "62",
+                "MM6"
+            ],
+            [
+                "VACON 0100-3L-0046-5-X",
+                "46",
+                "22",
+                "30",
+                "76",
+                "MM6"
+            ],
+            [
+                "VACON 0100-3L-0061-5-X",
+                "61",
+                "30",
+                "40",
+                "92",
+                "MM6"
+            ],
+            [
+                "VACON 0100-3L-0072-5-X",
+                "72",
+                "37",
+                "50",
+                "122",
+                "MM6"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_kw": "kW",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "High loadability (150% 1min/10min) values only",
+            "* 37kW [50HP] variant only for low loadability (110% 1min/10min)"
+        ],
+        "conditions": [
+            "Supply voltage 380-500 Vac",
+            "IP66 enclosure"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "table_voltage_power_525_600",
+        "table_name": "525-600V Power ratings for VACON 100 INDUSTRIAL and FLOW Wall Mounted Drives",
+        "applies_to": "VACON 100 INDUSTRIAL and FLOW Wall Mounted (IP21/IP54)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IL [A]",
+            "Motor shaft power [HP] @600V",
+            "Continuous current IH [A]",
+            "Motor shaft power [HP] @600V (high load)",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0004-6",
+                "3.9",
+                "3",
+                "2.7",
+                "2",
+                "5.4",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0006-6",
+                "6.1",
+                "5",
+                "3.9",
+                "3",
+                "7.8",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0009-6",
+                "9",
+                "7.5",
+                "6.1",
+                "5",
+                "12.2",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0011-6",
+                "11",
+                "10",
+                "9",
+                "7.5",
+                "18",
+                "MR5"
+            ],
+            [
+                "VACON 0100-3L-0018-6",
+                "18",
+                "15",
+                "13.5",
+                "10",
+                "27",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0022-6",
+                "22",
+                "20",
+                "18",
+                "15",
+                "36",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0027-6",
+                "27",
+                "25",
+                "22",
+                "20",
+                "44",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0034-6",
+                "34",
+                "30",
+                "27",
+                "25",
+                "54",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0041-6",
+                "41",
+                "40",
+                "34",
+                "30",
+                "68",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0052-6",
+                "52",
+                "50",
+                "41",
+                "40",
+                "82",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0062-6",
+                "62",
+                "60",
+                "52",
+                "50",
+                "104",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0080-6",
+                "80",
+                "75",
+                "62",
+                "60",
+                "124",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0100-6",
+                "100",
+                "100",
+                "80",
+                "75",
+                "160",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0125-6",
+                "125",
+                "125",
+                "100",
+                "100",
+                "200",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0144-6",
+                "144",
+                "150",
+                "125",
+                "125",
+                "250",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0208-6",
+                "208",
+                "200",
+                "170",
+                "150",
+                "340",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0262-6",
+                "261",
+                "250",
+                "208",
+                "200",
+                "416",
+                "MR9"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "* VACON 0100-3L-0262-6 not available in IP54"
+        ],
+        "conditions": [
+            "Supply voltage 525-600 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "table_id": "table_voltage_power_525_690",
+        "table_name": "525-690V Power ratings for VACON 100 INDUSTRIAL and FLOW Wall Mounted, Modules and Enclosed Drives",
+        "applies_to": "VACON 100 INDUSTRIAL and FLOW Wall Mounted (IP21/IP54), Modules (IP00), Enclosed Drives (IP21/IP54)",
+        "columns": [
+            "AC drive type",
+            "Continuous current IL [A]",
+            "Motor shaft power [kW] @690V",
+            "Motor shaft power [HP] @690V",
+            "Continuous current IH [A]",
+            "Motor shaft power [kW] @690V (high load)",
+            "Motor shaft power [HP] @690V (high load)",
+            "Max current Is (2s) [A]",
+            "Frame size"
+        ],
+        "rows": [
+            [
+                "VACON 0100-3L-0007-7",
+                "7.5",
+                "5.5",
+                "5",
+                "5.5",
+                "4",
+                "3",
+                "11",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0010-7",
+                "10",
+                "7.5",
+                "7.5",
+                "7.5",
+                "5.5",
+                "5",
+                "15",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0013-7",
+                "13.5",
+                "11",
+                "10",
+                "10",
+                "7.5",
+                "7.5",
+                "20",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0018-7",
+                "18",
+                "15",
+                "15",
+                "13.5",
+                "11",
+                "10",
+                "27",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0022-7",
+                "22",
+                "18.5",
+                "20",
+                "18",
+                "15",
+                "15",
+                "36",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0027-7",
+                "27",
+                "22",
+                "25",
+                "22",
+                "18.5",
+                "20",
+                "44",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0034-7",
+                "34",
+                "30",
+                "30",
+                "27",
+                "22",
+                "25",
+                "54",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0041-7",
+                "41",
+                "37",
+                "40",
+                "34",
+                "30",
+                "30",
+                "68",
+                "MR6"
+            ],
+            [
+                "VACON 0100-3L-0052-7",
+                "52",
+                "45",
+                "50",
+                "41",
+                "37",
+                "40",
+                "82",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0062-7",
+                "62",
+                "55",
+                "60",
+                "52",
+                "45",
+                "50",
+                "104",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0080-7",
+                "80",
+                "75",
+                "75",
+                "62",
+                "55",
+                "60",
+                "124",
+                "MR7"
+            ],
+            [
+                "VACON 0100-3L-0100-7",
+                "100",
+                "90",
+                "100",
+                "80",
+                "75",
+                "75",
+                "160",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0125-7",
+                "125",
+                "110",
+                "125",
+                "100",
+                "90",
+                "100",
+                "200",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0144-7",
+                "144",
+                "132",
+                "150",
+                "125",
+                "110",
+                "125",
+                "250",
+                "MR8"
+            ],
+            [
+                "VACON 0100-3L-0170-7",
+                "170",
+                "160",
+                "150",
+                "144",
+                "132",
+                "150",
+                "288",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0208-7",
+                "208",
+                "200",
+                "200",
+                "170",
+                "160",
+                "150",
+                "340",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0262-7",
+                "261",
+                "250",
+                "250",
+                "208",
+                "200",
+                "200",
+                "416",
+                "MR9"
+            ],
+            [
+                "VACON 0100-3L-0325-7",
+                "325",
+                "315",
+                "300",
+                "261",
+                "250",
+                "250",
+                "522",
+                "MR10"
+            ],
+            [
+                "VACON 0100-3L-0385-7",
+                "385",
+                "355",
+                "400",
+                "325",
+                "315",
+                "300",
+                "650",
+                "MR10"
+            ],
+            [
+                "VACON 0100-3L-0416-7",
+                "416",
+                "400",
+                "450",
+                "385",
+                "355",
+                "300",
+                "770",
+                "MR11"
+            ],
+            [
+                "VACON 0100-3L-0461-7",
+                "460",
+                "450",
+                "450",
+                "416",
+                "400",
+                "400",
+                "832",
+                "MR11"
+            ],
+            [
+                "VACON 0100-3L-0521-7",
+                "520",
+                "500",
+                "500",
+                "460",
+                "450",
+                "450",
+                "920",
+                "MR11"
+            ],
+            [
+                "VACON 0100-3L-0590-7",
+                "590",
+                "560",
+                "600",
+                "520",
+                "500",
+                "500",
+                "1040",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-0650-7",
+                "650",
+                "630",
+                "650",
+                "590",
+                "560",
+                "600",
+                "1180",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-0750-7",
+                "750",
+                "710",
+                "700",
+                "650",
+                "630",
+                "650",
+                "1300",
+                "MR12"
+            ],
+            [
+                "VACON 0100-3L-0820-7",
+                "820",
+                "800",
+                "800",
+                "650",
+                "630",
+                "650",
+                "1300",
+                "MR12"
+            ]
+        ],
+        "units": {
+            "current": "A",
+            "power_kw": "kW",
+            "power_hp": "HP"
+        },
+        "notes": [
+            "Low loadability at 40°C and high loadability at 50°C defined",
+            "* VACON 0100-3L-0262-7 not available in IP54"
+        ],
+        "conditions": [
+            "Supply voltage 525-690 Vac"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.22"
+        ],
+        "confidence": "high"
+    }
+],
+"mapping_rules": [
+    {
+        "rule_id": "rule_voltage_from_typecode_suffix",
+        "target_datasheet_field": "input_voltage_range",
+        "source_typecode_segment": "full_typecode",
+        "mapping_logic_from_documents": "Last numeric suffix in typecode corresponds to voltage class: '-2' = 208-240 Vac, '-5' = 380-500 Vac, '-6' = 525-600 Vac, '-7' = 525-690 Vac",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20",
+            "doc_selection_guide p.21",
+            "doc_selection_guide p.22"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "rule_id": "rule_variant_detection_x",
+        "target_datasheet_field": "product_variant",
+        "source_typecode_segment": "full_typecode",
+        "mapping_logic_from_documents": "Typecodes ending with '-X' correspond to VACON 100 X decentral drive variant",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.14",
+            "doc_selection_guide p.20",
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "rule_power_lookup",
+        "target_datasheet_field": "motor_power",
+        "source_typecode_segment": "full_typecode",
+        "mapping_logic_from_documents": "Motor power must be retrieved by exact match of full typecode in voltage-specific technical tables",
+        "required_additional_conditions": [
+            "Voltage class must be determined first",
+            "Loadability type (IL or IH) must be selected"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20",
+            "doc_selection_guide p.21",
+            "doc_selection_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "rule_frame_size_lookup",
+        "target_datasheet_field": "frame_size",
+        "source_typecode_segment": "full_typecode",
+        "mapping_logic_from_documents": "Frame size (MR4–MR12 or MM4–MM6) is determined by lookup from technical tables using full typecode",
+        "required_additional_conditions": [],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20",
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "rule_enclosure_variant_mapping",
+        "target_datasheet_field": "enclosure_type",
+        "source_typecode_segment": "full_typecode",
+        "mapping_logic_from_documents": "Enclosure type (IP21/IP54/IP00/IP66) is not encoded directly in typecode; must be determined from product variant and configuration selection",
+        "required_additional_conditions": [
+            "Check product variant (INDUSTRIAL, FLOW, 100 X)",
+            "Check installation type (wall mounted, module, enclosed)"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.2",
+            "doc_selection_guide p.12",
+            "doc_selection_guide p.16"
+        ],
+        "confidence": "medium"
+    }
+],
+"constraints": [
+    {
+        "rule_id": "constraint_ip54_exclusion",
+        "rule_type": "availability",
+        "affected_segment_or_table": "typecode_values",
+        "exact_rule": "VACON 0100-3L-0386-5 and VACON 0100-3L-0262-6 and VACON 0100-3L-0262-7 not available in IP54",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21",
+            "doc_selection_guide p.22"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "constraint_loadability_definition",
+        "rule_type": "technical_definition",
+        "affected_segment_or_table": "technical_tables",
+        "exact_rule": "Low loadability defined as 110% for 1 min/10 min; high loadability defined as 150% for 1 min/10 min",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20",
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "rule_id": "constraint_temperature_derating",
+        "rule_type": "environmental",
+        "affected_segment_or_table": "technical_tables",
+        "exact_rule": "Derating applies above 40°C: 1.5% per °C for standard drives, 2.5% per °C for VACON 100 X",
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.23"
+        ],
+        "confidence": "high"
+    }
+],
+"examples": [
+    {
+        "full_type_code": "VACON 0100-3L-0003-2",
+        "decoded_breakdown": [
+            "Voltage class: 208-240 Vac",
+            "Motor power: 0.55 kW (low load) / 0.37 kW (high load)",
+            "Frame size: MR4"
+        ],
+        "notes": [
+            "Exact segment mapping NOT FOUND IN THE UPLOADED DOCUMENTS",
+            "Values derived via lookup tables"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "full_type_code": "VACON 0100-3L-0031-5",
+        "decoded_breakdown": [
+            "Voltage class: 380-500 Vac",
+            "Motor power: 15 kW (low load) / 11 kW (high load)",
+            "Frame size: MR5"
+        ],
+        "notes": [
+            "Values derived via lookup tables"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.21"
+        ],
+        "confidence": "high"
+    },
+    {
+        "full_type_code": "VACON 0100-3L-0008-2-X",
+        "decoded_breakdown": [
+            "Voltage class: 208-240 Vac",
+            "Variant: VACON 100 X",
+            "Motor power: 1.5 kW",
+            "Frame size: MM4"
+        ],
+        "notes": [
+            "100 X variant identified by suffix -X"
+        ],
+        "preferred_source_document_id": "doc_selection_guide",
+        "all_source_references": [
+            "doc_selection_guide p.20"
+        ],
+        "confidence": "high"
+    }
+]
+}
