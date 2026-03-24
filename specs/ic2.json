@@ -1408,11 +1408,15 @@
                     "1"
                 ],
                 [
+                    "digital_outputs",
+                    "1"
+                ],
+                [
                     "analog_inputs",
                     "2"
                 ],
                 [
-                    "analog_output",
+                    "analog_outputs",
                     "1 current"
                 ],
                 [

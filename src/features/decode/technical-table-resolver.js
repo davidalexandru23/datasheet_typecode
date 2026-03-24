@@ -23,7 +23,7 @@ export function resolveTechnicalTables(segments, spec) {
   let dynamicallyResolvedEnclosure = null;
 
   for (const table of spec.technical_tables) {
-    const { matchedRows, allRowsObj, extractedKv, maxScore } = processTable(table, segments, dynamicallyResolvedEnclosure);
+    const { matchedRows, allRowsObj, extractedKv, maxScore, isRatingTable } = processTable(table, segments, dynamicallyResolvedEnclosure);
     
     // If we just resolved a table that contains an enclosure/chassis column, capture its value for the NEXT tables
     if (matchedRows && matchedRows.length > 0 && maxScore > 5) { // Only trust high-quality matches for dynamic linking
@@ -48,6 +48,7 @@ export function resolveTechnicalTables(segments, spec) {
       units: table.units || {},
       notes: table.notes || [],
       maxScore: maxScore || 0,
+      isRatingTable: isRatingTable || false,
     });
   }
 
@@ -129,6 +130,7 @@ function processTable(table, segments, dynamicallyResolvedEnclosure = null) {
   const firstCol = (table.columns[0] || '').toLowerCase();
   const isRatedCurrentTable = firstCol.includes('rated') && firstCol.includes('current');
   const isPowerCodeTable = firstCol.includes('power') && firstCol.includes('code');
+  const isRatingTable = isRatedCurrentTable || isPowerCodeTable || table.columns.some(c => c.toLowerCase().includes('current') && c.toLowerCase().includes('overload'));
 
   const scoredRows = [];
 
@@ -257,5 +259,5 @@ function processTable(table, segments, dynamicallyResolvedEnclosure = null) {
       return { matchedRows: [], allRowsObj, extractedKv, maxScore: 0 };
   }
 
-  return { matchedRows, allRowsObj, extractedKv, maxScore };
+  return { matchedRows, allRowsObj, extractedKv, maxScore, isRatingTable };
 }

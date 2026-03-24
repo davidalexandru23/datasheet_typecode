@@ -92,7 +92,6 @@ function App() {
           <span className={`status-dot ${loadStatus === 'loading' ? 'status-dot--loading' : loadStatus === 'error' ? 'status-dot--error' : ''}`} />
           <span>
             {loadStatus === 'loading' && 'Loading specs...'}
-            {loadStatus === 'ready' && `${specs.length} families loaded`}
             {loadStatus === 'error' && 'Failed to load specs'}
           </span>
         </div>

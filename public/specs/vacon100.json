@@ -239,6 +239,21 @@
             "confidence": "high"
         },
         {
+            "segment_name": "rated_continuous_current_code",
+            "code": "0003",
+            "meaning": "3.3 A / 1.1 kW"
+        },
+        {
+            "segment_name": "rated_continuous_current_code",
+            "code": "0004",
+            "meaning": "4.3 A / 1.5 kW"
+        },
+        {
+            "segment_name": "rated_continuous_current_code",
+            "code": "0061",
+            "meaning": "61 A / 30 kW"
+        },
+        {
             "segment_name": "nominal_mains_voltage_code",
             "code": "2",
             "meaning": "208-240 V",

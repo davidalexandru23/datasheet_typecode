@@ -60,12 +60,12 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secProducator = {
     title: 'PRODUCATOR',
     rows: [
-      r('1,01', 'Producator', val(d.manufacturer)),
-      r('1,02', 'Tara de origine', val(d.country_of_origin)),
-      r('1,03', 'Marca', val(d.brand_name)),
-      r('1,04', 'Model curent', val(d.product_family)),
-      r('1,05', 'Descriere', `VFD ${val(d.product_family)} ${pKW ? pKW + ' kW' : ''}`.trim()),
-      r('1,06', 'Cod de model', val(d.type_code)),
+      r('1.01', 'Producator', val(d.manufacturer)),
+      r('1.02', 'Tara de origine', val(d.country_of_origin)),
+      r('1.03', 'Marca', val(d.brand_name)),
+      r('1.04', 'Model curent', val(d.product_family)),
+      r('1.05', 'Descriere', `VFD ${val(d.product_family)} ${pKW ? pKW + ' kW' : ''}`.trim()),
+      r('1.06', 'Cod de model', val(d.type_code)),
     ]
   };
 
@@ -73,9 +73,9 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secDateRetea = {
     title: 'DATE RETEA',
     rows: [
-      r('2,02', 'Numar de faze', pPhase),
-      r('2,03', 'Tensiune intrare', pVoltIn, pVoltIn ? 'VAC' : ''),
-      r('2,05', 'Frecventa', val(d.input_frequency), 'Hz'),
+      r('2.02', 'Numar de faze', pPhase),
+      r('2.03', 'Tensiune intrare', pVoltIn, pVoltIn ? 'VAC' : ''),
+      r('2.05', 'Frecventa', val(d.input_frequency), 'Hz'),
     ]
   };
 
@@ -83,11 +83,11 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secDateNominale = {
     title: 'DATE NOMINALE',
     rows: [
-      r('3,01', 'Putere iesire', pKW, 'kW'),
-      r('3,02', 'Curent iesire (HO)', val(d.output_current), 'A'),
-      r('3,03', 'Eficienta', val(d.efficiency), '%'),
-      r('3,04', 'Timpul de suprasarcina (160%)', pKW ? val(d.overload_time_high_overload, d.overload_time_160pct) : '', 's'),
-      r('3,08', 'Filtru RFI', seg('rfi')),
+      r('3.01', 'Putere iesire', pKW, 'kW'),
+      r('3.02', 'Curent iesire (HO)', val(d.output_current), 'A'),
+      r('3.03', 'Eficienta', val(d.efficiency), '%'),
+      r('3.04', 'Timpul de suprasarcina (160%)', pKW ? val(d.overload_time_high_overload, d.overload_time_160pct) : '', 's'),
+      r('3.08', 'Filtru RFI', seg('rfi')),
     ]
   };
 
@@ -95,14 +95,14 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secHardware = {
     title: 'HARDWARE',
     rows: [
-      r('4,02', 'Panou de comanda', seg('display', 'lcp')),
-      r('4,04', 'Intrari analogice', pKW ? val(d.analog_inputs) : ''),
-      r('4,05', 'Intrari digitale', pKW ? val(d.digital_inputs) : ''),
-      r('4,06', 'Iesiri analogice', pKW ? val(d.analog_outputs) : ''),
-      r('4,07', 'Iesiri digitale', pKW ? val(d.digital_outputs) : ''),
-      r('4,08', 'Iesiri Releu', pKW ? val(d.relay_outputs) : ''),
-      r('4,12', 'Chopper de franare', seg('brake')),
-      r('4,14', 'Protectie placi (Coated PCB)', seg('pcb', 'coat')),
+      r('4.02', 'Panou de comanda', seg('display', 'lcp')),
+      r('4.04', 'Intrari analogice', pKW ? val(d.analog_inputs) : ''),
+      r('4.05', 'Intrari digitale', pKW ? val(d.digital_inputs) : ''),
+      r('4.06', 'Iesiri analogice', pKW ? val(d.analog_outputs) : ''),
+      r('4.07', 'Iesiri digitale', pKW ? val(d.digital_outputs) : ''),
+      r('4.08', 'Iesiri Releu', pKW ? val(d.relay_outputs) : ''),
+      r('4.12', 'Chopper de franare', seg('brake')),
+      r('4.14', 'Protectie placi (Coated PCB)', seg('pcb', 'coat')),
     ]
   };
 
@@ -110,10 +110,10 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secConexiuni = {
     title: 'CONEXIUNI MOTOR',
     rows: [
-      r('5,01', 'Tensiune de iesire', pVoltIn, pVoltIn ? 'VAC' : ''),
-      r('5,02', 'Curent nominal la motor', val(d.output_current), 'A'),
-      r('5,05', 'Frecventa de iesire', pVoltIn ? val(d.output_frequency_range) : '', 'Hz'),
-      r('5,06', 'Rezolutia frecventei la iesire', pVoltIn ? val(d.frequency_resolution) : '', 'Hz'),
+      r('5.01', 'Tensiune de iesire', pVoltIn, pVoltIn ? 'VAC' : ''),
+      r('5.02', 'Curent nominal la motor', val(d.output_current), 'A'),
+      r('5.05', 'Frecventa de iesire', pVoltIn ? val(d.output_frequency_range) : '', 'Hz'),
+      r('5.06', 'Rezolutia frecventei la iesire', pVoltIn ? val(d.frequency_resolution) : '', 'Hz'),
     ]
   };
 
@@ -121,10 +121,10 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secControl = {
     title: 'CARACTERISTICI DE CONTROL',
     rows: [
-      r('6,01', 'Interfata seriala de comunicatie', pVoltIn ? val(seg('a_options', 'fieldbus'), d.serial_interface) : ''),
-      r('6,02', 'Precizia vitezei', pVoltIn ? val(d.control_accuracy_open_loop) : ''),
-      r('6,03', 'Timp Rampa (Accelerare/Decelerare)', pVoltIn ? val(d.ramp_time_range) : '', 's'),
-      r('6,04', 'Intrari pt Safe Stop', pVoltIn ? val(d.safe_stop_input) : ''),
+      r('6.01', 'Interfata seriala de comunicatie', pVoltIn ? val(seg('a_options', 'fieldbus'), d.serial_interface) : ''),
+      r('6.02', 'Precizia vitezei', pVoltIn ? val(d.control_accuracy_open_loop) : ''),
+      r('6.03', 'Timp Rampa (Accelerare/Decelerare)', pVoltIn ? val(d.ramp_time_range) : '', 's'),
+      r('6.04', 'Intrari pt Safe Stop', pVoltIn ? val(d.safe_stop_input) : ''),
     ]
   };
 
@@ -132,14 +132,14 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secAmbient = {
     title: 'CONDITII AMBIENTALE',
     rows: [
-      r('7,01', 'Temperatura Minima a mediului ambient', val(d.ambient_temperature_minimum), '°C'),
-      r('7,02', 'Temperatura Maxima a mediului ambient', val(d.ambient_temperature_maximum), '°C'),
-      r('7,03', 'Temp Med Ambient cu declasare capabila', val(d.storage_temp_range), '°C'),
-      r('7,04', 'Grad de protectie IP', pIP),
-      r('7,05', 'Grad de poluare a mediului', pVoltIn ? val(d.pollution_degree) : ''),
-      r('7,06', 'Altitudinea maxima inainte de declasare', val(d.maximum_altitude_without_derating), 'm'),
-      r('7,07', 'Umiditate Maxima', pVoltIn ? val(d.humidity_range) : '', '%'),
-      r('7,08', 'Standard Vibratii', pVoltIn ? val(d.vibration_standard) : ''),
+      r('7.01', 'Temperatura Minima a mediului ambient', val(d.ambient_temperature_minimum), '°C'),
+      r('7.02', 'Temperatura Maxima a mediului ambient', val(d.ambient_temperature_maximum), '°C'),
+      r('7.03', 'Temperatura de operare', val(d.storage_temp_range), '°C'),
+      r('7.04', 'Grad de protectie IP', pIP),
+      r('7.05', 'Grad de poluare a mediului', pVoltIn ? val(d.pollution_degree) : ''),
+      r('7.06', 'Altitudinea maxima inainte de declasare', val(d.maximum_altitude_without_derating), 'm'),
+      r('7.07', 'Umiditate Maxima', pVoltIn ? val(d.humidity_range) : '', '%'),
+      r('7.08', 'Standard Vibratii', pVoltIn ? val(d.vibration_standard) : ''),
     ]
   };
 
@@ -147,8 +147,8 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secZgomot = {
     title: 'NIVEL DE ZGOMOT',
     rows: [
-      r('8,01', 'Zgomot Minim', ''),
-      r('8,02', 'Zgomot Maxim', val(d.acoustic_noise), 'dBA'),
+      r('8.01', 'Zgomot Minim', ''),
+      r('8.02', 'Zgomot Maxim', val(d.acoustic_noise), 'dBA'),
     ]
   };
 
@@ -156,11 +156,11 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secDimensiuni = {
     title: 'GREUTATE, DISTANTE, DIMENSIUNI',
     rows: [
-      r('9,01', 'Greutate Neta', val(d.weight), 'kg'),
-      r('9,02', 'Dimensiune ambalaj', ''),
-      r('9,05', 'Inaltime Neta', val(d.dimension_height), 'mm'),
-      r('9,06', 'Latime Neta', val(d.dimension_width), 'mm'),
-      r('9,07', 'Adancime Neta', val(d.dimension_depth), 'mm'),
+      r('9.01', 'Greutate Neta', val(d.weight), 'kg'),
+      r('9.02', 'Dimensiune ambalaj', ''),
+      r('9.05', 'Inaltime Neta', val(d.dimension_height), 'mm'),
+      r('9.06', 'Latime Neta', val(d.dimension_width), 'mm'),
+      r('9.07', 'Adancime Neta', val(d.dimension_depth), 'mm'),
     ]
   };
 

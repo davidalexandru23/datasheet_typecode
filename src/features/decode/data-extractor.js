@@ -24,11 +24,12 @@ export function extractDatasheetData(decodeResult) {
 
   // 2. Extract from technical tables
   if (technicalTables && technicalTables.length > 0) {
-    // Sort tables by their match quality (maxScore) so that the most specific table
-    // is processed LAST or prioritizes its data.
-    // We sort ASCENDING (lowest score first) so that the best match (highest score) 
-    // is processed LAST and overwrites generic data.
-    const sortedTables = [...technicalTables].sort((a, b) => (a.maxScore || 0) - (b.maxScore || 0));
+    // Sort tables by their match quality (maxScore) and type.
+    // We want to process Rating Tables with high scores LAST so they have final say on keys.
+    const sortedTables = [...technicalTables].sort((a, b) => {
+      if (a.isRatingTable !== b.isRatingTable) return a.isRatingTable ? 1 : -1;
+      return (a.maxScore || 0) - (b.maxScore || 0);
+    });
 
     for (const table of sortedTables) {
       // Merge KV tables (like environment limits, motor support)
@@ -46,15 +47,33 @@ export function extractDatasheetData(decodeResult) {
           const v = String(val);
           const isCode = k.includes('code') || k.includes('example');
           
-          if (!isCode && (k.includes('output_current') || (k.includes('current') && !extracted.output_current && !k.includes('input') && !k.includes('intermittent')))) {
-            extracted.output_current = v;
+          // Current extraction
+          if (!isCode && (k.includes('output_current') || (k.includes('current') && !k.includes('input') && !k.includes('intermittent')))) {
+            // Priority: Prefer normal/low overload over high/ho
+            const isNormal = k.includes('normal') || k.includes('low') || k.includes('_il');
+            const isHigh = k.includes('high') || k.includes('ho') || k.includes('_ih');
+            
+            if (isNormal) {
+              extracted.output_current = v; // Strong priority
+            } else if (isHigh && (!extracted.output_current || extracted.output_current === 'NOT FOUND')) {
+              extracted.output_current = v; // Fallback
+            } else if (!isNormal && !isHigh) {
+              extracted.output_current = v; // Generic
+            }
           }
-          if (!isCode && (k.includes('power') && (k.includes('kw') || k.includes('400v') || k.includes('230v') || k.includes('normal')))) {
-            // Priority: Prefer kW over HP, and explicit kW over generic power
-            if (!extracted.power_kw || k.includes('kw') || !extracted.power_kw.includes('kW')) {
+
+          // Power extraction
+          if (!isCode && (k.includes('power') && (k.includes('kw') || k.includes('400v') || k.includes('230v') || k.includes('690v') || k.includes('normal')))) {
+            const isNormal = k.includes('normal') || k.includes('low') || k.includes('kw_400v') || k.includes('kw_230v');
+            const isHigh = k.includes('high') || k.includes('ho');
+
+            if (isNormal) {
+              extracted.power_kw = v; // Strong priority
+            } else if (!extracted.power_kw || (!isHigh && k.includes('kw'))) {
                extracted.power_kw = v;
             }
           }
+
           if (!isCode && (k.includes('intermittent') || (k.includes('overload') && k.includes('current')))) {
             extracted.overload_current = v;
           }
