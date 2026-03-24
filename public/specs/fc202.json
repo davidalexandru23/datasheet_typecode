@@ -4,1376 +4,2580 @@
         "product_family": "VLT® AQUA Drive FC 202",
         "series_names": [
             "FC 202"
-        ],
-        "source_documents": [
-            "Selection Guide 0.25 kW – 1.4 MW"
-        ],
-        "knowledge_base_scope": "Extraction of typecode structure, values, technical data, and mapping rules for VLT® AQUA Drive FC 202 series based strictly on uploaded selection guide",
-        "coverage_summary": "General product description, features, performance range, and references to typecode sections identified; detailed typecode tables not yet extracted in current pages",
-        "unresolved_global_gaps": [
-            "Typecode structure details NOT FOUND IN THE UPLOADED DOCUMENTS",
-            "Typecode value tables NOT FOUND IN THE UPLOADED DOCUMENTS",
-            "Detailed ordering tables not yet extracted from later pages",
-            "Electrical rating tables not yet extracted",
-            "Datasheet mapping logic NOT FOUND IN THE UPLOADED DOCUMENTS"
-        ],
-        "conflicts_detected": []
+        ]
     },
-    "source_registry": [
-        {
-            "document_id": "doc_selection_guide",
-            "document_role": "selection_guide",
-            "short_title": "VLT® AQUA Drive FC 202 Selection Guide 0.25 kW – 1.4 MW",
-            "relevant_pages": [
-                1,
-                2,
-                7,
-                14,
-                16,
-                18,
-                22
-            ],
-            "scope_summary": "Product overview, installation features, efficiency, harmonic mitigation, cascade control, and references to ordering typecodes and technical data sections",
-            "explicit_power_range_covered": "0.25 kW – 1.4 MW",
-            "explicit_voltage_ranges_covered": [
-                "200-240 V",
-                "380-480 V",
-                "525-600 V",
-                "525-690 V"
-            ],
-            "explicit_other_manual_references": [],
-            "notes_relevant_to_decoding_or_datasheet_generation": [
-                "Ordering typecode sections referenced on pages 49, 58, 64 ",
-                "Multiple enclosure sizes A–F and enclosed drives referenced",
-                "Options structure includes A options (fieldbus), B options (functional), C options (cascade/relay), D option (24 V backup) "
-            ]
-        }
-    ],
     "typecode_structure": [
         {
-            "segment_name": "overall_typecode",
-            "segment_label_from_manual": "Ordering typecode",
-            "character_positions": "NOT FOUND IN THE UPLOADED DOCUMENTS",
-            "segment_length": "NOT FOUND IN THE UPLOADED DOCUMENTS",
-            "fixed_variable_optional_conditional": "NOT FOUND IN THE UPLOADED DOCUMENTS",
-            "explanation": "Ordering typecode exists and is defined in later sections of the selection guide",
+            "segment_name": "product_group_prefix",
+            "segment_label_from_manual": "Product group",
+            "character_positions": "1-2",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "FC",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115",
+                "doc_design_guide_DE p.198"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "separator_dash",
+            "segment_label_from_manual": "Type code separator",
+            "character_positions": "3",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "Literal '-' separator in the printed example typecode",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.117",
+                "doc_design_guide_DE p.198"
+            ],
+            "confidence": "high"
+        },
+        {
+            "segment_name": "drive_series",
+            "segment_label_from_manual": "Drive series / Application",
+            "character_positions": "4-6",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "fixed",
+            "explanation": "202 = VLT® AQUA Drive FC 202",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
                 "doc_selection_guide p.49",
-                "doc_selection_guide p.58",
-                "doc_selection_guide p.64"
-            ],
-            "confidence": "low"
-        }
-    ],
-    "typecode_values": [
-        {
-            "segment_name": "power_range",
-            "segment_code": "power",
-            "code": "0.25 kW – 1.4 MW",
-            "meaning": "Drive power range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.1"
+                "doc_design_guide p.115",
+                "doc_design_guide_DE p.198"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "voltage_range",
-            "segment_code": "voltage",
-            "code": "200-240 V",
-            "meaning": "Supported supply voltage range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "segment_label_from_manual": "Power size / Model",
+            "character_positions": "7-10",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: PK75, P5K5, N355",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.27"
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "voltage_range",
-            "segment_code": "voltage",
-            "code": "380-480 V",
-            "meaning": "Supported supply voltage range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "phase_or_line_code_1",
+            "segment_label_from_manual": "Phases / AC Line Voltage first character",
+            "character_positions": "11",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "S or T in A/B/C ordering; part of S2, T2, S4, T4, T6, T7 in selection guide",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.27"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "voltage_range",
-            "segment_code": "voltage",
-            "code": "525-600 V",
-            "meaning": "Supported supply voltage range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "mains_voltage",
+            "segment_label_from_manual": "Mains voltage / AC Line Voltage",
+            "character_positions": "11-12",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: S2, T2, S4, T4, T6, T7",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.27"
-            ],
-            "confidence": "high"
-        },
-        {
-            "segment_name": "voltage_range",
-            "segment_code": "voltage",
-            "code": "525-690 V",
-            "meaning": "Supported supply voltage range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.27"
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.198-200"
             ],
             "confidence": "high"
         },
         {
             "segment_name": "enclosure",
-            "segment_code": "enclosure",
-            "code": "A, B, C, D, E, F",
-            "meaning": "Enclosure sizes",
-            "notes": "Multiple enclosure size groups referenced",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_label_from_manual": "Enclosure / IP/UL protection ratings",
+            "character_positions": "13-15",
+            "segment_length": "3",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: E20, P21, H54, C20",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.2"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "protection_class",
-            "segment_code": "ip_rating",
-            "code": "IP00 to IP66",
-            "meaning": "Ingress protection range",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "rfi_filter",
+            "segment_label_from_manual": "RFI filter / terminal and monitoring options",
+            "character_positions": "16-17",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: H1, H2, H3, H4, H5, HX",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.14"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "options_group",
-            "segment_code": "A_options",
-            "code": "Fieldbuses",
-            "meaning": "Communication options",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "braking_and_safety",
+            "segment_label_from_manual": "Brake / Braking and safety",
+            "character_positions": "18",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, B, T, U, R, S",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.2"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "options_group",
-            "segment_code": "B_options",
-            "code": "Functional extensions",
-            "meaning": "Additional functional modules",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "display",
+            "segment_label_from_manual": "Display / LCP display",
+            "character_positions": "19",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, N, G, W, J, L, K",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.2"
+                "doc_selection_guide p.49",
+                "doc_selection_guide p.58-65",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "options_group",
-            "segment_code": "C_options",
-            "code": "Cascade controller and relay card",
-            "meaning": "Cascade control related options",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "pcb_coating",
+            "segment_label_from_manual": "PCB Coating",
+            "character_positions": "20",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, C, R",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.2"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "options_group",
-            "segment_code": "D_option",
-            "code": "24 V back-up power supply",
-            "meaning": "Backup supply option",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "mains_input_option",
+            "segment_label_from_manual": "Mains option / Mains input",
+            "character_positions": "21",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, 1, 3, 4, 5, 7, 8, A, D, E, J",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.2"
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "smartstart",
-            "code": "SmartStart",
-            "meaning": "Setup wizard activated at first power up or after factory reset",
-            "notes": "Guides through motor setup and water/pump feature selection",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "adaptation_a",
+            "segment_label_from_manual": "Adaptation / Hardware adaptation A",
+            "character_positions": "22",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, O, S",
+            "preferred_source_document_id": "doc_design_guide_abc",
             "all_source_references": [
-                "doc_selection_guide p.25"
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "ama",
-            "code": "Automatic Motor Adaptation",
-            "meaning": "Measures motor parameters and optimizes drive settings at standstill without disconnecting the load",
-            "notes": "Also referenced as AMA and accessible through SmartStart",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "adaptation_b",
+            "segment_label_from_manual": "Adaptation / Hardware adaptation B",
+            "character_positions": "23",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "Examples: X, Q",
+            "preferred_source_document_id": "doc_design_guide_abc",
             "all_source_references": [
-                "doc_selection_guide p.24",
-                "doc_selection_guide p.25"
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "aeo",
-            "code": "Automatic Energy Optimization",
-            "meaning": "Adapts voltage to the current load situation to reduce energy consumption",
-            "notes": "Also described as automatic adaption to application",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "software_release",
+            "segment_label_from_manual": "Software release",
+            "character_positions": "24-27",
+            "segment_length": "4",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "SXXX latest release standard software",
+            "preferred_source_document_id": "doc_design_guide_abc",
             "all_source_references": [
-                "doc_selection_guide p.9",
-                "doc_selection_guide p.24"
+                "doc_design_guide p.118",
+                "doc_design_guide_DE p.198-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "auto_tuning",
-            "code": "Auto Tuning",
-            "meaning": "Measures system characteristics and automatically finds process controller settings for stable and precise system control",
-            "notes": "Described as easy commissioning and super-easy commissioning",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "software_language",
+            "segment_label_from_manual": "Software language",
+            "character_positions": "28",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "variable",
+            "explanation": "X standard/not used depending on guide version",
+            "preferred_source_document_id": "doc_design_guide_abc",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.24"
+                "doc_design_guide p.118",
+                "doc_design_guide_DE p.198-200"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "flow_compensation",
-            "code": "Flow compensation",
-            "meaning": "Drive adapts the set-point according to the flow",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "a_options",
+            "segment_label_from_manual": "A options",
+            "character_positions": "29-30",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Fieldbus options",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "deragging",
-            "code": "Deragging",
-            "meaning": "Removes clogs from impellers by reversing the direction of the flow in cycles",
-            "notes": "Can be used as proactive measure to avoid damaging the pump; also described as standard and as replacement for external deragger relay",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "b_options",
+            "segment_label_from_manual": "B options",
+            "character_positions": "31-32",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Functional extension options",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.9",
-                "doc_selection_guide p.11",
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "pipe_fill",
-            "code": "Pipe fill",
-            "meaning": "Helps to avoid water hammering by filling pipes smoothly",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "c0_or_e0_options",
+            "segment_label_from_manual": "C0 / E0 options",
+            "character_positions": "33-34",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Reserved or MCO slot code depending on enclosure family",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "dry_run_end_of_curve_detection",
-            "code": "Dry run/end of curve detection",
-            "meaning": "Protects the pump from damage; if a set-point is not reached, the drive assumes that the pipe is dry or there is a leakage",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "c1_options",
+            "segment_label_from_manual": "C1 options",
+            "character_positions": "35",
+            "segment_length": "1",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Examples: X, R",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "sleep_mode",
-            "code": "Sleep mode",
-            "meaning": "Saves energy by stopping the pump when there is no demand",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "c_option_software_or_e1_options",
+            "segment_label_from_manual": "C option software / E1 options",
+            "character_positions": "36-37",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "XX no software option",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.11",
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
         },
         {
-            "segment_name": "feature",
-            "segment_code": "special_ramps",
-            "code": "Special ramps",
-            "meaning": "Dedicated startup and stop ramps for specific applications",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
+            "segment_name": "d_options",
+            "segment_label_from_manual": "D options",
+            "character_positions": "38-39",
+            "segment_length": "2",
+            "fixed_variable_optional_conditional": "optional",
+            "explanation": "Examples: DX, D0",
+            "preferred_source_document_id": "doc_design_guide_DE",
             "all_source_references": [
-                "doc_selection_guide p.25"
+                "doc_design_guide_DE p.203"
             ],
             "confidence": "high"
-        },
+        }
+    ],
+    "typecode_values": [
         {
-            "segment_name": "feature",
-            "segment_code": "motor_alternation",
-            "code": "Motor alternation",
-            "meaning": "Two motors share one drive",
-            "notes": "Also described as suitable for applications with 2 motors or 2 pumps sharing 1 drive",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "drive_series",
+            "code": "202",
+            "meaning": "VLT® AQUA Drive FC 202",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.25"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "basic_cascade_control",
-            "code": "Basic cascade control",
-            "meaning": "Speed control a single pump in a multi pump system",
-            "notes": "Described as cost attractive solution in for example booster sets",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "PK25",
+            "meaning": "0.25 kW / 0.33 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.22",
-                "doc_selection_guide p.25"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "master_follower",
-            "code": "Master-follower",
-            "meaning": "Control up to 8 drives and pumps to ensure smooth operation of the overall pump system",
-            "notes": "Use Master/Follower mode to reduce energy consumption compared to traditional technology across the line for on/off cycling of pumps or blowers, and valve throttling",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "PK37",
+            "meaning": "0.37 kW / 0.50 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.22",
-                "doc_selection_guide p.25"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "digital_cascade_controller",
-            "code": "Digital Cascade Controller",
-            "meaning": "Integrated cascade controller based on Modbus RTU communication protocol",
-            "notes": "Ready to use; simply activate it with a software license key",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [
-                "license based activation required"
-            ],
+            "segment_name": "power_rating",
+            "code": "PK55",
+            "meaning": "0.55 kW / 0.75 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.22",
-                "doc_selection_guide p.23"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "hot_swap",
-            "code": "Hot Swap",
-            "meaning": "Automatic drive detection supports drive maintenance without downtime by re-allocating roles in the master/follower architecture",
-            "notes": "After maintenance is complete, the cascade controller automatically incorporates the drive back into the loop and allows re-allocation of master/follower roles",
-            "dependencies": [
-                "digital_cascade_controller"
-            ],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "PK75",
+            "meaning": "0.75 kW / 1.0 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.11",
-                "doc_selection_guide p.23"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "condition_based_monitoring",
-            "code": "Condition-based monitoring",
-            "meaning": "Cloud-free artificial intelligence embedded in the drive automatically defines operating baseline parameters corresponding to specific applications, at all speeds and real-life operating cycles",
-            "notes": "Reduced installation time and predictive maintenance lower operating costs and boost uptime",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P1K1",
+            "meaning": "1.1 kW / 1.5 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.11"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "back_channel_cooling",
-            "code": "Back-channel cooling",
-            "meaning": "Cooling concept directing air through a rear cooling channel so up to 90% of the drive’s heat loss is removed directly outside the installation room",
-            "notes": "Described as reducing investment for air cooling systems by up to 90%",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P1K5",
+            "meaning": "1.5 kW / 2.0 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.9",
-                "doc_selection_guide p.14",
-                "doc_selection_guide p.15"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "panel_through_cooling",
-            "code": "Panel-through cooling",
-            "meaning": "Accessory mounting kit for small and mid-range drives enables heat losses to be directed directly outside the panel room and into designated air ducts",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P2K2",
+            "meaning": "2.2 kW / 3.0 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.15"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "long_motor_cables",
-            "code": "150 m screened / 300 m unscreened",
-            "meaning": "Standard cable capability without need for additional components",
-            "notes": "Presented as installation cost reduction feature",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P3K0",
+            "meaning": "3.0 kW / 4.0 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.7"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "pcb_coating_standard",
-            "code": "3C3 PCB coating as standard on 90 kW and larger drives",
-            "meaning": "Printed circuit board protection standard for larger drives",
-            "notes": "Guide also states VLT® AQUA Drive conforms to class 3C2 (IEC 60721-3-3) as standard and special coating can comply with class 3C3; all drives above 90 kW delivered with 3C3 coating as standard",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [
-                "90 kW and larger drives"
-            ],
+            "segment_name": "power_rating",
+            "code": "P3K7",
+            "meaning": "3.7 kW / 5.0 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.14"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "ruggedized_version",
-            "code": "Ruggedized",
-            "meaning": "Version intended to ensure components remain firmly in place in pump environments characterized by high vibration levels",
-            "notes": "",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P4K0",
+            "meaning": "4.0 kW / 5.5 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.14"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "ambient_temperature_range",
-            "code": "-25 to +50 °C",
-            "meaning": "Operating ambient temperature range without derating",
-            "notes": "One statement says VLT® AQUA Drives up to 315 kW operate in ambient temperatures from -25 to 50 °C without derating; another states VLT® AQUA Drive can operate in ambient temperatures between -25 and +50 °C, without derating",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P5K5",
+            "meaning": "5.5 kW / 7.5 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.14"
-            ],
-            "confidence": "medium"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "harmonic_mitigation_solution",
-            "code": "Advanced active filters",
-            "meaning": "Certified harmonic mitigation solution",
-            "notes": "Distortion levels of no more than 5% THDi and power factor of the system re-established at 1",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P7K5",
+            "meaning": "7.5 kW / 10 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.18",
-                "doc_selection_guide p.19"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "harmonic_mitigation_solution",
-            "code": "Advanced harmonic filters",
-            "meaning": "Certified harmonic mitigation solution",
-            "notes": "Specially designed to be connected in front of a VLT® drive; harmonic current distortion generated back to the mains is reduced to a minimum",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P11K",
+            "meaning": "11 kW / 15 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.18",
-                "doc_selection_guide p.19"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "harmonic_mitigation_solution",
-            "code": "Low harmonic drives",
-            "meaning": "Certified harmonic mitigation solution",
-            "notes": "Provide total harmonic current distortion (THDi) of maximum 5%",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P15K",
+            "meaning": "15 kW / 20 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.18"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "harmonic_mitigation_solution",
-            "code": "12-pulse drives",
-            "meaning": "Certified harmonic mitigation solution",
-            "notes": "Robust and cost-effective harmonic solution for higher power range above 250 kW",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [
-                "above 250 kW"
-            ],
+            "segment_name": "power_rating",
+            "code": "P18K",
+            "meaning": "18.5 kW / 25 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.18",
-                "doc_selection_guide p.19"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
         },
         {
-            "segment_name": "feature",
-            "segment_code": "harmonic_mitigation_solution",
-            "code": "Active front end drives",
-            "meaning": "Certified harmonic mitigation solution",
-            "notes": "Supply current distortion (THDi) about 3-4%",
-            "dependencies": [],
-            "exclusions": [],
-            "availability_conditions": [],
+            "segment_name": "power_rating",
+            "code": "P22K",
+            "meaning": "22 kW / 30 Hp",
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.18",
-                "doc_selection_guide p.19"
-            ],
-            "confidence": "high"
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P30K",
+            "meaning": "30 kW / 40 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P37K",
+            "meaning": "37 kW / 50 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P45K",
+            "meaning": "45 kW / 60 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P55K",
+            "meaning": "55 kW / 75 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P75K",
+            "meaning": "75 kW / 100 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "P90K",
+            "meaning": "90 kW / 125 Hp",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N55",
+            "meaning": "55 kW / 75 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N75",
+            "meaning": "75 kW / 100 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N90",
+            "meaning": "90 kW / 125 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N110",
+            "meaning": "110 kW / 150 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N132",
+            "meaning": "132 kW / 200 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N160",
+            "meaning": "160 kW / 250 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N200",
+            "meaning": "200 kW / 300 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N250",
+            "meaning": "250 kW / 350 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N315",
+            "meaning": "315 kW / 400–450 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N355",
+            "meaning": "355 kW / 500 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N400",
+            "meaning": "400 kW / 550–600 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N450",
+            "meaning": "450 kW / 450–600 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N500",
+            "meaning": "500 kW / 500–650 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N560",
+            "meaning": "560 kW / 600–750 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N630",
+            "meaning": "630 kW / 650 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N710",
+            "meaning": "710 kW / 750 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "power_rating",
+            "code": "N800",
+            "meaning": "800 kW / 950 hp",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "S2",
+            "meaning": "1 x 200/240 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "T2",
+            "meaning": "3 x 200-240 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "S4",
+            "meaning": "1 x 380/480 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "T4",
+            "meaning": "3 x 380-480 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "T6",
+            "meaning": "3 x 525-600 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_voltage",
+            "code": "T7",
+            "meaning": "3 x 525-690 V AC",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E20",
+            "meaning": "IP20/Chassis",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "P20",
+            "meaning": "IP20/Chassis + backplate",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E21",
+            "meaning": "IP21 / Type 1",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "P21",
+            "meaning": "IP21 / Type 1 + backplate",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E55",
+            "meaning": "IP55 / Type 12",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "P55",
+            "meaning": "IP55 / Type 12 + backplate",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "Y55",
+            "meaning": "IP55 / Type 12 + backplate (A4 enclosure, no C-options)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "Z55",
+            "meaning": "IP55 / Type 12 (A4 enclosure, no C-options)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E3R",
+            "meaning": "UL Type 3R (North America only)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "P3R",
+            "meaning": "UL Type 3R + backplate (North America only)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E66",
+            "meaning": "IP66 / Type 4X",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "Y66",
+            "meaning": "IP66 / Type 4X + backplate (A4 enclosure, no C-options)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "Z66",
+            "meaning": "IP66 / Type 4X (A4 enclosure, no C-options)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E2S",
+            "meaning": "IP20/Chassis - D3h Frame",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E2D",
+            "meaning": "IP21 / Type 1 D1h Frame",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E54",
+            "meaning": "IP54 / Type 12",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E5D",
+            "meaning": "IP54 / Type 12 D1h Frame",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E2M",
+            "meaning": "IP21 / Type 1 with mains shield",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E5M",
+            "meaning": "IP54 / Type 12 with mains shield",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C20",
+            "meaning": "IP20 + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C2S",
+            "meaning": "IP20/Chassis with stainless steel back channel - D3h Frame",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C21",
+            "meaning": "IP21 / Type 1 + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C54",
+            "meaning": "IP54 / Type 12 + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C2M",
+            "meaning": "IP21 / Type 1 + mains shield + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C5M",
+            "meaning": "IP54 / Type 12 + mains shield + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C2H",
+            "meaning": "IP21 / Type 1 + space heater + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "C5H",
+            "meaning": "IP54 / Type 12 + space heater + stainless steel back channel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "H21",
+            "meaning": "IP21 / Type 1 + heater / space heater",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "H54",
+            "meaning": "IP54 / Type 12 + heater / space heater",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "enclosure",
+            "code": "E00",
+            "meaning": "IP00 / Chassis (only enclosures E3h/E4h with top regen/loadshare)",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.200"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "H1",
+            "meaning": "Integrated EMC filter. Fulfil EN 55011 Class A1/B and EN/IEC 61800-3 Category 1/2",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "H2",
+            "meaning": "No additional EMC filter / RFI filter class A2 (C3)",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "H3",
+            "meaning": "Integrated EMC filter. Fulfil EN 55011 Class A1/B and EN/IEC 61800-3 Category 1/2",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "H4",
+            "meaning": "Integrated EMC filter. Fulfil EN 55011 Class A1 / EN/IEC 61800-3 Category 2 / RFI class A1 (C2)",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "H5",
+            "meaning": "Marine versions. Fulfil same emissions levels as H2 versions",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "rfi_filter",
+            "code": "HX",
+            "meaning": "No RFI / EMC filter",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_selection_guide p.58-65"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "X",
+            "meaning": "No brake IGBT / no brake chopper",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "B",
+            "meaning": "Brake IGBT / brake chopper included",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "T",
+            "meaning": "Safe Torque Off without brake",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "U",
+            "meaning": "Brake IGBT plus Safe Torque Off",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "R",
+            "meaning": "Regeneration terminals",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "braking_and_safety",
+            "code": "S",
+            "meaning": "Brake chopper + regeneration terminals",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "X",
+            "meaning": "No local control panel / blank faceplate",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "N",
+            "meaning": "Numerical Local Control Panel (LCP 101)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "G",
+            "meaning": "Graphical Local Control Panel (LCP 102)",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "W",
+            "meaning": "VLT® Wireless Communication Panel LCP 103",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_selection_guide p.58-65"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "J",
+            "meaning": "No LCP + USB through the door",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "L",
+            "meaning": "Graphical LCP + USB through the door",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "display",
+            "code": "K",
+            "meaning": "Numerical LCP + USB through the door",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.58-65"
+            ]
+        },
+        {
+            "segment_name": "pcb_coating",
+            "code": "X",
+            "meaning": "Standard coated PCB Class 3C2 / no coated PCB in older table wording",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118"
+            ]
+        },
+        {
+            "segment_name": "pcb_coating",
+            "code": "C",
+            "meaning": "Coated PCB Class 3C3",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "pcb_coating",
+            "code": "R",
+            "meaning": "Coated PCB Class 3C3 + ruggedized",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.58-65",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "X",
+            "meaning": "No mains option",
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.49",
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "1",
+            "meaning": "Mains disconnect",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "3",
+            "meaning": "Mains disconnect and fuse / mains disconnect + fuses",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "4",
+            "meaning": "Mains contactor + fuses",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "5",
+            "meaning": "Mains disconnect, fuse and load sharing",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "7",
+            "meaning": "Fuses",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "8",
+            "meaning": "Mains disconnect and load sharing",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_selection_guide p.49"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "A",
+            "meaning": "Fuse and load sharing / fuses + load share terminals",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "D",
+            "meaning": "Load sharing / load share terminals",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "E",
+            "meaning": "Mains disconnect + contactor + fuses",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "mains_input_option",
+            "code": "J",
+            "meaning": "Circuit breaker + fuses",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199"
+            ]
+        },
+        {
+            "segment_name": "adaptation_a",
+            "code": "X",
+            "meaning": "Standard cable entries / no option",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118",
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "adaptation_a",
+            "code": "O",
+            "meaning": "European metric thread in cable entries",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118"
+            ]
+        },
+        {
+            "segment_name": "adaptation_a",
+            "code": "S",
+            "meaning": "Imperial cable entries",
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.115-118"
+            ]
+        },
+        {
+            "segment_name": "adaptation_b",
+            "code": "Q",
+            "meaning": "Heat sink access / heat sink access panel",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.199-200"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "AX",
+            "meaning": "No A option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "A0",
+            "meaning": "VLT® PROFIBUS DP V1 MCA 101",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "A4",
+            "meaning": "VLT® DeviceNet MCA 104",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "AL",
+            "meaning": "VLT® PROFINET MCA 120",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "AN",
+            "meaning": "VLT® EtherNet/IP MCA 121",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "a_options",
+            "code": "AQ",
+            "meaning": "VLT® POWERLINK MCA 122",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "BX",
+            "meaning": "No option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "B0",
+            "meaning": "VLT® Analog I/O Option MCB 109",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "B2",
+            "meaning": "VLT® PTC Thermistor Card MCB 112",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "B4",
+            "meaning": "VLT® Sensor Input Option MCB 114",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "BK",
+            "meaning": "VLT® General Purpose I/O Module MCB 101",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "BP",
+            "meaning": "VLT® Relay Card MCB 105",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "BR",
+            "meaning": "VLT® Encoder Input MCB 102",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "b_options",
+            "code": "BY",
+            "meaning": "VLT® Extended Cascade Controller MCO 101",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "c0_or_e0_options",
+            "code": "CX",
+            "meaning": "No option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "c1_options",
+            "code": "X",
+            "meaning": "No option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "c1_options",
+            "code": "R",
+            "meaning": "VLT® Extended Relay Card MCB 113",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "c_option_software_or_e1_options",
+            "code": "XX",
+            "meaning": "No software option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "d_options",
+            "code": "DX",
+            "meaning": "No option",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
+        },
+        {
+            "segment_name": "d_options",
+            "code": "D0",
+            "meaning": "VLT® 24 V DC Supply MCB 107",
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.203"
+            ]
         }
     ],
     "technical_tables": [
         {
-            "table_id": "power_vs_energy_savings_centrifugal_pumps",
-            "table_name": "Flow vs Power Relationship for Centrifugal Pumps",
-            "applies_to": "Centrifugal pumps and blowers in water supply systems",
+            "table_id": "kv_overload_time",
+            "table_name": "Family overload time definition",
+            "applies_to": "Standard FC-202",
             "columns": [
-                "Flow (%)",
-                "Power required (%)",
-                "Control method"
-            ],
-            "rows": [
-                [
-                    "20",
-                    "~10",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "40",
-                    "~30",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "60",
-                    "~55",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "80",
-                    "~80",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "100",
-                    "100",
-                    "AC drive / Ideal control"
-                ]
-            ],
-            "units": {
-                "Flow (%)": "%",
-                "Power required (%)": "%"
-            },
-            "notes": [
-                "20% reduction in pump speed/flowrate can result in up to 50% energy reduction",
-                "Energy consumption for pumps typically represents 60-80% of total energy consumption in water supply systems"
-            ],
-            "conditions": [
-                "Applies to systems characterized by friction loss",
-                "Applies to centrifugal or rotodynamic pumps"
-            ],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.12"
-            ],
-            "confidence": "high"
-        },
-        {
-            "table_id": "power_vs_energy_savings_wastewater",
-            "table_name": "Flow vs Input Power for Wastewater Blowers/Pumps",
-            "applies_to": "Positive displacement blowers or pumps in wastewater treatment",
-            "columns": [
-                "Flow rate (%)",
-                "Input power (%)",
-                "Control method"
-            ],
-            "rows": [
-                [
-                    "20",
-                    "~20",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "40",
-                    "~40",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "60",
-                    "~60",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "80",
-                    "~80",
-                    "AC drive / Ideal control"
-                ],
-                [
-                    "100",
-                    "100",
-                    "AC drive / Ideal control"
-                ]
-            ],
-            "units": {
-                "Flow rate (%)": "%",
-                "Input power (%)": "%"
-            },
-            "notes": [
-                "A 30% reduction in speed will result in 30% energy savings assuming constant pressure",
-                "Blowers or surface aerators typically consume 40-70% of total energy in wastewater treatment plants"
-            ],
-            "conditions": [
-                "Applies to positive displacement blowers or pumps",
-                "Assumes constant pressure"
-            ],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.13"
-            ],
-            "confidence": "high"
-        },
-        {
-            "table_id": "cascade_control_energy_comparison",
-            "table_name": "Energy Consumption Comparison of Cascade Control Methods",
-            "applies_to": "Multi-pump systems",
-            "columns": [
-                "Control method",
-                "Energy consumption (kWh)"
-            ],
-            "rows": [
-                [
-                    "Master/Follower",
-                    "20689"
-                ],
-                [
-                    "Basic cascade control",
-                    "23126"
-                ],
-                [
-                    "Variable speed only",
-                    "25596"
-                ],
-                [
-                    "All constant speed",
-                    "48492"
-                ]
-            ],
-            "units": {
-                "Energy consumption (kWh)": "kWh"
-            },
-            "notes": [
-                "Master/Follower mode significantly reduces energy consumption compared to traditional constant speed systems"
-            ],
-            "conditions": [
-                "Comparison based on example system shown in guide"
-            ],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.22"
-            ],
-            "confidence": "high"
-        },
-        {
-            "table_id": "cascade_controller_capabilities",
-            "table_name": "Cascade Controller Pump Configuration Capabilities",
-            "applies_to": "Cascade control options",
-            "columns": [
-                "Controller type",
-                "Configuration",
-                "Maximum pumps"
-            ],
-            "rows": [
-                [
-                    "Basic Cascade Controller",
-                    "1 VSP + 2 FSP",
-                    "3"
-                ],
-                [
-                    "Extended Cascade Controller MCO 101",
-                    "1 VSP + 5 FSP",
-                    "6"
-                ],
-                [
-                    "Extended Cascade Controller MCO 101",
-                    "1-6 VSP + 1-5 FSP",
-                    "6"
-                ],
-                [
-                    "Extended Cascade Controller MCO 101",
-                    "6 VSP",
-                    "6"
-                ],
-                [
-                    "Advanced Cascade Controller MCO 102",
-                    "1 VSP + 8 FSP",
-                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
-                ],
-                [
-                    "Advanced Cascade Controller MCO 102",
-                    "1-8 VSP + 1-7 FSP",
-                    "8"
-                ],
-                [
-                    "Advanced Cascade Controller MCO 102",
-                    "8 VSP",
-                    "8"
-                ],
-                [
-                    "Digital Cascade Controller",
-                    "8 VSP",
-                    "8"
-                ]
-            ],
-            "units": {},
-            "notes": [
-                "VSP = Variable Speed Pump",
-                "FSP = Fixed Speed Pump",
-                "Digital Cascade Controller based on Modbus RTU communication protocol"
-            ],
-            "conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.22",
-                "doc_selection_guide p.23"
-            ],
-            "confidence": "high"
-        },
-        {
-            "table_id": "harmonic_mitigation_comparison",
-            "table_name": "Harmonic Mitigation Technology Comparison",
-            "applies_to": "Harmonic mitigation solutions",
-            "columns": [
-                "Technology",
-                "Typical THDi",
-                "Notes"
-            ],
-            "rows": [
-                [
-                    "Advanced Active Filter (AAF)",
-                    "<=5%",
-                    "Central solution; operates only when needed"
-                ],
-                [
-                    "Active Front End (AFE)",
-                    "3-4%",
-                    "Requires voltage boost of approximately 10%"
-                ],
-                [
-                    "Low Harmonic Drive (LHD)",
-                    "<=5%",
-                    "Integrated Advanced Active Filter"
-                ],
-                [
-                    "12-pulse drive",
-                    "~12%",
-                    "Used above 250 kW"
-                ]
-            ],
-            "units": {
-                "Typical THDi": "%"
-            },
-            "notes": [
-                "Central AAF solution can support up to 50 drives",
-                "Harmonic noise kept under 3% on all AC drives in system with central AAF solution"
-            ],
-            "conditions": [
-                "Performance depends on grid quality, imbalance, and pre-distortion"
-            ],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.16",
-                "doc_selection_guide p.18",
-                "doc_selection_guide p.19"
-            ],
-            "confidence": "high"
-        },
-        {
-            "table_id": "installation_features_summary",
-            "table_name": "Installation Savings Features",
-            "applies_to": "All VLT® AQUA Drive installations",
-            "columns": [
-                "Feature",
-                "Description",
+                "Parameter",
                 "Value"
             ],
             "rows": [
                 [
-                    "Cable length capability",
-                    "Screened cable length",
-                    "150 m"
+                    "overload_time_high_overload",
+                    "60 s"
                 ],
                 [
-                    "Cable length capability",
-                    "Unscreened cable length",
-                    "300 m"
+                    "overload_time_normal_overload",
+                    "60 s"
                 ],
                 [
-                    "Air conditioning reduction",
-                    "Reduction in air cooling investment",
-                    "up to 90%"
+                    "high_overload_definition_abc",
+                    "160% current during 1 min / 10 min for T2 A/B/C selection-guide tables"
                 ],
                 [
-                    "Heat removal",
-                    "Heat removed via back-channel cooling",
-                    "up to 90%"
+                    "high_overload_definition_de",
+                    "150% current during 60 s for D/E tables"
                 ],
                 [
-                    "Installation savings",
-                    "Cost savings compared to traditional AC drives",
-                    "up to 15%"
+                    "normal_overload_definition",
+                    "110% current during 60 s"
+                ]
+            ],
+            "units": {},
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.44",
+                "doc_selection_guide p.51-52",
+                "doc_design_guide_DE p.41-46"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "dimensions_abc_enclosures",
+            "table_name": "Dimensions enclosure sizes A, B and C",
+            "applies_to": "A/B/C enclosure families",
+            "columns": [
+                "Enclosure_size",
+                "Height_mm",
+                "Width_mm",
+                "Depth_mm",
+                "Weight_kg",
+                "Enclosure_IP",
+                "Power_Code"
+            ],
+            "rows": [
+                [
+                    "A2",
+                    "268",
+                    "90",
+                    "205",
+                    "4.9",
+                    "E20",
+                    "PK25 PK37 PK55 PK75 P1K1 P1K5 P2K2 P3K0 P4K0"
+                ],
+                [
+                    "A3",
+                    "375",
+                    "90",
+                    "207",
+                    "5.3",
+                    "E20",
+                    "P5K5 P7K5"
+                ],
+                [
+                    "A4",
+                    "268",
+                    "130",
+                    "205",
+                    "6.0",
+                    "",
+                    ""
+                ],
+                [
+                    "A5",
+                    "375",
+                    "130",
+                    "207",
+                    "7.0",
+                    "",
+                    ""
+                ],
+                [
+                    "B1",
+                    "390",
+                    "200",
+                    "175",
+                    "9.7",
+                    "",
+                    ""
+                ],
+                [
+                    "B2",
+                    "420",
+                    "242",
+                    "200",
+                    "14.2",
+                    "",
+                    ""
+                ],
+                [
+                    "B3",
+                    "480",
+                    "242",
+                    "260",
+                    "23.0",
+                    "",
+                    ""
+                ],
+                [
+                    "B4",
+                    "650",
+                    "242",
+                    "260",
+                    "27.0",
+                    "",
+                    ""
+                ],
+                [
+                    "C1",
+                    "399",
+                    "165",
+                    "249",
+                    "12.0",
+                    "",
+                    ""
+                ],
+                [
+                    "C2",
+                    "520",
+                    "230",
+                    "242",
+                    "23.0",
+                    "",
+                    ""
+                ],
+                [
+                    "C3",
+                    "680",
+                    "308",
+                    "310",
+                    "45.0",
+                    "",
+                    ""
+                ],
+                [
+                    "C4",
+                    "770",
+                    "370",
+                    "335",
+                    "65.0",
+                    "",
+                    ""
                 ]
             ],
             "units": {
-                "Cable length": "m",
-                "Reduction": "%"
+                "Height_mm": "mm",
+                "Width_mm": "mm",
+                "Depth_mm": "mm",
+                "Weight_kg": "kg"
             },
             "notes": [
-                "Back-channel cooling significantly reduces cooling system size",
-                "Space-saving design enables side-by-side installation"
+                "Selection Guide p.48 and Design Guide Table 7.31 are consistent for the main envelope dimensions",
+                "Depth varies with installed options"
             ],
             "conditions": [],
             "preferred_source_document_id": "doc_selection_guide",
             "all_source_references": [
-                "doc_selection_guide p.6",
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.14"
+                "doc_selection_guide p.48",
+                "doc_design_guide p.165"
             ],
             "confidence": "high"
+        },
+        {
+            "table_id": "dimensions_de_enclosures",
+            "table_name": "Dimensions enclosure sizes D and E",
+            "applies_to": "D/E enclosure families",
+            "columns": [
+                "Enclosure_size",
+                "Height_mm",
+                "Width_mm",
+                "Depth_mm",
+                "Weight_kg"
+            ],
+            "rows": [
+                [
+                    "D1h",
+                    "901",
+                    "325",
+                    "379",
+                    "62"
+                ],
+                [
+                    "D2h",
+                    "1107",
+                    "325",
+                    "379",
+                    "125"
+                ],
+                [
+                    "D3h",
+                    "909",
+                    "250",
+                    "375",
+                    "62"
+                ],
+                [
+                    "D4h",
+                    "1027",
+                    "375",
+                    "375",
+                    "108"
+                ],
+                [
+                    "D5h",
+                    "1324",
+                    "325",
+                    "381",
+                    "99"
+                ],
+                [
+                    "D6h",
+                    "1663",
+                    "325",
+                    "381",
+                    "128"
+                ],
+                [
+                    "D7h",
+                    "1978",
+                    "420",
+                    "386",
+                    "185"
+                ],
+                [
+                    "D8h",
+                    "2284",
+                    "420",
+                    "406",
+                    "232"
+                ],
+                [
+                    "E1h",
+                    "2043",
+                    "602",
+                    "513",
+                    "295"
+                ],
+                [
+                    "E2h",
+                    "2043",
+                    "698",
+                    "513",
+                    "318"
+                ],
+                [
+                    "E3h",
+                    "1578",
+                    "506",
+                    "482",
+                    "272"
+                ],
+                [
+                    "E4h",
+                    "1578",
+                    "604",
+                    "482",
+                    "295"
+                ]
+            ],
+            "units": {
+                "Height_mm": "mm",
+                "Width_mm": "mm",
+                "Depth_mm": "mm",
+                "Weight_kg": "kg"
+            },
+            "notes": [
+                "D4h weight shown without optional load share and regen terminals",
+                "Some D/E protection ratings change with load share / regen terminal configuration"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.13-16"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "acoustic_noise_abc",
+            "table_name": "Acoustic noise ratings A/B/C",
+            "applies_to": "A/B/C enclosure families",
+            "columns": [
+                "Enclosure_size",
+                "Acoustic_noise_50pct_fan_dBA",
+                "Acoustic_noise_full_fan_dBA",
+                "Power_Code"
+            ],
+            "rows": [
+                [
+                    "A1",
+                    "51",
+                    "60",
+                    ""
+                ],
+                [
+                    "A2",
+                    "51",
+                    "60",
+                    "PK25 PK37 PK55 PK75 P1K1 P1K5 P2K2 P3K0 P4K0"
+                ],
+                [
+                    "A3",
+                    "51",
+                    "60",
+                    "P5K5 P7K5"
+                ],
+                [
+                    "A4",
+                    "51",
+                    "60",
+                    ""
+                ],
+                [
+                    "A5",
+                    "54",
+                    "63",
+                    ""
+                ],
+                [
+                    "B1",
+                    "61",
+                    "67",
+                    ""
+                ],
+                [
+                    "B2",
+                    "58",
+                    "70",
+                    ""
+                ],
+                [
+                    "B4",
+                    "52",
+                    "62",
+                    ""
+                ],
+                [
+                    "C1",
+                    "52",
+                    "62",
+                    ""
+                ],
+                [
+                    "C2",
+                    "55",
+                    "65",
+                    ""
+                ],
+                [
+                    "C4",
+                    "56",
+                    "71",
+                    ""
+                ],
+                [
+                    "D3h",
+                    "58",
+                    "71",
+                    ""
+                ]
+            ],
+            "units": {
+                "Acoustic_noise_50pct_fan_dBA": "dBA",
+                "Acoustic_noise_full_fan_dBA": "dBA"
+            },
+            "notes": [
+                "Values measured 1 m from the unit"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_design_guide_abc",
+            "all_source_references": [
+                "doc_design_guide p.166"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "acoustic_noise_de",
+            "table_name": "Acoustic noise D/E",
+            "applies_to": "D/E enclosure families",
+            "columns": [
+                "Enclosure_group",
+                "Acoustic_noise_full_fan_dBA"
+            ],
+            "rows": [
+                [
+                    "D1h/D3h/D5h/D6h",
+                    "73"
+                ],
+                [
+                    "D2h/D4h/D7h/D8h",
+                    "75"
+                ],
+                [
+                    "E1h-E4h",
+                    "80"
+                ]
+            ],
+            "units": {
+                "Acoustic_noise_full_fan_dBA": "dBA"
+            },
+            "notes": [
+                "Typical acoustic noise values measured at a distance of 1 m (9 ft) from the unit"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.167"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "electrical_t2_abc_high_overload",
+            "table_name": "Electrical data A/B/C, T2 3x200-240 V AC, high overload",
+            "applies_to": "A/B/C, T2, high overload",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Output_current_continuous_A",
+                "Output_current_intermittent_60s_A",
+                "Continuous_input_current_A",
+                "Estimated_power_loss_W"
+            ],
+            "rows": [
+                [
+                    "0.25",
+                    "3x200-240 V AC",
+                    "PK25",
+                    "1.8",
+                    "2.7",
+                    "1.6",
+                    "21"
+                ],
+                [
+                    "0.37",
+                    "3x200-240 V AC",
+                    "PK37",
+                    "2.4",
+                    "3.6",
+                    "2.2",
+                    "29"
+                ],
+                [
+                    "0.55",
+                    "3x200-240 V AC",
+                    "PK55",
+                    "3.5",
+                    "5.3",
+                    "3.2",
+                    "42"
+                ],
+                [
+                    "0.75",
+                    "3x200-240 V AC",
+                    "PK75",
+                    "4.6",
+                    "6.9",
+                    "4.1",
+                    "54"
+                ],
+                [
+                    "1.1",
+                    "3x200-240 V AC",
+                    "P1K1",
+                    "6.6",
+                    "9.9",
+                    "5.9",
+                    "63"
+                ],
+                [
+                    "1.5",
+                    "3x200-240 V AC",
+                    "P1K5",
+                    "7.5",
+                    "11.3",
+                    "6.8",
+                    "82"
+                ],
+                [
+                    "2.2",
+                    "3x200-240 V AC",
+                    "P2K2",
+                    "10.6",
+                    "15.9",
+                    "9.5",
+                    "116"
+                ],
+                [
+                    "3.0",
+                    "3x200-240 V AC",
+                    "P3K0",
+                    "12.5",
+                    "18.8",
+                    "11.3",
+                    "155"
+                ],
+                [
+                    "3.7",
+                    "3x200-240 V AC",
+                    "P3K7",
+                    "16.7",
+                    "25.0",
+                    "15.0",
+                    "185"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A": "A",
+                "Output_current_intermittent_60s_A": "A",
+                "Continuous_input_current_A": "A",
+                "Estimated_power_loss_W": "W"
+            },
+            "notes": [
+                "Selection-guide table heading states High overload (160% 1 min / 10 min)"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.44"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "electrical_t2_de_high_overload",
+            "table_name": "Electrical data D/E, T2 3x200-240 V AC, high overload",
+            "applies_to": "D/E, T2, high overload",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Output_current_continuous_A",
+                "Output_current_intermittent_60s_A",
+                "Continuous_input_current_A",
+                "Estimated_power_loss_W",
+                "Enclosure_ip20",
+                "Enclosure_ip21",
+                "Enclosure_ip54",
+                "Efficiency"
+            ],
+            "rows": [
+                [
+                    "45",
+                    "3x200-240 V AC",
+                    "N55K",
+                    "160",
+                    "240",
+                    "154",
+                    "1482",
+                    "D3h",
+                    "D1h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "55",
+                    "3x200-240 V AC",
+                    "N75K",
+                    "190",
+                    "285",
+                    "183",
+                    "1794",
+                    "D3h",
+                    "D1h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "75",
+                    "3x200-240 V AC",
+                    "N90K",
+                    "240",
+                    "360",
+                    "231",
+                    "1990",
+                    "D4h",
+                    "D2h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "90",
+                    "3x200-240 V AC",
+                    "N110",
+                    "302",
+                    "453",
+                    "291",
+                    "2613",
+                    "D4h",
+                    "D2h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "110",
+                    "3x200-240 V AC",
+                    "N150",
+                    "361",
+                    "542",
+                    "348",
+                    "3195",
+                    "D4h",
+                    "D2h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ],
+                [
+                    "150",
+                    "3x200-240 V AC",
+                    "N160",
+                    "443",
+                    "665",
+                    "427",
+                    "4103",
+                    "D4h",
+                    "D2h",
+                    "",
+                    "NOT FOUND IN THE UPLOADED DOCUMENTS"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A": "A",
+                "Output_current_intermittent_60s_A": "A",
+                "Continuous_input_current_A": "A",
+                "Estimated_power_loss_W": "W"
+            },
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.51"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "electrical_t2_de_normal_overload",
+            "table_name": "Electrical data D/E, T2 3x200-240 V AC, normal overload",
+            "applies_to": "D/E, T2, normal overload",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Output_current_continuous_A",
+                "Output_current_intermittent_60s_A",
+                "Continuous_input_current_A",
+                "Estimated_power_loss_W"
+            ],
+            "rows": [
+                [
+                    "55",
+                    "3x200-240 V AC",
+                    "N55K",
+                    "190",
+                    "209",
+                    "183",
+                    "1505"
+                ],
+                [
+                    "75",
+                    "3x200-240 V AC",
+                    "N75K",
+                    "240",
+                    "264",
+                    "231",
+                    "2398"
+                ],
+                [
+                    "90",
+                    "3x200-240 V AC",
+                    "N90K",
+                    "302",
+                    "332",
+                    "291",
+                    "2623"
+                ],
+                [
+                    "110",
+                    "3x200-240 V AC",
+                    "N110",
+                    "361",
+                    "397",
+                    "348",
+                    "3284"
+                ],
+                [
+                    "150",
+                    "3x200-240 V AC",
+                    "N150",
+                    "443",
+                    "487",
+                    "427",
+                    "4117"
+                ],
+                [
+                    "160",
+                    "3x200-240 V AC",
+                    "N160",
+                    "535",
+                    "589",
+                    "516",
+                    "5209"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A": "A",
+                "Output_current_intermittent_60s_A": "A",
+                "Continuous_input_current_A": "A",
+                "Estimated_power_loss_W": "W"
+            },
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.51"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "electrical_t4_de_normal_overload",
+            "table_name": "Electrical data D/E, T4 3x380-480 V AC, normal overload",
+            "applies_to": "D/E, T4, normal overload",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Output_current_continuous_A_380_440V",
+                "Output_current_intermittent_60s_A_380_440V",
+                "Output_current_continuous_A_441_500V",
+                "Output_current_intermittent_60s_A_441_500V",
+                "Continuous_input_current_A_at_400V",
+                "Estimated_power_loss_W",
+                "Enclosure_ip20",
+                "Enclosure_ip21",
+                "Enclosure_ip54"
+            ],
+            "rows": [
+                [
+                    "110",
+                    "3x380-480 V AC",
+                    "N110",
+                    "212",
+                    "233",
+                    "190",
+                    "209",
+                    "204",
+                    "2559",
+                    "D3h",
+                    "D1h/D5h/D6h",
+                    "D1h/D5h/D6h"
+                ],
+                [
+                    "132",
+                    "3x380-480 V AC",
+                    "N132",
+                    "260",
+                    "286",
+                    "240",
+                    "264",
+                    "251",
+                    "2954",
+                    "D3h",
+                    "D1h/D5h/D6h",
+                    "D1h/D5h/D6h"
+                ],
+                [
+                    "160",
+                    "3x380-480 V AC",
+                    "N160",
+                    "315",
+                    "347",
+                    "302",
+                    "332",
+                    "304",
+                    "3770",
+                    "D3h",
+                    "D1h/D5h/D6h",
+                    "D1h/D5h/D6h"
+                ],
+                [
+                    "200",
+                    "3x380-480 V AC",
+                    "N200",
+                    "395",
+                    "435",
+                    "361",
+                    "397",
+                    "381",
+                    "4116",
+                    "D4h",
+                    "D2h/D7h/D8h",
+                    "D2h/D7h/D8h"
+                ],
+                [
+                    "250",
+                    "3x380-480 V AC",
+                    "N250",
+                    "480",
+                    "528",
+                    "443",
+                    "487",
+                    "463",
+                    "5137",
+                    "D4h",
+                    "D2h/D7h/D8h",
+                    "D2h/D7h/D8h"
+                ],
+                [
+                    "315",
+                    "3x380-480 V AC",
+                    "N315",
+                    "588",
+                    "647",
+                    "535",
+                    "588",
+                    "567",
+                    "6674",
+                    "D4h",
+                    "D2h/D7h/D8h",
+                    "D2h/D7h/D8h"
+                ],
+                [
+                    "355",
+                    "3x380-480 V AC",
+                    "N355",
+                    "658",
+                    "724",
+                    "590",
+                    "649",
+                    "634",
+                    "6928",
+                    "E3h",
+                    "E1h",
+                    "E1h"
+                ],
+                [
+                    "400",
+                    "3x380-480 V AC",
+                    "N400",
+                    "745",
+                    "820",
+                    "678",
+                    "746",
+                    "718",
+                    "8036",
+                    "E3h",
+                    "E1h",
+                    "E1h"
+                ],
+                [
+                    "450",
+                    "3x380-480 V AC",
+                    "N450",
+                    "800",
+                    "880",
+                    "730",
+                    "803",
+                    "771",
+                    "8783",
+                    "E3h",
+                    "E1h",
+                    "E1h"
+                ],
+                [
+                    "500",
+                    "3x380-480 V AC",
+                    "N500",
+                    "880",
+                    "968",
+                    "780",
+                    "858",
+                    "848",
+                    "9473",
+                    "E4h",
+                    "E2h",
+                    "E2h"
+                ],
+                [
+                    "560",
+                    "3x380-480 V AC",
+                    "N560",
+                    "990",
+                    "1089",
+                    "890",
+                    "979",
+                    "954",
+                    "11102",
+                    "E4h",
+                    "E2h",
+                    "E2h"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A_380_440V": "A",
+                "Output_current_intermittent_60s_A_380_440V": "A",
+                "Output_current_continuous_A_441_500V": "A",
+                "Output_current_intermittent_60s_A_441_500V": "A",
+                "Continuous_input_current_A_at_400V": "A",
+                "Estimated_power_loss_W": "W"
+            },
+            "notes": [
+                "This table is the most directly usable lookup for nominal output current by standard T4 typecode model"
+            ],
+            "conditions": [],
+            "preferred_source_document_id": "doc_selection_guide",
+            "all_source_references": [
+                "doc_selection_guide p.52"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "electrical_t7_de_normal_overload",
+            "table_name": "Electrical data D/E, T7 3x525-690 V AC, normal overload",
+            "applies_to": "D/E, T7, normal overload",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Output_current_continuous_A_525V",
+                "Output_current_intermittent_60s_A_525V",
+                "Output_current_continuous_A_575_690V",
+                "Output_current_intermittent_60s_A_575_690V",
+                "Estimated_power_loss_W_575V",
+                "Estimated_power_loss_W_690V",
+                "Efficiency"
+            ],
+            "rows": [
+                [
+                    "200",
+                    "3x525-690 V AC",
+                    "N200",
+                    "201",
+                    "301",
+                    "192",
+                    "288",
+                    "2361",
+                    "2446",
+                    "0.98"
+                ],
+                [
+                    "250",
+                    "3x525-690 V AC",
+                    "N250",
+                    "253",
+                    "380",
+                    "242",
+                    "363",
+                    "3074",
+                    "3175",
+                    "0.98"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A_525V": "A",
+                "Output_current_intermittent_60s_A_525V": "A",
+                "Output_current_continuous_A_575_690V": "A",
+                "Output_current_intermittent_60s_A_575_690V": "A",
+                "Estimated_power_loss_W_575V": "W",
+                "Estimated_power_loss_W_690V": "W",
+                "Efficiency": "ratio"
+            },
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "doc_design_guide_DE",
+            "all_source_references": [
+                "doc_design_guide_DE p.46"
+            ],
+            "confidence": "high"
+        },
+        {
+            "table_id": "p5k5_electrical",
+            "table_name": "Electrical Data 5.5kW",
+            "applies_to": "FC-202 5.5kW 380-480V",
+            "columns": [
+                "Power_kw",
+                "Mains_voltage",
+                "Type_code",
+                "Enclosure_ip20",
+                "Output_current_continuous_A",
+                "Efficiency",
+                "Estimated_power_loss_W"
+            ],
+            "rows": [
+                [
+                    "5.5",
+                    "380-480 V",
+                    "P5K5",
+                    "E20",
+                    "12",
+                    "0.98",
+                    "165"
+                ]
+            ],
+            "units": {
+                "Output_current_continuous_A": "A",
+                "Efficiency": "%",
+                "Estimated_power_loss_W": "W"
+            },
+            "notes": [],
+            "conditions": [],
+            "preferred_source_document_id": "manual",
+            "all_source_references": [],
+            "confidence": "high"
         }
-    ],
-    "mapping_rules": [
-        {
-            "rule_id": "map_power_from_range",
-            "target_datasheet_field": "rated_power",
-            "source_typecode_segment": "power_range",
-            "mapping_logic_from_documents": "Select rated power within the overall supported range 0.25 kW – 1.4 MW",
-            "required_additional_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.1"
-            ],
-            "confidence": "low"
-        },
-        {
-            "rule_id": "map_voltage_from_range",
-            "target_datasheet_field": "supply_voltage",
-            "source_typecode_segment": "voltage_range",
-            "mapping_logic_from_documents": "Select supply voltage based on supported ranges: 200-240 V, 380-480 V, 525-600 V, 525-690 V",
-            "required_additional_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.27"
-            ],
-            "confidence": "low"
-        },
-        {
-            "rule_id": "map_enclosure_size",
-            "target_datasheet_field": "enclosure_size",
-            "source_typecode_segment": "enclosure",
-            "mapping_logic_from_documents": "Map enclosure code to one of the enclosure sizes A, B, C, D, E, F",
-            "required_additional_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.2"
-            ],
-            "confidence": "low"
-        },
-        {
-            "rule_id": "map_ip_rating",
-            "target_datasheet_field": "protection_class",
-            "source_typecode_segment": "protection_class",
-            "mapping_logic_from_documents": "Map selected IP rating within range IP00 to IP66",
-            "required_additional_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.7",
-                "doc_selection_guide p.14"
-            ],
-            "confidence": "low"
-        },
-        {
-            "rule_id": "map_options_group",
-            "target_datasheet_field": "options",
-            "source_typecode_segment": "options_group",
-            "mapping_logic_from_documents": "Map option groups A, B, C, D to fieldbus, functional extensions, cascade/relay, and 24 V backup respectively",
-            "required_additional_conditions": [],
-            "preferred_source_document_id": "doc_selection_guide",
-            "all_source_references": [
-                "doc_selection_guide p.2"
-            ],
-            "confidence": "low"
-        }
-    ],
-"constraints": [
-    {
-        "rule_id": "temperature_derating_condition",
-        "rule_type": "operational_limit",
-        "affected_segment_or_table": "ambient_temperature_range",
-        "exact_rule": "VLT® AQUA Drives up to 315 kW operate in ambient temperatures from -25 to 50 °C without derating",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.7"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "temperature_general_range",
-        "rule_type": "operational_limit",
-        "affected_segment_or_table": "ambient_temperature_range",
-        "exact_rule": "VLT® AQUA Drive can operate in ambient temperatures between -25 and +50 °C without derating",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.14"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "pcb_coating_condition",
-        "rule_type": "availability_condition",
-        "affected_segment_or_table": "pcb_coating_standard",
-        "exact_rule": "3C3 PCB coating is standard on 90 kW and larger drives",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.7"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "pcb_coating_class_standard",
-        "rule_type": "technical_condition",
-        "affected_segment_or_table": "pcb_coating_standard",
-        "exact_rule": "VLT® AQUA Drive conforms to class 3C2 (IEC 60721-3-3) as standard; special coating can comply with class 3C3",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.14"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "harmonic_standard_reference",
-        "rule_type": "compliance_requirement",
-        "affected_segment_or_table": "harmonic_mitigation_comparison",
-        "exact_rule": "Harmonic mitigation designed to meet IEEE-519 2014 Guide requirements for voltage THD limits at the Point of Common Coupling",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.16"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "harmonic_central_filter_limit",
-        "rule_type": "performance_limit",
-        "affected_segment_or_table": "harmonic_mitigation_comparison",
-        "exact_rule": "Central advanced active filter solution ensures harmonic noise is kept under 3% on all AC drives in the system",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.16"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "harmonic_low_harmonic_drive_limit",
-        "rule_type": "performance_limit",
-        "affected_segment_or_table": "harmonic_mitigation_comparison",
-        "exact_rule": "Low harmonic drives provide total harmonic current distortion (THDi) of maximum 5%",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.18"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "harmonic_active_front_end_limit",
-        "rule_type": "performance_limit",
-        "affected_segment_or_table": "harmonic_mitigation_comparison",
-        "exact_rule": "Active front-end systems provide supply current distortion (THDi) of about 3-4%",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.19"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "harmonic_12_pulse_application",
-        "rule_type": "availability_condition",
-        "affected_segment_or_table": "harmonic_mitigation_comparison",
-        "exact_rule": "12-pulse drives are used for higher power range applications above 250 kW",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.19"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "cascade_controller_license",
-        "rule_type": "availability_condition",
-        "affected_segment_or_table": "digital_cascade_controller",
-        "exact_rule": "Digital Cascade Controller is license-based and activated via software license key",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.23"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "cascade_controller_max_pumps",
-        "rule_type": "system_limit",
-        "affected_segment_or_table": "cascade_controller_capabilities",
-        "exact_rule": "Digital Cascade Controller enables configuration of up to eight pumps in multiple-pump systems",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.23"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "cooling_heat_removal",
-        "rule_type": "performance_limit",
-        "affected_segment_or_table": "back_channel_cooling",
-        "exact_rule": "Back-channel cooling transfers up to 90% of heat away from the room",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.9",
-            "doc_selection_guide p.14",
-            "doc_selection_guide p.15"
-        ],
-        "confidence": "high"
-    },
-    {
-        "rule_id": "installation_savings_limit",
-        "rule_type": "performance_limit",
-        "affected_segment_or_table": "installation_features_summary",
-        "exact_rule": "Installation cost savings of up to 15% compared to traditional AC drives",
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [
-            "doc_selection_guide p.6"
-        ],
-        "confidence": "high"
-    }
-],
-"examples": [
-    {
-        "full_type_code": "NOT FOUND IN THE UPLOADED DOCUMENTS",
-        "decoded_breakdown": [],
-        "notes": [
-            "No explicit typecode examples found in the provided pages"
-        ],
-        "preferred_source_document_id": "doc_selection_guide",
-        "all_source_references": [],
-        "confidence": "low"
-    }
-],
-"datasheet_fields": [
-    {
-        "datasheet_field_name": "rated_power",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": true,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "rating_table",
-            "selection_logic"
-        ],
-        "source_references": [
-            "doc_selection_guide p.1"
-        ]
-    },
-    {
-        "datasheet_field_name": "supply_voltage",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": true,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "rating_table"
-        ],
-        "source_references": [
-            "doc_selection_guide p.27"
-        ]
-    },
-    {
-        "datasheet_field_name": "enclosure_size",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": true,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "lookup_table"
-        ],
-        "source_references": [
-            "doc_selection_guide p.2"
-        ]
-    },
-    {
-        "datasheet_field_name": "ip_rating",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": true,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "lookup_table"
-        ],
-        "source_references": [
-            "doc_selection_guide p.7",
-            "doc_selection_guide p.14"
-        ]
-    },
-    {
-        "datasheet_field_name": "cooling_method",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "feature_mapping"
-        ],
-        "source_references": [
-            "doc_selection_guide p.14",
-            "doc_selection_guide p.15"
-        ]
-    },
-    {
-        "datasheet_field_name": "harmonic_mitigation_type",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": true,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "lookup_table"
-        ],
-        "source_references": [
-            "doc_selection_guide p.18",
-            "doc_selection_guide p.19"
-        ]
-    },
-    {
-        "datasheet_field_name": "ambient_temperature_range",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "feature_mapping"
-        ],
-        "source_references": [
-            "doc_selection_guide p.7",
-            "doc_selection_guide p.14"
-        ]
-    },
-    {
-        "datasheet_field_name": "cascade_control_capability",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": true,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "lookup_table"
-        ],
-        "source_references": [
-            "doc_selection_guide p.22",
-            "doc_selection_guide p.23"
-        ]
-    },
-    {
-        "datasheet_field_name": "energy_savings",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": true,
-        "not_available_in_uploaded_documents": false,
-        "resolution_priority": [
-            "feature_mapping"
-        ],
-        "source_references": [
-            "doc_selection_guide p.8",
-            "doc_selection_guide p.9"
-        ]
-    },
-    {
-        "datasheet_field_name": "typecode_full",
-        "directly_available_from_typecode": false,
-        "available_from_lookup_table": false,
-        "available_from_rating_table": false,
-        "available_from_converged_documents": false,
-        "not_available_in_uploaded_documents": true,
-        "resolution_priority": [],
-        "source_references": []
-    }
-],
-"conflicts": [],
-"app_resolution_model": {
-    "family_detection_rules": [
-        "If product name contains 'VLT® AQUA Drive FC 202', assign to this knowledge base"
-    ],
-    "parse_order": [
-        "overall_typecode",
-        "power_range",
-        "voltage_range",
-        "enclosure",
-        "options_group"
-    ],
-    "field_resolution_order": [
-        "direct_typecode",
-        "lookup_table",
-        "technical_table",
-        "feature_mapping"
-    ],
-    "fallback_rules": [
-        "If value not found, return NOT FOUND IN THE UPLOADED DOCUMENTS",
-        "If multiple options exist, select based on applicable conditions"
-    ],
-    "unavailable_value_marker": "NOT FOUND IN THE UPLOADED DOCUMENTS"
-}
+    ]
 }

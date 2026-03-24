@@ -85,48 +85,112 @@ function processTable(table, segments) {
     return { matchedRows, allRowsObj, extractedKv };
   }
 
-  // For data tables (dimensions, power ratings), try to match the power or voltage code
-  const powerSeg = segments.find(s => s.segment_name.includes('power') || s.segment_name.includes('size'));
-  const voltSeg = segments.find(s => s.segment_name.includes('voltage'));
-  const encSeg = segments.find(s => s.segment_name.includes('enclosure'));
+  // For data tables (dimensions, power ratings, acoustic noise), try to match multiple segments
+  const powerSeg = segments.find(s => s.segment_name.toLowerCase().includes('power') || s.segment_name.toLowerCase().includes('size'));
+  const voltSeg = segments.find(s => s.segment_name.toLowerCase().includes('voltage') || s.segment_name.toLowerCase().includes('mains'));
+  const encSeg = segments.find(s => s.segment_name.toLowerCase().includes('enclosure') || s.segment_name.toLowerCase().includes('protection'));
+  
+  const appliesStr = (table.applies_to || '').toLowerCase();
+  const scoredRows = [];
 
   for (const rowObj of allRowsObj) {
-    let rowMatchedAnyCriteria = false;
-    const rowValues = Object.values(rowObj).map(String);
+    let score = 0;
+    const rowValues = Object.values(rowObj).map(String).map(s => s.toLowerCase());
 
-    // Check enclosure matches
-    if (encSeg && rowValues.some(val => 
-        val.toLowerCase() === encSeg.raw_code.toLowerCase() ||
-        val.toLowerCase().includes(encSeg.raw_code.toLowerCase())
-      )) {
-      rowMatchedAnyCriteria = true;
+    // 1. Enclosure matching
+    if (encSeg) {
+      const encCode = encSeg.raw_code.toLowerCase();
+      if (rowValues.some(val => val === encCode)) {
+        score += 3;
+      } else if (rowValues.some(val => val.includes(encCode))) {
+        score += 2;
+      }
     }
-    
-    // Check power matches prefix (e.g. P1K1 matches 1.1)
-    if (!rowMatchedAnyCriteria && powerSeg) {
-        // P1K1 -> 1.1, P90K -> 90
-        let kwMatch = powerSeg.meaning.match(/([\d.]+)\s*kW/i);
-        let kwVal = kwMatch ? kwMatch[1] : powerSeg.raw_code;
-        
-        if (rowValues.some(val => val.includes(kwVal) || val.includes(powerSeg.raw_code))) {
-            rowMatchedAnyCriteria = true;
+
+    // 2. Power matching
+    if (powerSeg) {
+      let kwMatch = powerSeg.meaning.match(/([\d.]+)\s*kW/i);
+      let kwVal = kwMatch ? kwMatch[1] : powerSeg.raw_code;
+      const powerCodeLower = powerSeg.raw_code.toLowerCase();
+      const kwValLower = kwVal.toLowerCase();
+
+      if (rowValues.some(val => val === powerCodeLower)) {
+        score += 4; // exact typecode match (e.g. N110)
+      } else if (rowValues.some(val => val === kwValLower)) {
+        score += 3; // exact kW match (e.g. 110)
+      } else if (rowValues.some(val => val.includes(powerCodeLower) || val.includes(kwValLower))) {
+        score += 1; // partial string match
+      }
+    }
+
+    // 3. Voltage matching
+    if (voltSeg) {
+      const voltCode = voltSeg.raw_code.toLowerCase();
+      if (rowValues.some(val => val.includes(voltCode))) {
+        score += 2;
+      } else if (appliesStr.includes(voltCode)) {
+        score += 1;
+      }
+    }
+
+    // 4. Dynamic Dimenions Inference matching
+    if (powerSeg && voltSeg && encSeg) {
+      let kwMatch = powerSeg.meaning.match(/([\d.]+)\s*kW/i);
+      let extractedKwVal = kwMatch ? kwMatch[1] : powerSeg.raw_code;
+      const kw = parseFloat(extractedKwVal);
+      const ipMatch = encSeg.raw_code.match(/\d+/);
+      const ip = ipMatch ? parseInt(ipMatch[0], 10) : 20;
+      const vCode = voltSeg.raw_code.toUpperCase();
+      let inferredEnc = '';
+      
+      if (vCode === 'T4') {
+        if (ip <= 21) {
+          if (kw <= 4.0) inferredEnc = 'A2';
+          else if (kw <= 7.5) inferredEnc = 'A3';
+          else if (kw <= 15) inferredEnc = 'B3';
+          else if (kw <= 22) inferredEnc = 'B4';
+          else if (kw <= 45) inferredEnc = 'C3';
+          else if (kw <= 75) inferredEnc = 'C4';
+        } else {
+          if (kw <= 4.0) inferredEnc = 'A4';
+          else if (kw <= 7.5) inferredEnc = 'A5';
+          else if (kw <= 22) inferredEnc = 'B1';
+          else if (kw <= 30) inferredEnc = 'B2';
+          else if (kw <= 75) inferredEnc = 'C1';
+          else if (kw <= 90) inferredEnc = 'C2';
         }
+      } else if (vCode === 'T2') {
+         if (ip <= 21) {
+          if (kw <= 2.2) inferredEnc = 'A2';
+          else if (kw <= 3.7) inferredEnc = 'A3';
+          else if (kw <= 11) inferredEnc = 'B3';
+          else if (kw <= 15) inferredEnc = 'B4';
+          else if (kw <= 22) inferredEnc = 'C3';
+          else inferredEnc = 'C4';
+         }
+      }
+
+      if (inferredEnc && rowValues.some(val => val === inferredEnc.toLowerCase())) {
+        score += 10; // Massive score for dynamically matching the physical enclosure size directly
+      }
     }
 
-    if (!rowMatchedAnyCriteria && voltSeg) {
-         if (rowValues.some(val => val.toUpperCase().includes(voltSeg.raw_code.toUpperCase()))) {
-            rowMatchedAnyCriteria = true;
-        }
-    }
-
-    if (rowMatchedAnyCriteria) {
-      matchedRows.push(rowObj);
+    // Include any row that matches at least one condition (or table condition)
+    if (score > 0) {
+      scoredRows.push({ rowObj, score });
     }
   }
 
-  // Fallback: if no rows matched, return all rows
+  // Sort by highest score first
+  scoredRows.sort((a, b) => b.score - a.score);
+  
+  if (scoredRows.length > 0) {
+    matchedRows.push(...scoredRows.map(s => s.rowObj));
+  }
+
+  // Fallback: if no rows matched, return empty so we don't blindly pick random data
   if (matchedRows.length === 0) {
-      return { matchedRows: allRowsObj, allRowsObj, extractedKv };
+      return { matchedRows: [], allRowsObj, extractedKv };
   }
 
   return { matchedRows, allRowsObj, extractedKv };

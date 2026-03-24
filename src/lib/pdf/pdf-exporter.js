@@ -264,38 +264,66 @@ export async function exportPdf(sections, meta = {}) {
   });
 
   // ── DISCLAIMER TEXT (last page) ──
-  let lastPageY = doc.lastAutoTable.finalY + 15;
-  
-  // If the table ended too far down the page, we need a new page for the disclaimer
-  if (lastPageY > pageH - 35) {
-    doc.addPage();
-    lastPageY = 20; // reset to top of new page
-  }
-  
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(5.5);
   doc.setTextColor(120, 120, 120);
-  const disclaimer = [
-    'Orice informație, incluzând, dar fără a se limita la informații privind selectarea produsului, aplicația sau utilizarea acestuia, proiectarea produsului, greutatea, dimensiunile, capacitatea sau',
-    'orice alte date tehnice din manuale de produs, descrieri de catalog, materiale publicitare etc., indiferent dacă sunt puse la dispoziție în scris, oral, electronic, online sau prin descărcare,',
-    'trebuie considerată drept informativă și devine obligatorie doar dacă și în măsura în care se face referire explicită la aceasta într-o ofertă sau într-o confirmare de comandă.',
-    '',
-    'Danfoss nu poate accepta nicio responsabilitate pentru posibile erori în cataloage, broșuri, videoclipuri sau alte materiale. Danfoss își rezervă dreptul de a modifica produsele sale fără',
-    'notificare prealabilă. Aceasta se aplică și produselor comandate, dar nelivrate, cu condiția ca astfel de modificări să poată fi realizate fără a afecta forma, potrivirea sau funcția produsului.',
-    '',
-    'Toate mărcile comerciale incluse în acest material sunt proprietatea Danfoss A/S sau a companiilor din grupul Danfoss. „Danfoss” și sigla Danfoss sunt mărci comerciale ale Danfoss A/S.',
-    'Toate drepturile sunt rezervate.',
-  ];
 
-  let disclaimerY = lastPageY;
-  for (const line of disclaimer) {
-    if (line === '') {
-      disclaimerY += 2;
-      continue;
+  const para1 = 'Orice informație, incluzând, dar fără a se limita la informații privind selectarea produsului, aplicația sau utilizarea acestuia, proiectarea produsului, greutatea, dimensiunile, capacitatea sau orice alte date tehnice din manuale de produs, descrieri de catalog, materiale publicitare etc., indiferent dacă sunt puse la dispoziție în scris, oral, electronic, online sau prin descărcare, trebuie considerată drept informativă și devine obligatorie doar dacă și în măsura în care se face referire explicită la aceasta într-o ofertă sau într-o confirmare de comandă.';
+  const para2 = 'Danfoss nu poate accepta nicio responsabilitate pentru posibile erori în cataloage, broșuri, videoclipuri sau alte materiale. Danfoss își rezervă dreptul de a modifica produsele sale fără notificare prealabilă. Aceasta se aplică și produselor comandate, dar nelivrate, cu condiția ca astfel de modificări să poată fi realizate fără a afecta forma, potrivirea sau funcția produsului.';
+  const para3 = 'Toate mărcile comerciale incluse în acest material sunt proprietatea Danfoss A/S sau a companiilor din grupul Danfoss. „Danfoss” și sigla Danfoss sunt mărci comerciale ale Danfoss A/S. Toate drepturile sunt rezervate.';
+
+  // Split text dynamically based on available width
+  const lines1 = doc.splitTextToSize(para1, contentW);
+  const lines2 = doc.splitTextToSize(para2, contentW);
+  const lines3 = doc.splitTextToSize(para3, contentW);
+
+  // Total lines + spacing
+  const totalLines = lines1.length + lines2.length + lines3.length;
+  const disclaimerHeight = (totalLines * 2.5) + 6; // approximate height in mm
+
+  // Anchor the disclaimer to the bottom of the page, above the absolute footer (pageH - 20)
+  let disclaimerStartY = pageH - 20 - disclaimerHeight;
+
+  // If the table crossed into this space, push the disclaimer to a new page
+  if (doc.lastAutoTable.finalY > disclaimerStartY - 5) {
+    doc.addPage();
+    
+    // Draw continuation header
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...BLACK);
+    doc.text(`Fisa tehnica | ${meta.family || ''}`, marginL, 10);
+    if (logoPngUrl) {
+      doc.addImage(logoPngUrl, 'PNG', pageW - marginR - 22, 4, 22, 9.2);
+    } else {
+      doc.setFillColor(...RED);
+      doc.roundedRect(pageW - marginR - 22, 4, 22, 7, 1, 1, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(7);
+      doc.setTextColor(...WHITE);
+      doc.text('Danfoss', pageW - marginR - 11, 8.5, { align: 'center' });
     }
-    doc.text(line, marginL, disclaimerY);
-    disclaimerY += 2.5;
+    
+    // Draw footer manually since addPage bypasses autotable hook
+    drawFooter(doc.internal.getNumberOfPages(), doc.internal.getNumberOfPages());
+    
+    // Reset Y to absolute bottom of new page
+    disclaimerStartY = pageH - 20 - disclaimerHeight;
   }
+
+  // Draw the paragraphs
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(5.5);
+  doc.setTextColor(120, 120, 120);
+
+  let currentY = disclaimerStartY;
+  doc.text(lines1, marginL, currentY);
+  currentY += (lines1.length * 2.5) + 2;
+  
+  doc.text(lines2, marginL, currentY);
+  currentY += (lines2.length * 2.5) + 2;
+  
+  doc.text(lines3, marginL, currentY);
 
   // ── SAVE ──
   const filename = `Fisa_tehnica_${(meta.family || 'datasheet').replace(/[^a-zA-Z0-9]/g, '_')}_${meta.typecode ? meta.typecode.replace(/[^a-zA-Z0-9]/g, '_') : 'export'}.pdf`;

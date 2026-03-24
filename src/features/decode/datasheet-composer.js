@@ -82,7 +82,7 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
       r('3,01', 'Putere iesire', pKW, 'kW'),
       r('3,02', 'Curent iesire (HO)', val(d.output_current), 'A'),
       r('3,03', 'Eficienta', val(d.efficiency), '%'),
-      r('3,04', 'Timpul de suprasarcina (160%)', pKW ? val(d.overload_time_160pct) : '', 's'),
+      r('3,04', 'Timpul de suprasarcina (160%)', pKW ? val(d.overload_time_high_overload, d.overload_time_160pct) : '', 's'),
       r('3,08', 'Filtru RFI', seg('rfi')),
     ]
   };
@@ -144,7 +144,7 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
     title: 'NIVEL DE ZGOMOT',
     rows: [
       r('8,01', 'Zgomot Minim', ''),
-      r('8,02', 'Zgomot Maxim', ''),
+      r('8,02', 'Zgomot Maxim', val(d.acoustic_noise), 'dBA'),
     ]
   };
 
