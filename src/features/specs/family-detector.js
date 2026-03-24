@@ -50,14 +50,25 @@ export function detectFamily(typecode, loadedSpecs) {
       const spec = loadedSpecs.find(s => {
         const meta = s.knowledge_base_metadata;
         if (!meta) return false;
-        const specFamily = (meta.product_family || '').toUpperCase();
-        const specNames = (meta.series_names || []).map(n => n.toUpperCase());
-        return specFamily.includes(pattern.family.toUpperCase()) ||
-               specNames.some(n => pattern.family.toUpperCase().includes(n));
+        
+        const normalizeForMatch = (str) => 
+          (str || '').toUpperCase().replace(/[®™]/g, '').replace(/\s+/g, ' ').trim();
+          
+        const specFamily = normalizeForMatch(meta.product_family);
+        const specNames = (meta.series_names || []).map(normalizeForMatch);
+        const searchFamily = normalizeForMatch(pattern.family);
+        
+        return specFamily.includes(searchFamily) ||
+               specNames.some(n => n.includes(searchFamily) || searchFamily.includes(n));
       });
 
       if (spec) {
-        return { family: spec.knowledge_base_metadata.product_family, spec };
+        let family = spec.knowledge_base_metadata.product_family;
+        if (family === 'VACON 100' || family === 'VACON 100 INDUSTRIAL') {
+          if (normalized.includes('FLOW')) family = 'VACON 100 FLOW';
+          else if (normalized.includes('HVAC')) family = 'VACON 100 HVAC';
+        }
+        return { family, spec };
       }
     }
   }
@@ -85,9 +96,12 @@ export function detectFamily(typecode, loadedSpecs) {
     const meta = spec.knowledge_base_metadata;
     if (!meta || !meta.series_names) continue;
 
+    const normalizeForMatch = (str) => 
+      (str || '').toUpperCase().replace(/[®™]/g, '').replace(/\s+/g, ' ').trim();
+    
+    const codeNorm = normalizeForMatch(normalized);
     for (const name of meta.series_names) {
-      const seriesNorm = name.toUpperCase().replace(/\s+/g, '');
-      const codeNorm = normalized.replace(/\s+/g, '');
+      const seriesNorm = normalizeForMatch(name);
       if (codeNorm.startsWith(seriesNorm) || codeNorm.includes(seriesNorm)) {
         return { family: meta.product_family, spec };
       }

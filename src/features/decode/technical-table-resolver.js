@@ -20,10 +20,24 @@ export function resolveTechnicalTables(segments, spec) {
   if (!spec.technical_tables || spec.technical_tables.length === 0) return [];
 
   const results = [];
+  let dynamicallyResolvedEnclosure = null;
 
   for (const table of spec.technical_tables) {
-    const { matchedRows, allRowsObj, extractedKv } = processTable(table, segments);
+    const { matchedRows, allRowsObj, extractedKv, maxScore } = processTable(table, segments, dynamicallyResolvedEnclosure);
     
+    // If we just resolved a table that contains an enclosure/chassis column, capture its value for the NEXT tables
+    if (matchedRows && matchedRows.length > 0 && maxScore > 5) { // Only trust high-quality matches for dynamic linking
+      const bestMatch = matchedRows[0];
+      const encKey = Object.keys(bestMatch).find(k => 
+        k.toLowerCase().includes('enclosure') || 
+        k.toLowerCase().includes('chassis') || 
+        k.toLowerCase().includes('frame')
+      );
+      if (encKey && bestMatch[encKey]) {
+        dynamicallyResolvedEnclosure = String(bestMatch[encKey]).toLowerCase();
+      }
+    }
+
     results.push({
       tableId: table.table_id || '',
       tableName: table.table_name || '',
@@ -33,6 +47,7 @@ export function resolveTechnicalTables(segments, spec) {
       extractedKv,
       units: table.units || {},
       notes: table.notes || [],
+      maxScore: maxScore || 0,
     });
   }
 
@@ -44,21 +59,29 @@ export function resolveTechnicalTables(segments, spec) {
  * 
  * @param {import('../../types/knowledge-base.js').TechnicalTable} table 
  * @param {DecodedSegment[]} segments 
+ * @param {string} dynamicallyResolvedEnclosure
  */
-function processTable(table, segments) {
+function processTable(table, segments, dynamicallyResolvedEnclosure = null) {
   const allRowsObj = [];
   const matchedRows = [];
   const extractedKv = {};
+  let maxScore = 0;
 
-  if (!table.rows || !table.columns) return { matchedRows, allRowsObj, extractedKv };
+  if (!table.rows || !table.columns) return { matchedRows, allRowsObj, extractedKv, maxScore: 0 };
 
-  // Convert array-of-arrays to array-of-objects
-  for (const rowArray of table.rows) {
-    const rowObj = {};
-    for (let i = 0; i < table.columns.length && i < rowArray.length; i++) {
-        rowObj[table.columns[i]] = rowArray[i];
+  // Convert array-of-arrays to array-of-objects, or pass through if already objects
+  for (const rowItem of table.rows) {
+    if (Array.isArray(rowItem)) {
+      const rowObj = {};
+      for (let i = 0; i < table.columns.length && i < rowItem.length; i++) {
+          rowObj[table.columns[i]] = rowItem[i];
+      }
+      allRowsObj.push(rowObj);
+    } else if (typeof rowItem === 'object' && rowItem !== null) {
+      allRowsObj.push(rowItem);
+    } else {
+      allRowsObj.push(rowItem);
     }
-    allRowsObj.push(rowObj);
   }
 
   // Detect parameter/value style tables (like environment limits)
@@ -82,15 +105,31 @@ function processTable(table, segments) {
       }
       matchedRows.push(rowObj); // All rows "match" in a KV table
     }
-    return { matchedRows, allRowsObj, extractedKv };
+    return { matchedRows, allRowsObj, extractedKv, maxScore: 100 }; // KV tables have absolute priority
   }
 
   // For data tables (dimensions, power ratings, acoustic noise), try to match multiple segments
-  const powerSeg = segments.find(s => s.segment_name.toLowerCase().includes('power') || s.segment_name.toLowerCase().includes('size'));
-  const voltSeg = segments.find(s => s.segment_name.toLowerCase().includes('voltage') || s.segment_name.toLowerCase().includes('mains'));
-  const encSeg = segments.find(s => s.segment_name.toLowerCase().includes('enclosure') || s.segment_name.toLowerCase().includes('protection'));
+  const powerSeg = segments.find(s => {
+    const n = s.segment_name.toLowerCase();
+    return n.includes('power') || n.includes('size') || n.includes('current') || n.includes('rated');
+  });
+  const voltSeg = segments.find(s => 
+    s.segment_name.toLowerCase().includes('voltage') || 
+    s.segment_name.toLowerCase().includes('mains')
+  );
+  const encSeg = segments.find(s => 
+    s.segment_name.toLowerCase().includes('enclosure') || 
+    s.segment_name.toLowerCase().includes('protection') ||
+    s.segment_name.toLowerCase().includes('chassis')
+  );
   
   const appliesStr = (table.applies_to || '').toLowerCase();
+  
+  // Detect if tab columns include a primary key for ratings (VACON or VLT pattern)
+  const firstCol = (table.columns[0] || '').toLowerCase();
+  const isRatedCurrentTable = firstCol.includes('rated') && firstCol.includes('current');
+  const isPowerCodeTable = firstCol.includes('power') && firstCol.includes('code');
+
   const scoredRows = [];
 
   for (const rowObj of allRowsObj) {
@@ -107,15 +146,24 @@ function processTable(table, segments) {
       }
     }
 
-    // 2. Power matching
+    // 2. Power / Rated current matching
     if (powerSeg) {
       let kwMatch = powerSeg.meaning.match(/([\d.]+)\s*kW/i);
       let kwVal = kwMatch ? kwMatch[1] : powerSeg.raw_code;
       const powerCodeLower = powerSeg.raw_code.toLowerCase();
       const kwValLower = kwVal.toLowerCase();
 
-      if (rowValues.some(val => val === powerCodeLower)) {
-        score += 4; // exact typecode match (e.g. N110)
+      // 2a. Primary column match (index 0 is usually the code/model ID)
+      const primaryVal = rowValues[0] || '';
+      
+      // VACON pattern: rated_current_code matches directly against Rated_current_code column
+      // VLT pattern: power_code matches directly against Power_code column
+      if ((isRatedCurrentTable || isPowerCodeTable) && primaryVal === powerCodeLower) {
+        score += 15; // Very high — exact primary key match
+      } else if (primaryVal === powerCodeLower || (primaryVal.includes('-') && primaryVal.split('-').pop() === powerCodeLower)) {
+        score += 10;
+      } else if (rowValues.some(val => val === powerCodeLower)) {
+        score += 8; // exact typecode match in any column
       } else if (rowValues.some(val => val === kwValLower)) {
         score += 3; // exact kW match (e.g. 110)
       } else if (rowValues.some(val => val.includes(powerCodeLower) || val.includes(kwValLower))) {
@@ -126,14 +174,27 @@ function processTable(table, segments) {
     // 3. Voltage matching
     if (voltSeg) {
       const voltCode = voltSeg.raw_code.toLowerCase();
-      if (rowValues.some(val => val.includes(voltCode))) {
+      const voltMeaning = (voltSeg.meaning || '').toLowerCase()
+        .replace(/\s*\(inferred[^)]*\)\s*/gi, '')
+        .replace(/\s*\(extracted[^)]*\)\s*/gi, '')
+        .trim();
+      
+      // Strong match: voltage meaning (e.g. "380-500 v") matches a row value
+      if (voltMeaning && rowValues.some(val => val.includes(voltMeaning) || voltMeaning.includes(val))) {
+        score += 5;
+      } else if (rowValues.some(val => val.includes(voltCode))) {
         score += 2;
       } else if (appliesStr.includes(voltCode)) {
         score += 1;
       }
     }
 
-    // 4. Dynamic Dimenions Inference matching
+    // 4. Dynamic Cascading Linked Enclosure
+    if (dynamicallyResolvedEnclosure && rowValues.some(val => val === dynamicallyResolvedEnclosure)) {
+      score += 20; // 20 points for hard-linked dimension resolution
+    }
+
+    // 5. Legacy VLT Dimensions Inference matching
     if (powerSeg && voltSeg && encSeg) {
       let kwMatch = powerSeg.meaning.match(/([\d.]+)\s*kW/i);
       let extractedKwVal = kwMatch ? kwMatch[1] : powerSeg.raw_code;
@@ -175,9 +236,10 @@ function processTable(table, segments) {
       }
     }
 
-    // Include any row that matches at least one condition (or table condition)
+    // Include any row that matches at least one condition
     if (score > 0) {
       scoredRows.push({ rowObj, score });
+      if (score > maxScore) maxScore = score;
     }
   }
 
@@ -185,13 +247,15 @@ function processTable(table, segments) {
   scoredRows.sort((a, b) => b.score - a.score);
   
   if (scoredRows.length > 0) {
-    matchedRows.push(...scoredRows.map(s => s.rowObj));
+    // ONLY return rows that share the absolute highest score for this table
+    const topScorers = scoredRows.filter(s => s.score === maxScore);
+    matchedRows.push(...topScorers.map(s => s.rowObj));
   }
 
   // Fallback: if no rows matched, return empty so we don't blindly pick random data
   if (matchedRows.length === 0) {
-      return { matchedRows: [], allRowsObj, extractedKv };
+      return { matchedRows: [], allRowsObj, extractedKv, maxScore: 0 };
   }
 
-  return { matchedRows, allRowsObj, extractedKv };
+  return { matchedRows, allRowsObj, extractedKv, maxScore };
 }

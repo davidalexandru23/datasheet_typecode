@@ -24,7 +24,13 @@ export function extractDatasheetData(decodeResult) {
 
   // 2. Extract from technical tables
   if (technicalTables && technicalTables.length > 0) {
-    for (const table of technicalTables) {
+    // Sort tables by their match quality (maxScore) so that the most specific table
+    // is processed LAST or prioritizes its data.
+    // We sort ASCENDING (lowest score first) so that the best match (highest score) 
+    // is processed LAST and overwrites generic data.
+    const sortedTables = [...technicalTables].sort((a, b) => (a.maxScore || 0) - (b.maxScore || 0));
+
+    for (const table of sortedTables) {
       // Merge KV tables (like environment limits, motor support)
       if (table.extractedKv && Object.keys(table.extractedKv).length > 0) {
         Object.assign(extracted, table.extractedKv);
@@ -38,11 +44,18 @@ export function extractDatasheetData(decodeResult) {
         for (const [key, val] of Object.entries(row)) {
           const k = key.toLowerCase();
           const v = String(val);
+          const isCode = k.includes('code') || k.includes('example');
           
-          if (k.includes('output_current_continuous') || (k.includes('current') && !extracted.output_current && !k.includes('input') && !k.includes('intermittent'))) {
+          if (!isCode && (k.includes('output_current') || (k.includes('current') && !extracted.output_current && !k.includes('input') && !k.includes('intermittent')))) {
             extracted.output_current = v;
           }
-          if (k.includes('intermittent') || (k.includes('overload') && k.includes('current'))) {
+          if (!isCode && (k.includes('power') && (k.includes('kw') || k.includes('400v') || k.includes('230v') || k.includes('normal')))) {
+            // Priority: Prefer kW over HP, and explicit kW over generic power
+            if (!extracted.power_kw || k.includes('kw') || !extracted.power_kw.includes('kW')) {
+               extracted.power_kw = v;
+            }
+          }
+          if (!isCode && (k.includes('intermittent') || (k.includes('overload') && k.includes('current')))) {
             extracted.overload_current = v;
           }
           if (k.includes('efficien') || k.includes('eficienta')) {
@@ -73,12 +86,79 @@ export function extractDatasheetData(decodeResult) {
     }
   }
 
+  // 2b. VACON-specific KV table post-processing
+  // The general_specs_kv table provides descriptive text that needs parsing into specific fields
+  
+  // Ambient temperature: parse from "ambient_operating_temperature_wall_modules_enclosed"
+  const ambientKey = extracted.ambient_operating_temperature_wall_modules_enclosed 
+    || extracted.ambient_operating_temperature_100x;
+  if (ambientKey) {
+    const tempMatch = ambientKey.match(/(-?\d+)\s*°?\s*C\s*to\s*\+?(\d+)\s*°?\s*C/i);
+    if (tempMatch) {
+      extracted.ambient_temperature_minimum = extracted.ambient_temperature_minimum || tempMatch[1];
+      extracted.ambient_temperature_maximum = extracted.ambient_temperature_maximum || tempMatch[2];
+    }
+  }
+
+  // Altitude: parse from "altitude_nominal_rating"
+  if (extracted.altitude_nominal_rating && !extracted.maximum_altitude_without_derating) {
+    const altMatch = extracted.altitude_nominal_rating.match(/up\s+to\s+(\d+)\s*m/i);
+    if (altMatch) {
+      extracted.maximum_altitude_without_derating = altMatch[1];
+    }
+  }
+
+  // I/O counts: parse from "i_o" field (e.g. "2 x AI, 6 x DI, 1 x AO, 10 Vref, 24 Vin, 2 x 24 Vout, 3 x RO or 2 x RO + TI")
+  if (extracted.i_o) {
+    const ioStr = extracted.i_o;
+    const aiMatch = ioStr.match(/(\d+)\s*x?\s*AI/i);
+    const diMatch = ioStr.match(/(\d+)\s*x?\s*DI/i);
+    const aoMatch = ioStr.match(/(\d+)\s*x?\s*AO/i);
+    const roMatch = ioStr.match(/(\d+)\s*x?\s*RO/i);
+    
+    if (aiMatch) extracted.analog_inputs = aiMatch[1];
+    if (diMatch) extracted.digital_inputs = diMatch[1];
+    if (aoMatch) extracted.analog_outputs = aoMatch[1];
+    if (roMatch) extracted.relay_outputs = roMatch[1];
+  }
+
+  // Fix I/O fields: if they contain descriptive text instead of numbers, use defaults
+  const ioFields = ['analog_inputs', 'digital_inputs', 'analog_outputs', 'digital_outputs', 'relay_outputs'];
+  for (const field of ioFields) {
+    if (extracted[field] && !/^\d+/.test(String(extracted[field]).trim())) {
+      // Value is descriptive text, not a count — clear it so defaults are used from composer
+      delete extracted[field];
+    }
+  }
+
+  // Output frequency: parse from KV "output_frequency" 
+  if (extracted.output_frequency && !extracted.output_frequency_range) {
+    extracted.output_frequency_range = extracted.output_frequency;
+  }
+
+  // Default enclosure/IP: parse from "enclosure_classes" KV
+  if (extracted.enclosure_classes && !extracted.ip_rating) {
+    const ipMatch = extracted.enclosure_classes.match(/IP(\d{2})/);
+    if (ipMatch) {
+      extracted.ip_rating = `IP${ipMatch[1]}`;
+    }
+  }
+
   // 3. Extract missing data explicitly from segment parsing
   
   // Power
-  let currentPower = extracted.power || _seg(segments, 'power', 'size');
+  let currentPower = extracted.power || _seg(segments, 'power', 'size', 'rated');
   let voltStr = extracted.voltage_range || _seg(segments, 'voltage', 'ac_line', 'mains');
-  let encStr = extracted.ip_rating || _seg(segments, 'enclosure', 'protection');
+  let encStr = extracted.ip_rating || _seg(segments, 'enclosure', 'protection', 'optional_codes');
+
+  // VACON-specific: rated_continuous_current_code meaning contains combined "61 A / 30 kW" 
+  const ratedSeg = segments.find(s => s.segment_name.toLowerCase().includes('rated_continuous_current'));
+  if (ratedSeg && ratedSeg.meaning) {
+    const mKw = ratedSeg.meaning.match(/(\d+\.?\d*)\s*kW/i);
+    const mA = ratedSeg.meaning.match(/(\d+\.?\d*)\s*A/i);
+    if (mKw && !extracted.power_kw) extracted.power_kw = mKw[1];
+    if (mA && !extracted.output_current) extracted.output_current = mA[1];
+  }
 
   // GLOBAL SEMANTIC HARVESTING: 
   // If technical parameters were embedded inside unnamed or option code segments (like VACON '+IP54'),
@@ -86,9 +166,9 @@ export function extractDatasheetData(decodeResult) {
   for (const seg of segments) {
     const text = String(seg.meaning + ' ' + seg.raw_code).toUpperCase();
     
-    if (!encStr && /IP\s*\d{2}/.test(text)) {
-       const m = text.match(/(IP\s*\d{2})/);
-       if (m) encStr = m[1];
+    if (!encStr && /IP\s*\d{2}/i.test(text)) {
+       const m = text.match(/IP\s*(\d{2})/i);
+       if (m) encStr = `IP${m[1]}`;
     }
     
     if (!currentPower && (/[\d.]+\s*KW/.test(text) || /[\d.]+\s*HP/.test(text))) {
@@ -96,8 +176,8 @@ export function extractDatasheetData(decodeResult) {
        if (m) currentPower = m[1];
     }
 
-    if (!extracted.phases && /(\d)\s*(?:PHASE|FAZE|PH)/.test(text)) {
-       const m = text.match(/(\d)\s*(?:PHASE|FAZE|PH)/);
+    if (!extracted.phases && /(\d)\s*[-]?\s*(?:PHASE|FAZE|PH)/.test(text)) {
+       const m = text.match(/(\d)\s*[-]?\s*(?:PHASE|FAZE|PH)/);
        if (m) extracted.phases = m[1];
     }
     
@@ -110,7 +190,15 @@ export function extractDatasheetData(decodeResult) {
   // Refine Power
   if (currentPower && !extracted.power_kw) {
     const match = currentPower.match(/([\d.]+)\s*kW/i);
-    extracted.power_kw = match ? match[1] : currentPower;
+    // Explicitly reject meanings that are likely just current/voltage codes if no kW found
+    if (match) {
+      extracted.power_kw = match[1];
+    } else if (currentPower.match(/^\d+$/) && currentPower.length < 3) {
+      // It's just a small number, maybe from a voltage code? Allow if no other clue.
+      extracted.power_kw = currentPower;
+    } else if (!currentPower.includes('A') && !currentPower.includes('V') && !currentPower.includes('HP')) {
+      extracted.power_kw = currentPower;
+    }
   }
 
   // Refine Voltage and Phases
@@ -133,16 +221,26 @@ export function extractDatasheetData(decodeResult) {
 
   // ==== FALLBACK MATHEMATICAL INFERENCE ====
   // If the user's JSON omitted electrical tables, we dynamically calculate the nominals here.
+  const is200v = (extracted.voltage_range || '').includes('200');
+  const is690v = (extracted.voltage_range || '').includes('690') || (extracted.voltage_range || '').includes('600');
+  const is400v = !is200v && !is690v;
+
+  if (extracted.power_kw && !extracted.output_current) {
+     // Generic dynamic mapping for output current:
+     // 400V drives: ~2.1A per kW. 200V drives: ~4.2A per kW. 690V drives: ~1.2A per kW.
+     let est = parseFloat(extracted.power_kw) * (is200v ? 4.2 : (is690v ? 1.2 : 2.0));
+     extracted.output_current = Math.round(est).toString();
+  } else if (extracted.output_current && !extracted.power_kw) {
+     // Infer Power from Current
+     // 400V: kW ≈ A / 2.0 (roughly, for standard motors)
+     // 690V: kW ≈ A * 1.1 (roughly)
+     // 200V: kW ≈ A / 4.0
+     let est = parseFloat(extracted.output_current) * (is200v ? 0.25 : (is690v ? 1.1 : 0.5));
+     extracted.power_kw = Math.round(est).toString();
+  }
+
   if (extracted.power_kw) {
       const kw = parseFloat(extracted.power_kw);
-      if (!extracted.output_current) {
-         // Generic dynamic mapping for output current:
-         // 400V drives: ~2.1A per kW. 200V drives: ~4.2A per kW. 690V drives: ~1.2A per kW.
-         const is200v = (extracted.voltage_range || '').includes('200');
-         const is690v = (extracted.voltage_range || '').includes('690');
-         let est = kw * (is200v ? 4.2 : (is690v ? 1.2 : 2.18));
-         extracted.output_current = Math.round(est).toString();
-      }
       if (!extracted.overload_current && extracted.output_current) {
          // High overload is typically 150-160% of continuous
          extracted.overload_current = Math.round(parseFloat(extracted.output_current) * 1.5).toString();
@@ -159,7 +257,7 @@ export function extractDatasheetData(decodeResult) {
       }
 
       // ==== DYNAMIC DIMENSIONS & NOISE FALLBACK ====
-      if (!extracted.dimension_height || !extracted.acoustic_noise) {
+      if (!extracted.dimension_height || !extracted.dimension_width || !extracted.dimension_depth || !extracted.weight || !extracted.acoustic_noise) {
           const encSize = _inferEnclosureSize(kw, extracted.voltage_range, extracted.ip_rating);
           const dimMap = {
               'A2': { h: '268', w: '90', d: '205', wt: '4.9', noise: '60' },
@@ -173,7 +271,15 @@ export function extractDatasheetData(decodeResult) {
               'C1': { h: '680', w: '308', d: '310', wt: '45.0', noise: '67' },
               'C2': { h: '770', w: '370', d: '335', wt: '65.0', noise: '67' },
               'C3': { h: '550', w: '329', d: '332', wt: '35.0', noise: '67' },
-              'C4': { h: '660', w: '370', d: '332', wt: '50.0', noise: '67' }
+              'C4': { h: '660', w: '370', d: '332', wt: '50.0', noise: '67' },
+              'D1h': { h: '901', w: '325', d: '379', wt: '62.0', noise: '71' },
+              'D2h': { h: '1107', w: '325', d: '379', wt: '125.0', noise: '71' },
+              'D3h': { h: '909', w: '250', d: '375', wt: '62.0', noise: '71' },
+              'D4h': { h: '1027', w: '375', d: '375', wt: '125.0', noise: '71' },
+              'E1h': { h: '2043', w: '602', d: '513', wt: '295.0', noise: '74' },
+              'E2h': { h: '2043', w: '698', d: '513', wt: '318.0', noise: '74' },
+              'E3h': { h: '1578', w: '506', d: '482', wt: '272.0', noise: '74' },
+              'E4h': { h: '1578', w: '604', d: '482', wt: '295.0', noise: '74' }
           };
           
           if (encSize && dimMap[encSize]) {
@@ -204,6 +310,10 @@ function _inferEnclosureSize(kw, voltageRange, ipRating) {
             if (kw <= 22) return 'B4';
             if (kw <= 45) return 'C3';
             if (kw <= 75) return 'C4';
+            if (kw <= 160) return 'D3h';
+            if (kw <= 315) return 'D4h';
+            if (kw <= 500) return 'E3h';
+            if (kw <= 800) return 'E4h';
         } else {
             if (kw <= 4.0) return 'A4';
             if (kw <= 7.5) return 'A5';
@@ -211,6 +321,11 @@ function _inferEnclosureSize(kw, voltageRange, ipRating) {
             if (kw <= 30) return 'B2';
             if (kw <= 75) return 'C1';
             if (kw <= 90) return 'C2';
+            // IP54 high power defaults
+            if (kw <= 160) return 'D1h';
+            if (kw <= 315) return 'D2h';
+            if (kw <= 500) return 'E1h';
+            if (kw <= 800) return 'E2h';
         }
     } else if (vCode === 'T2') {
         if (ip <= 21) {

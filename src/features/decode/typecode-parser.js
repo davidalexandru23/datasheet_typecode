@@ -132,6 +132,45 @@ function parseBySegments(rawCode, spec) {
     });
   }
 
+  // Floating Segment Matching: handle segments without numeric positions (VACON suffixes and +codes)
+  const remainingStructure = spec.typecode_structure.filter(seg => {
+    const isPositional = parsePositions(seg.character_positions) !== null;
+    const alreadyDecoded = segments.some(s => s.segment_name === seg.segment_name);
+    return !isPositional || !alreadyDecoded;
+  });
+
+  for (const seg of remainingStructure) {
+    const segName = seg.segment_name;
+    // Find all defined values for this segment in spec
+    const possibleValues = (spec.typecode_values || []).filter(v => v.segment_name === segName);
+    
+    for (const val of possibleValues) {
+      const valCode = val.code.toUpperCase();
+      if (!valCode || valCode === 'X' || valCode === 'XX') continue; // Skip generic placeholders in floating match
+
+      if (code.toUpperCase().includes(valCode)) {
+        // Only add if not already covered by a positional segment
+        if (!segments.some(s => s.raw_code.toUpperCase().includes(valCode) || valCode.includes(s.raw_code.toUpperCase()))) {
+          segments.push({
+            segment_name: segName,
+            segment_label: seg.segment_label_from_manual || val.segment_code || segName,
+            character_positions: seg.character_positions || 'floating',
+            raw_code: valCode,
+            meaning: val.meaning || '',
+            notes: val.notes || '',
+            confidence: val.confidence || 'medium',
+            source_references: val.all_source_references || seg.all_source_references || [],
+            dependencies: val.dependencies || [],
+            exclusions: val.exclusions || [],
+            availability_conditions: val.availability_conditions || [],
+          });
+          // Break to avoid multiple values for same segment unless it's "optional_codes"
+          if (segName !== 'optional_codes') break;
+        }
+      }
+    }
+  }
+
   return segments;
 }
 
@@ -146,13 +185,29 @@ function extractFromExplanation(rawCode, segDef) {
   const explanation = segDef.explanation || '';
   const codeUpper = rawCode.toUpperCase();
   
-  // Pattern: "T for 3 phases" or "T is the phase designator"
-  const phaseMatch = explanation.match(new RegExp(`${codeUpper}\\s+(?:for|is|=|means|designat)\\s+(.+?)(?:\\.|,|;|$)`, 'i'));
-  if (phaseMatch) {
+  // Pattern: "0061 = 61 A" or "0061 is 61 A"
+  const valMatch = explanation.match(new RegExp(`${rawCode}\\s+(?:=|is|means|for)\\s+([\\d.]+)\\s*(A|kW|V|Hz)`, 'i'));
+  if (valMatch) {
     return {
       segment_name: segDef.segment_name,
       code: rawCode,
-      meaning: phaseMatch[1].trim() + ' (extracted from spec description)',
+      meaning: `${valMatch[1]} ${valMatch[2].toUpperCase()}`,
+      notes: explanation,
+      confidence: 'medium',
+      dependencies: [],
+      exclusions: [],
+      availability_conditions: [],
+      all_source_references: segDef.all_source_references || [],
+    };
+  }
+
+  // Generic Pattern fallback
+  const genericMatch = explanation.match(new RegExp(`${codeUpper}\\s+(?:for|is|=|means|designat)\\s+(.+?)(?:\\.|,|;|$)`, 'i'));
+  if (genericMatch) {
+    return {
+      segment_name: segDef.segment_name,
+      code: rawCode,
+      meaning: genericMatch[1].trim() + ' (extracted from spec description)',
       notes: explanation,
       confidence: 'medium',
       dependencies: [],
@@ -604,17 +659,24 @@ function parseByFullCodeLookup(rawCode, spec) {
  * @returns {{ strategy: import('../../types/knowledge-base.js').DecodingStrategy, segments: DecodedSegment[] }}
  */
 export function parseTypecode(rawCode, spec) {
+  let cleanedCode = rawCode.trim();
+  
+  // Normalization for VACON: If it starts with "VACON 0100", remove the space
+  if (cleanedCode.toUpperCase().startsWith('VACON 0100')) {
+    cleanedCode = 'VACON0100' + cleanedCode.substring(10);
+  }
+
   const useSegments = hasSegmentStructure(spec);
 
   if (useSegments) {
     return {
       strategy: 'segment',
-      segments: parseBySegments(rawCode, spec),
+      segments: parseBySegments(cleanedCode, spec),
     };
   }
 
   return {
     strategy: 'full-code-lookup',
-    segments: parseByFullCodeLookup(rawCode, spec),
+    segments: parseByFullCodeLookup(cleanedCode, spec),
   };
 }

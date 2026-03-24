@@ -24,10 +24,14 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   /** Helper to find raw segment meaning based on keywords */
   const seg = (...keywords) => {
     for (const kw of keywords) {
-      const found = segments.find(s =>
-        s.segment_name.toLowerCase().includes(kw.toLowerCase()) ||
-        (s.segment_label && s.segment_label.toLowerCase().includes(kw.toLowerCase()))
-      );
+      const found = segments.find(s => {
+        // Special IP match: only match optional_codes if the meaning actually starts with IP rating pattern
+        if (kw.toLowerCase() === 'protection' && s.segment_name === 'optional_codes') {
+          return /IP\s*\d{2}/i.test(s.meaning);
+        }
+        return s.segment_name.toLowerCase().includes(kw.toLowerCase()) ||
+          (s.segment_label && s.segment_label.toLowerCase().includes(kw.toLowerCase()));
+      });
       if (found && found.meaning && !found.meaning.startsWith('Unknown')) {
         return found.meaning
           .replace(/\s*\(inferred(?:\s+from\s+[^)]+)?\)\s*/gi, '')
@@ -152,11 +156,11 @@ export function composeDatasheet({ segments, technicalTables, extracted_data }) 
   const secDimensiuni = {
     title: 'GREUTATE, DISTANTE, DIMENSIUNI',
     rows: [
-      r('9,01', 'Greutate Neta', val(d.weight)),
+      r('9,01', 'Greutate Neta', val(d.weight), 'kg'),
       r('9,02', 'Dimensiune ambalaj', ''),
-      r('9,05', 'Inaltime Neta', val(d.dimension_height)),
-      r('9,06', 'Latime Neta', val(d.dimension_width)),
-      r('9,07', 'Adancime Neta', val(d.dimension_depth)),
+      r('9,05', 'Inaltime Neta', val(d.dimension_height), 'mm'),
+      r('9,06', 'Latime Neta', val(d.dimension_width), 'mm'),
+      r('9,07', 'Adancime Neta', val(d.dimension_depth), 'mm'),
     ]
   };
 

@@ -66,10 +66,9 @@
   padding: 0;
 }
 
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -77,7 +76,6 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
-  min-height: 100vh;
 }
 
 /* ─── App Layout ──────────────────────────────────────────── */
@@ -85,7 +83,8 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .app-header {
@@ -170,7 +169,8 @@ body {
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 0;
-  max-height: calc(100vh - 57px);
+  overflow: hidden;
+  min-height: 0; /* Important for flex child to be scrollable */
 }
 
 .sidebar {
